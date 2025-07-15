@@ -8,7 +8,7 @@ info:
   coursenum: CS170
   points: 100
   goals:
-    - To use dictionary data structure to tell a choose-your-own adventure style story
+    - To use a dictionary data structure to tell a choose-your-own adventure style story
   rubric:
     - weight: 60
       description: Algorithm Implementation
