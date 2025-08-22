@@ -61,13 +61,13 @@ This modulation strategy is called Pulse-Width Modulation.  WWVB uses three kind
 Here is an example signal that sends a marker bit followed by two zero bits.  Notice that the first bit is quiet for almost one second (0.8 seconds), and then loud for the remainder of the second (0.2 seconds).  That's a marker.  The second and third bits reverse that trend, and a requiet for only 0.2 seconds and then loud for the remainder of the second (0.8 seconds).  These are zero bits.  This signal transmitted a marker, followed by a 0, followed by a 0.
 
 <p align="center">
-<img style="max-width:100%;" alt="A marker followed by two zero bits from WWVB using PWM" src="https://github.com/BillJr99/WWVB/blob/main/marker-zero-zero.png?raw=true">
+<img style="max-width:100%;" alt="A marker followed by two zero bits from WWVB using PWM" src="../../images/activity-wwvb/marker-zero-zero.png?raw=true">
 </p>
 
 Here's another example that sends a zero, a one, and a one bit.
 
 <p align="center">
-<img style="max-width:100%;" alt="A zero followed by two one bits from WWVB using PWM" src="https://github.com/BillJr99/WWVB/blob/main/zero-one-one.png?raw=true">
+<img style="max-width:100%;" alt="A zero followed by two one bits from WWVB using PWM" src="../../images/activity-wwvb/zero-one-one.png?raw=true">
 </p>
 
 If we listen carefully (or observe the strength of the radio signal), we can decipher the entire code.  Over the course of one minute, WWVB will send 60 bit signals.  Each one tells us something about the current time.  Here's what they mean:
