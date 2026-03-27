@@ -179,6 +179,3 @@ Here's my finished product, available at [https://www.billmongan.com/minizerokno
 
 Here is the program for the hashing version of the Zero Knowledge Coin Flip, available at [https://replit.com/@BillJr99/ZeroKnowledgeCoinFlip](https://replit.com/@BillJr99/ZeroKnowledgeCoinFlip):
 
-<p align="center">
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@BillJr99/WWVB-Decoder?embed=true"></iframe>
-</p>

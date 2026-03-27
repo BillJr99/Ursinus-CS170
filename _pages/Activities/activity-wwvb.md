@@ -221,10 +221,6 @@ Notice that WWVB modulates its signal at 1000 Hz.  Could it be posssible to enco
 
 Here's my finished product for the WWVB decoder, available at [https://replit.com/@BillJr99/WWVB-Decoder](https://replit.com/@BillJr99/WWVB-Decoder):
 
-<p align="center">
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@BillJr99/WWVB-Decoder?embed=true"></iframe>
-</p>
-
 The complete source code for all the programs is available at [https://www.github.com/BillJr99/WWVB/](https://www.github.com/BillJr99/WWVB/).
 
 #### wwvbhelper.py
