@@ -46,14 +46,14 @@ info:
       model: |
         <img src="../files/activity-microbitprng/PRNG.png" alt="Pseudonumber Random Number Generator (PRNG) formula">
         <br>
-        <a title="Cmglee, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Linear_congruential_generator_visualisation.svg"><img width="512" alt="Linear congruential generator visualisation" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Linear_congruential_generator_visualisation.svg/512px-Linear_congruential_generator_visualisation.svg.png"></a>
+        <a title="Cmglee, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Linear_congruential_generator_visualisation.svg"><img width="512" alt="Linear congruential generator visualisation" src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Linear_congruential_generator_visualisation.svg"></a>
       questions: 
         - "The <a href=\"https://en.wikipedia.org/wiki/Linear_congruential_generator\">Linear Congruential Generator</a> is one way to generate a pseudo-random number computationally.  Choose a starting value and generate 3 random numbers using this formula."
         - What would happen if two people used the same starting value (called a &quot;seed&quot;)?
         - How might video games generate a seed?
     - title: "Introduction to the micro:bit"
       model: |
-        <a href="https://upload.wikimedia.org/wikipedia/commons/a/a3/Micro-bit_v1_%26_v2.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Micro-bit_v1_%26_v2.JPG" alt="Micro-bit v1 &amp; v2.JPG: Creative Commons Zero, Public Domain Dedication"></a>
+        <a href="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Micro-bit_v1_%26_v2.JPG"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Micro-bit_v1_%26_v2.JPG" alt="Micro-bit v1 &amp; v2.JPG: Creative Commons Zero, Public Domain Dedication"></a>
         <br>
         <div style="text-align: left;">
         micro:bit devices are &quot;programmable units&quot; that have:

@@ -26,7 +26,7 @@ info:
         - How did you keep track?
     - title: "Tracking Collections of Data"
       model: |
-        <a title="No machine-readable author provided. Jarkko Piiroinen assumed (based on copyright claims)., Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Array1.svg"><img width="256" alt="Array1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Array1.svg/256px-Array1.svg.png"></a>
+        <a title="No machine-readable author provided. Jarkko Piiroinen assumed (based on copyright claims)., Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Array1.svg"><img width="256" alt="Array1" src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Array1.svg"></a>
       questions: 
         - "You can create &quot;arrays&quot; of data to do this automatically!  In python, this creates a table for each of 5 of your friends, each set to 0 words: <code>friends = [0,0,0,0,0]</code>"
         - Where do you see tables like this in your own life?

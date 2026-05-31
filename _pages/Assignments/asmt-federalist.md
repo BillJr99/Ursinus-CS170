@@ -54,7 +54,7 @@ tags:
 The Federalist Papers are a series of articles written by three of the Founding Fathers (James Madison, Alexander Hamilton, and John Jay) during the adoption period of the United States Constitution.  They used a pseudonum known as "Publius" to maintain anonymity.  Often, it is important to maintain anonymity for one's own safety, to avoid persecution resulting from one's speech; other times, anonymity allows one to avoid revealing their own beliefs in their writing.  But if you've ever read e-mails or text messages from your friends, you have probably found that you can guess who wrote something before you even see the person's name.  That's because we have unique writing styles that can help identify an author over time.  Sure enough, some of the previously unknown authors of the Federalist Papers were identified through stylometry (the study of one's linguistic style).  In this assignment, we will write a program to do just this.
 
 <p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/The_Federalist_%281st_ed%2C_1788%2C_vol_I%2C_title_page%29_-_02.jpg" alt="The Federalist Papers" style="max-width:100%;">
+<img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/The_Federalist_%281st_ed%2C_1788%2C_vol_I%2C_title_page%29_-_02.jpg" alt="The Federalist Papers" style="max-width:100%;">
 </p>
 
 ## Stylometric Features

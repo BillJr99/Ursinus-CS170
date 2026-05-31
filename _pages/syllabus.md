@@ -70,7 +70,7 @@ info:
     <div style="width: 100%; display: table; border-collapse:separate; border-spacing:5px;">
     <div style="width: 100%; display: table-row;">
         <div style="display: table-cell; padding:5px; width:33%;">
-            <a href="https://en.wikipedia.org/wiki/File:Micro-bit_v1_%26_v2.JPG#/media/File:Micro-bit_v1_&amp;_v2.JPG"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Micro-bit_v1_%26_v2.JPG/1280px-Micro-bit_v1_%26_v2.JPG" alt="Micro-bit v1 &amp; v2.JPG: Creative Commons Zero, Public Domain Dedication" width="100%" style="display:block;"></a>
+            <a href="https://en.wikipedia.org/wiki/File:Micro-bit_v1_%26_v2.JPG#/media/File:Micro-bit_v1_&amp;_v2.JPG"><img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Micro-bit_v1_%26_v2.JPG" alt="Micro-bit v1 &amp; v2.JPG: Creative Commons Zero, Public Domain Dedication" width="100%" style="display:block;"></a>
         </div>
         <div style="display: table-cell; padding:5px; width:33%;">
             <img width="100%" style="display:block;" src="https://github.com/billjr99/thunder-and-lightning-v2/raw/master/.github/makecode/blocks.png" alt="Thunder and Lightning Timer Program Blocks for Microbit">

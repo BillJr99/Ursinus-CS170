@@ -40,7 +40,7 @@ info:
         - What should we do if the signal is stronger or weaker?
     - title: "Enhancing the Program"
       model: |
-        <a title="Berrely, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Apple_AirTag.svg"><img width="512" alt="Apple AirTag" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Apple_AirTag.svg/512px-Apple_AirTag.svg.png"></a>
+        <a title="Berrely, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Apple_AirTag.svg"><img width="512" alt="Apple AirTag" src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Apple_AirTag.svg"></a>
       questions: 
         - When should we send a radio signal (i.e., &quot;Marco!&quot;)
         - Should we do this over and over again, or pause in between?  Why or why not?

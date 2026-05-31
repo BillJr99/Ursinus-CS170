@@ -98,7 +98,7 @@ info:
         - "What does the <code>==</code> operator do?  Why do you think it is different from a single <code>=</code> sign?"
         - "With a partner, write a short program that either tells an interactive story or treasure hunt, asks a user to guess a secret number (and tells them if they are correct), plays rock-paper-scizzors, plays a question and answer quiz game, or tells you whether you should turn on the heater or air conditioner.  Be prepared to share this with the class!"      
     - model: |
-        <a title="P. Kemp, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:If-Then-Else-diagram.svg"><img width="256" alt="If-Then-Else-diagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/If-Then-Else-diagram.svg/256px-If-Then-Else-diagram.svg.png"></a>
+        <a title="P. Kemp, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:If-Then-Else-diagram.svg"><img width="256" alt="If-Then-Else-diagram" src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/If-Then-Else-diagram.svg"></a>
       title: "Using Flow Charts to Observe Conditional Program Flow"
       questions:
         - "Draw a flowchart diagram that illustrates the control flow of your Venn Diagram program."
@@ -111,7 +111,7 @@ info:
         - "Label the three large circles \"A\", \"B\", and \"C\".  In each of the 7 regions within the Venn Diagram, which elements are true and which are false?"
         - "Write a series of <code>if</code> statements that may use <code>else</code> and <code>else if</code> blocks that print out the different states of your Venn Diagram.  There are a few ways to go about this, so we will discuss and compare approaches as a class."  
     - model: |
-        <a title="P. Kemp, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:If-Then-Else-diagram.svg"><img width="256" alt="If-Then-Else-diagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/If-Then-Else-diagram.svg/256px-If-Then-Else-diagram.svg.png"></a>
+        <a title="P. Kemp, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:If-Then-Else-diagram.svg"><img width="256" alt="If-Then-Else-diagram" src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/If-Then-Else-diagram.svg"></a>
       title: "Using Flow Charts to Observe Conditional Program Flow"
       questions:
         - "Draw a flowchart diagram that illustrates the control flow of your Venn Diagram program."
