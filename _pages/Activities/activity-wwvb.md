@@ -143,7 +143,7 @@ This will generate a file called `output.wav` by default, that sounds like this 
     <source src="../files/activity-wwvb/output.wav" type="audio/x-wav">
 </audio>
 
-This particular sample is the one that is decoded by running the replit below.  This sample was generated on July 12, 2022, at 9:13 AM.  If you run the replit, it should display this date and time!  If you run the `wwvb-generator.py` script, it will generate a new `output.wav` file with the current date and time, which you can upload to this replit and decode again (it should print the date and time that you created this new sample!  
+This particular sample is the one that is decoded by the project below.  This sample was generated on July 12, 2022, at 9:13 AM.  If you run the project, it should display this date and time!  If you run the `wwvb-generator.py` script, it will generate a new `output.wav` file with the current date and time, which you can decode again (it should print the date and time that you created this new sample!  
 
 One note is that the time is in the Universal Coordinated Time (UTC) time zone, so that it is the same time zone for everyone around the world.  The time you get may differ by a few hours or parts of an hour, depending on the time zone you are in.  That's normal!  For example, Eastern Standard Time is 5 hours earlier than UTC, or 4 hours earlier during Daylight Saving Time.
 
@@ -219,7 +219,11 @@ Notice that WWVB modulates its signal at 1000 Hz.  Could it be posssible to enco
 
 ### The Finished Project
 
-Here's my finished product for the WWVB decoder, available at [https://replit.com/@BillJr99/WWVB-Decoder](https://replit.com/@BillJr99/WWVB-Decoder):
+Here's my finished product for the WWVB decoder:
+
+<p align="center">
+<iframe height="600px" width="100%" src="https://www.billmongan.com/Ursinus-CS170/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FUrsinus-CS170%2Fgh-pages%2Ffiles%2Freplit%2FWWVB-Decoder.zip&title=WWVB%20Decoder" scrolling="yes" frameborder="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin"></iframe>
+</p>
 
 The complete source code for all the programs is available at [https://www.github.com/BillJr99/WWVB/](https://www.github.com/BillJr99/WWVB/).
 
