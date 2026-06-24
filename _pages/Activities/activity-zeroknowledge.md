@@ -177,5 +177,9 @@ Here's my finished product, available at [https://www.billmongan.com/minizerokno
 <img style="max-width:100%;" alt="The finished hide and seek project in the Microbit Makecode" src="https://github.com/billjr99/minizeroknowledgecoinflip/raw/master/.github/makecode/blocks.png">
 </p>
 
-Here is the program for the hashing version of the Zero Knowledge Coin Flip, available at [https://replit.com/@BillJr99/ZeroKnowledgeCoinFlip](https://replit.com/@BillJr99/ZeroKnowledgeCoinFlip):
+Here is the program for the hashing version of the Zero Knowledge Coin Flip:
+
+<p align="center">
+<iframe height="600px" width="100%" src="https://www.billmongan.com/Ursinus-CS170/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FUrsinus-CS170%2Fgh-pages%2Ffiles%2Freplit%2FZeroKnowledgeCoinFlip.zip&title=Zero%20Knowledge%20Coin%20Flip" scrolling="yes" frameborder="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin"></iframe>
+</p>
 
