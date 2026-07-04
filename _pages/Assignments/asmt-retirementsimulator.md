@@ -14,34 +14,34 @@ info:
   rubric:
     - weight: 60
       description: Algorithm Implementation
-      preemerging: The algorithm fails on the test inputs due to major issues, or the program fails to compile and/or run
-      beginning: The algorithm fails on the test inputs due to one or more minor issues
-      progressing: The algorithm is implemented to solve the problem correctly according to given test inputs, but would fail if executed in a general case due to a minor issue or omission in the algorithm design or implementation
-      proficient: A reasonable algorithm is implemented to solve the problem which correctly solves the problem according to the given test inputs, and would be reasonably expected to solve the problem in the general case
+      preemerging: "The programs do not run, or neither the pi estimation nor the retirement simulation produces output"
+      beginning: "The programs run but a core calculation has a logic slip, such as forgetting to multiply the inside-circle ratio by 4, testing the dart condition x**2 + y**2 <= 1 incorrectly, or failing to subtract the annual spending S at the start of each simulated year"
+      progressing: "The pi estimation and the single retirement simulation both produce correct results for the required inputs, but one component has a minor issue: for example, the multi-trial version does not re-initialize the starting balance for each new trial, the run-out-of-money case does not exit both the day and year loops, or portfolio_history is not built correctly so the plot is empty or wrong"
+      proficient: "The pi estimator approximates pi for N = 100 through 1,000,000 dart throws and prints the approximation, absolute error, and percentage error; the retirement simulation subtracts annual spending, applies a random daily change between -P_down and P_up, and stops correctly (reporting the day and year) when money runs out; and the k-trial version re-initializes its variables each trial, reports the percentage of successful trials, and builds portfolio_history for the matplotlib plot"
     - weight: 10
       description: Code Indentation and Spacing
-      preemerging: Code indentation and spacing are generally inappropriate or inconsistent
-      beginning: Code indentation or spacing are generally appropriate but inconsistent in a few isolated instances
-      progressing: Code indentation or spacing are appropriate or consistent, with minor adjustments needed
-      proficient: Code indentation and spacing are appropriate and consistent
+      preemerging: "Indentation and spacing are inconsistent enough to make the programs hard to follow, or indentation errors in the nested year and day loops prevent the programs from running"
+      beginning: "Indentation and spacing are mostly consistent, with a few isolated issues such as uneven indentation inside the nested trial, year, and day loops"
+      progressing: "Indentation and spacing are consistent, with only a minor adjustment needed (for example, missing blank lines between the initialization and simulation sections)"
+      proficient: "Indentation and spacing are consistent throughout: each level of the trial, year, and day loops is indented one level deeper than the last, operators are consistently spaced, and blank lines separate the initialization, simulation, and output sections"
     - weight: 10
       description: Code Quality
-      preemerging: Prior code quality feedback and style guide standards are not reflected in the submitted code to a great extent
-      beginning: Code quality conforms to several standards in the course Style Guide, and progress is demonstrated in improving code quality from prior feedback
-      progressing: Code quality conforms to the standards in the course Style Guide to a great extent, with a few identified areas of improvement
-      proficient: Code quality substantially conforms to the standards in the course Style Guide
+      preemerging: "The code has not been run through pylint, and there are widespread style issues such as unclear names or the simulation logic copy-pasted between the single-trial and multi-trial versions"
+      beginning: "pylint reports several warnings that were not addressed (for example, unused variables or imports left over from experimenting)"
+      progressing: "The code runs nearly clean through pylint with only one or two unaddressed warnings; names like count_inside, percent_error, and portfolio_history are descriptive snake_case, with a few isolated style issues remaining"
+      proficient: "The code follows the course style guide and runs cleanly through pylint (no warnings other than those the instructor has designated as acceptable): descriptive snake_case names such as count_inside and portfolio_history, no unused variables, and the simulation logic written once rather than copy-pasted between the single-trial and multi-trial versions"
     - weight: 10
       description: Code Documentation
-      preemerging: Code commenting and structure are absent, or code structure departs significantly from best practice
-      beginning: Code commenting and structure is limited in ways that reduce the readability of the program; specifically, descriptive comments are present for some functions
-      progressing: Code documentation is present that re-states the explicit code definitions
-      proficient: Code is documented at non-trivial points in a manner that enhances the readability of the program; specifically, descriptive comments are present for all functions
+      preemerging: "The code contains no comments, or comments are so sparse that a reader cannot follow the simulation logic"
+      beginning: "Some sections are commented, but key steps such as the dart-inside-the-circle test or the yearly spending subtraction are unexplained"
+      progressing: "Comments are present at each major step, but they mostly restate the code rather than explaining why (for example, why the ratio is multiplied by 4, or why variables are re-initialized each trial)"
+      proficient: "Every function has a comment or docstring stating its purpose, inputs, and output; non-obvious steps such as why the inside-circle ratio approximates pi/4 and why the balance variables must be re-initialized at the start of each trial are explained; comments explain why, not just what"
     - weight: 10
       description: Writeup and Submission
-      preemerging: An incomplete submission is provided, or the README file submitted is blank
-      beginning: The program is submitted, but not according to the directions in one or more ways (for example, because it is lacking a readme writeup or missing answers to written questions)
-      progressing: The program is submitted according to the directions with a minor omission or correction needed, including a readme writeup describing the solution and answering nearly all questions posed in the instructions
-      proficient: The program is submitted according to the directions, including a readme writeup describing the solution and answering all questions posed in the instructions    
+      preemerging: "No README.md is committed to the repository, or the repository is missing the simulation programs or the required plots"
+      beginning: "A README.md is committed, but it is missing the output table, one of the plots, or the answers to the bolded questions (the areas of the square and circle, and how accuracy improves as N increases), or the final version was not pushed to GitHub before the deadline"
+      progressing: "The README.md includes the output table, both plots, and answers to the bolded questions, with a minor omission such as a missing row of the table or a brief discussion paragraph"
+      proficient: "The README.md includes the output table for all five values of N, the percentage-error plot, the portfolio balance plot with a paragraph discussing the patterns you observe, answers to both bolded questions, a description of how to run the programs, and the final version of all files is committed and pushed to GitHub"
       
 tags:
   - python
@@ -51,6 +51,16 @@ tags:
   - iteration
   
 ---
+
+## Purpose
+
+How do scientists and financial planners answer questions that are too complicated to solve with a single formula - like "will my retirement savings last 30 years in an unpredictable market?"  One powerful answer is simulation: use a computer to run an experiment with random chance thousands of times, and study the pattern of outcomes.  In this assignment, you will use that technique (called a Monte Carlo simulation) first to estimate the value of pi by "throwing darts," and then to model a retirement portfolio through decades of random market ups and downs - the same kind of analysis real financial planning tools perform.
+
+## Getting Started with GitHub
+
+Accept the assignment invitation using the GitHub Classroom link, and clone your repository to your computer to get started.  As you work, commit your changes early and often with meaningful messages, and push them before the deadline: your latest pushed commit is what is graded.  If this is new to you, the [Using Git and GitHub](../Modules/Github/Module) and [Cloning an Assignment with GitHub Classroom](../Modules/GithubClassroom/Module) modules walk you through it step-by-step.
+
+Your Code Quality score is informed by pylint: see the [Code Quality and Linting module](../Modules/Pylint/Module) for how to run it and read its output.
 
 ## Part 1: Simulating Pi with a Monte Carlo Simulation
 
@@ -227,4 +237,18 @@ On some computers, the last command will be:
 
 ## What to Turn In
 
-When you're done, write a README for your project, and save all your files, before exporting your project to ZIP.  **In your README, answer any bolded questions presented on this page.**  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+When you're done, write a `README.md` file in your repository, save all your files, and commit and push everything (your Python files, your plots, and your README) to GitHub.  There is no need to export your project to ZIP: your pushed repository is your submission, and your latest pushed commit before the deadline is what will be graded.  If a Canvas submission link is posted, you may also paste your repository's URL there as a secondary confirmation.  **In your README, answer any bolded questions presented on this page.**  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+
+## Before You Submit: Self-Check
+
+Before you submit, walk through this checklist - if you can check every box, you're in great shape!
+
+- [ ] Each program runs from top to bottom without errors when I run it fresh (after installing `matplotlib`).
+- [ ] My pi estimator asks the user for `N`, and I recorded results for N = 100, 1,000, 10,000, 100,000, and 1,000,000 in my output table (approximation, absolute error, and percentage error).
+- [ ] My single retirement simulation subtracts spending each year, applies a random daily change, and correctly reports the day and year if the money runs out.
+- [ ] My multi-trial version re-initializes the balance variables at the start of each trial and prints the number and percentage of successful trials.
+- [ ] My `portfolio_history` plot displays, and my README includes it plus the percentage-error plot for Part 1.
+- [ ] I ran my code through pylint and addressed the warnings (see the [Code Quality and Linting module](../Modules/Pylint/Module)).
+- [ ] Every function has a comment or docstring explaining its purpose, inputs, and output.
+- [ ] My `README.md` answers every bolded question and includes the discussion paragraph about the portfolio plot patterns.
+- [ ] I committed AND pushed my work to GitHub, and I can see my final version on github.com in my browser.

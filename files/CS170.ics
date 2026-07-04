@@ -461,7 +461,7 @@ BEGIN:VEVENT
 UID:00000000-0000-0000-0000-018bcfe5682d
 DTSTAMP:20241206T000000Z
 DTSTART;VALUE=DATE:20241206
-SUMMARY:CS170 Programming for the World Around Us: Programming Assignment: Retirement Simulator Handed Out
+SUMMARY:CS170 Programming for the World Around Us: Programming Assignment: Retirement Simulator Due
 LOCATION:
 DESCRIPTION:
 PRIORITY:3

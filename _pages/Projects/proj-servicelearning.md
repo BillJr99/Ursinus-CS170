@@ -43,6 +43,10 @@ This open-ended project aims to give you space to explore computing and its appl
 * Producing a podcast episode about the role of computing in society (for instance, about how humans can be better engaged by technical professionals to facilitate more accessible technologies)
 * A research report on computing privacy considerations
 
+### Sharing Your Work on GitHub
+
+GitHub is a natural home for many of these deliverables: a repository can host your written materials, lesson plans, code, and media, and it satisfies the public dissemination expectation of the grading contract.  If you'd like to share your project this way, the [Using Git and GitHub](../Modules/Github/Module) and [Cloning an Assignment with GitHub Classroom](../Modules/GithubClassroom/Module) modules walk you through creating a repository, committing your work with meaningful messages, and pushing it so it is visible on github.com.  Commit early and often as you work - your drafts will benefit from the history, too.
+
 ## Group Formation and Proposal (20 Points)
 
 To form a group, students should draft a text document including the names of all students in the group, a summary of the proposed project, and a breakdown of each student's responsibilities on the team.  **Each student** should send this identical document to me for approval via e-mail.  I will respond via e-mail to the **entire** group notifying them that the project has been approved, and which members are on the team.  If I add or remove members from the team, I will notify the entire group via e-mail.  This shall constitute agreement of the project responsibilities by all members of the team.
@@ -58,3 +62,15 @@ It is best if one's first draft is not also the final draft, especially as your 
 ## Final Draft (50 Points)
 
 It is **highly recommended** that you review your first draft with a [Writing Fellow from the Writing and Speaking Center](https://www.ursinus.edu/offices/center-for-writing-and-speaking/).  Based on this feedback and the feedback from your instructor (and possibly from classmates), revise your report into a final draft.  
+
+## Before You Submit: Self-Check
+
+Before you submit your final draft, walk through this checklist - if you can check every box, you're in great shape!
+
+- [ ] Our proposal document was emailed by each member by the proposal deadline and approved by the professor, and our submitted project substantially matches it.
+- [ ] Our first draft was submitted by its deadline and described real progress toward the project's conclusion.
+- [ ] The final report substantially discusses the project's goals, rationale, development approach, and final results.
+- [ ] The report includes a deliverable, explained clearly enough that someone else could use or extend it.
+- [ ] The project is disseminated on a public forum (a website, GitHub repository, article, paper submission, podcast, or similar), and the report links to it.
+- [ ] Each group member made meaningful contributions, and the report reflects them.
+- [ ] (Recommended) We reviewed a draft with a Writing Fellow from the Writing and Speaking Center.

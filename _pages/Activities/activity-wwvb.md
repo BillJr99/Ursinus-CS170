@@ -238,3 +238,125 @@ The complete source code for all the programs is available at [https://www.githu
 #### wwvb-wav-decoder.py
 
 <script src="https://gist.github.com/BillJr99/c321edfca090198eacf0e188c7984043.js"></script>
+
+## Key Ideas in Review
+
+That was a big journey - from flashlights to Fourier Transforms!  Here are the three ideas to hold onto:
+
+* **Modulation** means shaping a signal onto a carrier wave.  WWVB uses **Pulse-Width Modulation** (PWM): every second it sends one symbol, and the *width* of the quiet (attenuated) part of that second tells you which symbol it was - 0.2 s of quiet means a `0`, 0.5 s means a `1`, and 0.8 s means a *marker*.
+* An **encoding** is an agreed-upon meaning for each position in a message.  In WWVB's 60-second frame, each second has a job: some bits add an amount to the minutes, some to the hours, some to the day of the year.  A bit only *adds its amount if it is a 1*.
+* **Framing**: markers don't carry numbers - they're punctuation.  They mark the boundaries between fields, and two markers in a row mean "a new minute is starting," so a late listener knows where to begin counting.
+
+### Tracing the Decoder
+
+Let's decode four seconds of signal by hand.  For each second, we measure how long the signal stays quiet before it gets loud, then classify it using the decoder's thresholds (below 0.35 s is a `0`, 0.35-0.65 s is a `1`, above 0.65 s is a marker):
+
+| Second | Quiet (attenuated) width | Classification |
+|--------|--------------------------|----------------|
+| 1      | 0.21 s                   | `0`            |
+| 2      | 0.49 s                   | `1`            |
+| 3      | 0.52 s                   | `1`            |
+| 4      | 0.79 s                   | marker         |
+
+Notice the measured widths aren't exactly 0.2, 0.5, and 0.8 - real radio is noisy!  That's why the decoder uses in-between thresholds (0.35 and 0.65) instead of demanding exact values.
+
+Now let's use the encoding table to turn bits into a number.  Bits 1-8 of the frame describe the minutes, with values 40, 20, 10, (unused), 8, 4, 2, 1.  Suppose we received:
+
+| Bit position | 1 (+40) | 2 (+20) | 3 (+10) | 4 (unused) | 5 (+8) | 6 (+4) | 7 (+2) | 8 (+1) |
+|--------------|---------|---------|---------|------------|--------|--------|--------|--------|
+| Received bit | 0       | 1       | 0       | 0          | 1      | 0      | 0      | 1      |
+| Contribution | 0       | 20      | 0       | 0          | 8      | 0      | 0      | 1      |
+
+Adding the contributions: 20 + 8 + 1 = **29 minutes past the hour**.  Every field in the frame (hours, day of year, year) decodes exactly the same way - only the weights change.
+
+### Common Mistakes
+
+* **Counting a marker as a number**: markers are worth nothing; they only separate fields.  Adding a marker's position weight will scramble your time.
+* **Off-by-one on bit positions**: the frame's first second is bit 0 (a marker), so "add 40 to the minutes" is bit 1, the *second* second.  Being one position off shifts every weight and produces nonsense.
+* **Expecting exact widths**: real signals are noisy, so classify with ranges (thresholds), not equality checks like `width == 0.5`.
+* **Forgetting time zones**: WWVB broadcasts UTC.  If your decoded time looks "wrong by a few hours," it's probably just not converted to your local time zone.
+
+## Practice Exercises
+
+These exercises need no radio and no hardware - just pencil and paper, or any Python environment (such as the class replit or IDLE).
+
+### Exercise 1 (warm-up)
+
+Classify each of these measured quiet-signal widths as a `0`, `1`, or marker, using the thresholds from the decoder (below 0.35 s is a `0`; 0.35-0.65 s is a `1`; above 0.65 s is a marker): 0.18 s, 0.55 s, 0.82 s, 0.31 s, 0.47 s.
+
+<details>
+<summary>Click to reveal a solution to Exercise 1</summary>
+
+```python
+# 0.18 s -> 0        (below 0.35)
+# 0.55 s -> 1        (between 0.35 and 0.65)
+# 0.82 s -> marker   (above 0.65)
+# 0.31 s -> 0        (below 0.35, even though it's a "sloppy" 0.2!)
+# 0.47 s -> 1
+```
+
+The thresholds sit halfway between the ideal widths, so each measurement is assigned to whichever ideal value it's closest to.  This tolerance for noise is what lets a wristwatch with a tiny antenna decode a station 2000 miles away.
+
+</details>
+
+### Exercise 2
+
+Using the minutes weights (bits 1-8 are worth 40, 20, 10, unused, 8, 4, 2, 1), decode these received minute bits: `1, 0, 1, 0, 0, 1, 0, 1`.  Then go the other direction: what bits would WWVB send for 52 minutes past the hour?
+
+<details>
+<summary>Click to reveal a solution to Exercise 2</summary>
+
+```python
+# Decode: 1,0,1,0,0,1,0,1 -> 40 + 10 + 4 + 1 = 55 minutes
+# Encode 52: take weights largest-first, like making change:
+#   52 - 40 = 12 (bit 1 on), 12 < 20 and < 10? no: 12 - 10 = 2 (bit 3 on),
+#   2 - 2 = 0 (bit 7 on)
+# Bits: 1, 0, 1, 0, 0, 0, 1, 0
+```
+
+Decoding is just adding up the weights of the 1 bits.  Encoding works like making change with coins: subtract the largest weight that fits, over and over, until you reach zero.
+
+</details>
+
+### Exercise 3
+
+Write a Python function `decode_minutes(bits)` that takes a list of the eight minute bits and returns the number of minutes, using the weights from Exercise 2.  Test it on both bit patterns above.
+
+<details>
+<summary>Click to reveal a solution to Exercise 3</summary>
+
+```python
+def decode_minutes(bits):
+    weights = [40, 20, 10, 0, 8, 4, 2, 1]  # 0 for the unused slot
+    total = 0
+    for i in range(len(bits)):
+        total = total + bits[i] * weights[i]
+    return total
+
+print(decode_minutes([1, 0, 1, 0, 0, 1, 0, 1]))  # 55
+print(decode_minutes([1, 0, 1, 0, 0, 0, 1, 0]))  # 52
+```
+
+Multiplying each bit by its weight is a neat trick: a 1 bit contributes its full weight, and a 0 bit contributes nothing, so we don't even need an `if` statement.  Giving the unused slot a weight of 0 keeps the positions lined up.
+
+</details>
+
+### Exercise 4 (challenge)
+
+A late listener tunes in mid-broadcast and hears this stream of symbols (M = marker): `1, 0, M, M, 1, 0, 0, ...`  At which symbol should they start decoding a fresh minute, and why?  Then, write a short Python loop that scans a list of symbols (using 2 to represent a marker) and prints the index where a new frame begins.
+
+<details>
+<summary>Click to reveal a solution to Exercise 4</summary>
+
+```python
+symbols = [1, 0, 2, 2, 1, 0, 0]  # 2 means marker
+
+for i in range(1, len(symbols)):
+    if symbols[i] == 2 and symbols[i - 1] == 2:
+        print("New minute starts at index", i)  # prints 3
+        break
+```
+
+A single marker just separates fields, but every minute *ends* with a marker (second 59) and *begins* with another (second 0) - so two markers back-to-back can only mean a frame boundary.  The second marker of the pair (index 3 here) is bit 0 of the new minute, and decoding can begin.
+
+</details>

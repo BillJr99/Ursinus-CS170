@@ -220,6 +220,8 @@ schedule:
   readings:
   - rtitle: "Runestone Ch. 1"
     rlink: false   
+  - rtitle: "Module: Using Git and GitHub"
+    rlink: "./Modules/Github/Module"
   deliverables:  
   - dtitle: "Lab: Computing Environment Handed Out"
     dlink: "./Labs/ComputingEnvironment"
@@ -231,6 +233,8 @@ schedule:
   readings:
   - rtitle: "Think Python Ch. 1"
     rlink: false   
+  - rtitle: "Module: Working with Git Repositories"
+    rlink: "./Modules/Github/Module2"
 - week: "1"
   date: "3"
   title: "Introduction to the micro:bit and Random Number Generation with Variables and Mathematical Expressions"
@@ -243,6 +247,9 @@ schedule:
 - week: "2"
   date: "0"
   title: "Introduction to the micro:bit and Random Number Generation with Variables and Mathematical Expressions"
+  readings:
+  - rtitle: "Module: Cloning an Assignment with GitHub Classroom"
+    rlink: "./Modules/GithubClassroom/Module"
   deliverables:  
   - dtitle: "Lab: Computing Environment Due"
     dlink: "./Labs/ComputingEnvironment"
@@ -265,6 +272,8 @@ schedule:
     rlink: false   
   - rtitle: "Runestone Ch. 2"
     rlink: false      
+  - rtitle: "Module: Code Quality and Linting with Pylint"
+    rlink: "./Modules/Pylint/Module"
 - week: "2"
   date: "3"
   title: "Representing Numbers and Text in Python" 
@@ -367,7 +376,8 @@ schedule:
     rubricpath: "_pages/Assignments/asmt-minicrypto.md"            
 - week: "5"
   date: "3"
-  title: "Tin Foil Piano with micro:bit Using Functions and Loops"
+  title: "More Python Practice: Functions and Loops in Python"
+  link: "./Activities/PythonIteration"
 - week: "6"
   date: "0"
   title: "Iteration in Python"
@@ -434,8 +444,15 @@ schedule:
   title: "Functions in Python"
 - week: "9"
   date: "0"
-  title: "Social Vicinity Tracker with micro:bit Using Arrays"
-  link: "./Activities/SocialVicinity"  
+  title: "Lists in Python"
+  link: "./Activities/PythonLists"
+  readings:
+  - rtitle: "Think Python Ch. 9"
+    rlink: false     
+  - rtitle: "Runestone Ch. 7, 9"
+    rlink: false      
+  - rtitle: "Optional Enrichment: Social Vicinity Tracker with the micro:bit"
+    rlink: "./Activities/SocialVicinity"
 - week: "9"
   date: "1"
   title: "Lab: Credit Card Validator"
@@ -446,7 +463,7 @@ schedule:
     rubricpath: "_pages/Labs/lab-creditcardvalidator.md" 
 - week: "9"
   date: "2"
-  title: "Social Vicinity Tracker with micro:bit Using Arrays"
+  title: "Lists in Python"
   deliverables:
   - dtitle: "Programming Assignment: Computer Art Handed Out"
     dlink: "./Assignments/ComputerArt"
@@ -459,12 +476,6 @@ schedule:
 - week: "9"
   date: "3"  
   title: "Lists in Python"
-  link: "./Activities/PythonLists"  
-  readings:
-  - rtitle: "Think Python Ch. 9"
-    rlink: false     
-  - rtitle: "Runestone Ch. 7, 9"
-    rlink: false      
   deliverables:
   - dtitle: "Service Learning Project: First Draft Due"
     dlink: "./Projects/ServiceLearning"
@@ -477,7 +488,8 @@ schedule:
     rubricpath: "_pages/Projects/proj-servicelearning.md"
 - week: "10"
   date: "0"
-  title: "Lists in Python"
+  title: "Hands-On Data Analysis with Python"
+  link: "./Activities/DataPython"
   deliverables:  
   - dtitle: "Final Project: Proposal Handed Out"
     dlink: "./Projects/FinalProject"
@@ -494,7 +506,7 @@ schedule:
     rubricpath: "_pages/Labs/lab-unittesting.md"
 - week: "10"
   date: "2"
-  title: "Lists in Python"
+  title: "Hands-On Data Analysis with Python"
   deliverables:
   - dtitle: "Programming Assignment: Random Computer Art Due"
     dlink: "./Assignments/ComputerArt"
@@ -503,7 +515,7 @@ schedule:
   - dtitle: "Programming Assignment: Respiratory Tracker Handed Out"
     dlink: "./Assignments/RespiratoryTracker"
     points: 100        
-    rubricpath: "_pages/Assignments/respiratorytracker.md"
+    rubricpath: "_pages/Assignments/asmt-respiratorytracker.md"
 - week: "10"
   date: "3"
   title: "Dictionaries in Python"
@@ -614,7 +626,7 @@ schedule:
   date: "3"
   title: "Data Encodings: Telling Time with WWVB" 
   deliverables:
-  - dtitle: "Programming Assignment: Retirement Simulator Handed Out"
+  - dtitle: "Programming Assignment: Retirement Simulator Due"
     dlink: "./Assignments/RetirementSimulator"
     points: 100         
     rubricpath: "_pages/Assignments/asmt-retirementsimulator.md"   
