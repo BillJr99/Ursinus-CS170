@@ -41,7 +41,13 @@ In this project, you will propose a topic of your choosing and a group of at lea
 
 Your project will take input from a text file to initialize at least some of your variables into a list or dictionary structure (or a class).
 
-You may use git or another version control system to coordinate between your team.  **Each student shall contribute by checking in meaningful contributions to the project on the version control system.  If a version control system is not used, code sections should be commented with the initials or recognized pseudonym of the student.**
+### Getting Started with GitHub
+
+We will use GitHub to coordinate and submit this project.  Accept the project invitation using the GitHub Classroom link (or create a shared repository for your team), and each member should clone the repository to their own computer.  Commit early and often with meaningful messages, and push your changes so your teammates can see them: your team's latest pushed commit before the deadline is what is graded, and your commit history is how each member demonstrates their contributions.  If this is new to you, the [Using Git and GitHub](../Modules/Github/Module) and [Cloning an Assignment with GitHub Classroom](../Modules/GithubClassroom/Module) modules walk you through it step-by-step.
+
+**Each student shall contribute by committing meaningful contributions to the project repository.  If a version control system is not used, code sections should be commented with the initials or recognized pseudonym of the student.**
+
+Your code quality contract items are informed by pylint: see the [Code Quality and Linting module](../Modules/Pylint/Module) for how to run it and read its output.
 
 Finally, prepare as a team a project presentation that you will present live to the class for final presentations.  **Each student must have a speaking role** at the presentation.
 
@@ -56,4 +62,18 @@ Should a member of the team fail to participate to the standards set in the prop
 ## Version Control (15% Extra Credit)
 
 See [this video](../Modules/Github/Module) for more information on using Git as a version control system to synchronize your project with your partners, and [this video](https://www.youtube.com/watch?v=5rgp8HkRTzc) for a tutorial on using Git with NetBeans.
+
+## Before You Submit: Self-Check
+
+Before your team submits, walk through this checklist together - if you can check every box, you're in great shape!
+
+- [ ] Our project proposal was emailed by each member and approved by the professor, and our submitted project substantially matches it.
+- [ ] The program runs from top to bottom without errors on a fresh clone of our repository, and it reads a text file to initialize a list, dictionary, or class.
+- [ ] The project includes a loop and a conditional, and functions break up the work so that the main function is small.
+- [ ] Unit tests exist for each function, including tests with boundary case inputs, and they all pass.
+- [ ] We ran the code through pylint and addressed the warnings (see the [Code Quality and Linting module](../Modules/Pylint/Module)); names are meaningful and consistently cased, and indentation is consistent.
+- [ ] Every function is documented with a comment or docstring stating its purpose, inputs, and output.
+- [ ] A `README.md` describing the project and how to run it is committed to the repository.
+- [ ] Every member's contributions are visible as commits pushed to GitHub, and the final version is visible on github.com.
+- [ ] Our presentation is prepared, and every member has a speaking role.
 

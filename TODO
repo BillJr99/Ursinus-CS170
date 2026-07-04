@@ -1,7 +1,0 @@
-Augment course notes
-Make assignment rubrics more specific about each component and quality sought
-Exercises
-Respiratory tracker needs better peak detector or replace
-Use linter: https://github.com/rlalik/autograding-pylint-grader
-Use github more natively
-Replace some Micro:bit time with more Python

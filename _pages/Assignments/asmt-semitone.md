@@ -14,34 +14,34 @@ info:
   rubric:
     - weight: 60
       description: Algorithm Implementation
-      preemerging: The algorithm fails on the test inputs due to major issues, or the program fails to compile and/or run
-      beginning: The algorithm fails on the test inputs due to one or more minor issues
-      progressing: The algorithm is implemented to solve the problem correctly according to given test inputs, but would fail if executed in a general case due to a minor issue or omission in the algorithm design or implementation
-      proficient: A reasonable algorithm is implemented to solve the problem which correctly solves the problem according to the given test inputs, and would be reasonably expected to solve the problem in the general case
+      preemerging: "The programs do not run (for example, due to a syntax error, or because sounds.py is missing from the project), or the frequency calculation is not implemented"
+      beginning: "The programs run but the frequency formula has a logic slip - for example, multiplying the base by the step instead of raising (2**(1/12)) to the step power, or forgetting to convert the keyboard input with int() - so the computed frequency does not match the note table"
+      progressing: "The frequency calculation matches the note table for both positive and negative half-steps and a tone plays with sounds.sine_tone, but one component is incomplete: for example, the song plays every note at the same duration instead of using 1/2 and 1/8 notes, or the phone-number program does not use the two-frequency dtmf_tone mixing from the digit table"
+      proficient: "The program reads the base frequency and number of half-steps from the keyboard, computes pitch = base * (2**(1/12))**step correctly for both positive and negative steps (matching the note frequency table), and plays the note with sounds.sine_tone; the song program plays a recognizable melody with appropriate note durations, and the phone-number program plays the correct dtmf_tone frequency pair for each digit"
     - weight: 10
       description: Code Indentation and Spacing
-      preemerging: Code indentation and spacing are generally inappropriate or inconsistent
-      beginning: Code indentation or spacing are generally appropriate but inconsistent in a few isolated instances
-      progressing: Code indentation or spacing are appropriate or consistent, with minor adjustments needed
-      proficient: Code indentation and spacing are appropriate and consistent
+      preemerging: "Indentation and spacing are inconsistent enough to make the programs hard to follow, or indentation errors prevent the programs from running"
+      beginning: "Indentation and spacing are mostly consistent, with a few isolated issues such as uneven spacing around the * and ** operators or inconsistent blank lines between sections"
+      progressing: "Indentation and spacing are consistent across the frequency, song, and phone-dialer files, with only a minor adjustment needed"
+      proficient: "Indentation and spacing are consistent throughout every file: statements are indented uniformly, operators are consistently spaced, and blank lines separate the input, calculation, and playback sections of each program"
     - weight: 10
       description: Code Quality
-      preemerging: Prior code quality feedback and style guide standards are not reflected in the submitted code to a great extent
-      beginning: Code quality conforms to several standards in the course Style Guide, and progress is demonstrated in improving code quality from prior feedback
-      progressing: Code quality conforms to the standards in the course Style Guide to a great extent, with a few identified areas of improvement
-      proficient: Code quality substantially conforms to the standards in the course Style Guide
+      preemerging: "The code has not been run through pylint, and there are widespread style issues such as one-letter variable names or the song written as one long copy-pasted block"
+      beginning: "pylint reports several warnings that were not addressed (for example, unused imports or variables left over from experimenting), or repeated note-playing lines appear where a duration variable or loop would do"
+      progressing: "The code runs nearly clean through pylint with only one or two unaddressed warnings; names like base, steps, and frequency are descriptive snake_case, with a few isolated style issues remaining"
+      proficient: "The code follows the course style guide and runs cleanly through pylint (no warnings other than those the instructor has designated as acceptable): descriptive snake_case names such as base, steps, and frequency; no unused variables or imports; and no duplicated blocks that a variable or loop could replace"
     - weight: 10
       description: Code Documentation
-      preemerging: Code commenting and structure are absent, or code structure departs significantly from best practice
-      beginning: Code commenting and structure is limited in ways that reduce the readability of the program; specifically, descriptive comments are present for some functions
-      progressing: Code documentation is present that re-states the explicit code definitions
-      proficient: Code is documented at non-trivial points in a manner that enhances the readability of the program; specifically, descriptive comments are present for all functions
+      preemerging: "The code contains no comments, or comments are so sparse that a reader cannot follow what each program does"
+      beginning: "Some sections are commented, but key steps such as the pitch formula or the note durations in the song are unexplained"
+      progressing: "Comments are present at each major step, but they mostly restate the code (for example, 'multiply base by the ratio') rather than explaining why the step is needed"
+      proficient: "Every file and function begins with a comment or docstring stating its purpose, inputs, and output; non-obvious steps such as the 2**(1/12) semitone ratio, the note durations, and the DTMF frequency pairs are explained; comments explain why, not just what"
     - weight: 10
       description: Writeup and Submission
-      preemerging: An incomplete submission is provided, or the README file submitted is blank
-      beginning: The program is submitted, but not according to the directions in one or more ways (for example, because it is lacking a readme writeup or missing answers to written questions)
-      progressing: The program is submitted according to the directions with a minor omission or correction needed, including a readme writeup describing the solution and answering nearly all questions posed in the instructions
-      proficient: The program is submitted according to the directions, including a readme writeup describing the solution and answering all questions posed in the instructions    
+      preemerging: "No README.md is committed to the repository, or the repository is missing files (such as sounds.py or the song program) needed to run the project"
+      beginning: "A README.md is committed, but it does not answer the bolded questions (what happens to the pitch as frequency increases, and which digit the audio graph shows), or the final version of the code was not pushed to GitHub before the deadline"
+      progressing: "The README.md answers the bolded questions and describes how to run the programs, with a minor omission such as not saying what the user should type at each input prompt"
+      proficient: "The README.md answers both bolded questions, explains how to run each program and what to type at each input prompt, describes what you did and the functions you used, and the final version of all files is committed and pushed to GitHub"
       
 tags:
   - python
@@ -57,6 +57,12 @@ In this assignment, you will write a program to execute a mathematical formula t
 For example, one half step above A4 is A#4 ("A sharp 4"), and its frequency of 466.16 is obtained by calculating <span>\\(pitch = base \times (2^{\frac{1}{12}})^{step} = 440 \times (2^{\frac{1}{12}})^{1} = 466.16\\)</span>.  Two half-steps above A4 is B4, whose frequency of 493.88 can be obtained by computing <span>\\(pitch = base \times (2^{\frac{1}{12}})^{step} = 440 \times (2^{\frac{1}{12}})^{2} = 493.88\\)</span>.  One half-step below A4 is G#4, whose frequency of 392 is computed via <span>\\(pitch = base \times (2^{\frac{1}{12}})^{step} = 440 \times (2^{\frac{1}{12}})^{-1} = 415.3\\)</span>.  You can find a table of notes and frequencies [here](https://web.archive.org/web/20170720171942/https://pages.mtu.edu/~suits/notefreqs.html).
 
 ## What to Do
+
+### Getting Started with GitHub
+
+Accept the assignment invitation using the GitHub Classroom link, and clone your repository to your computer to get started.  As you work, commit your changes early and often with meaningful messages, and push them before the deadline: your latest pushed commit is what is graded.  If this is new to you, the [Using Git and GitHub](../Modules/Github/Module) and [Cloning an Assignment with GitHub Classroom](../Modules/GithubClassroom/Module) modules walk you through it step-by-step.
+
+Your Code Quality score is informed by pylint: see the [Code Quality and Linting module](../Modules/Pylint/Module) for how to run it and read its output.
 
 ### Calculate the Frequency
 Create a Python project and ask the user to input the base frequency and the number of half-steps you want to calculate.  To get user input from the keyboard on-screen, you can use this code:
@@ -157,7 +163,21 @@ Using these frequency combinations, try writing a program that plays the tones f
 
 ## What to Turn In
 
-When you're done, write a README for your project, and save all your files, before exporting your project to ZIP.  **In your README, answer any bolded questions presented on this page.**  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+When you're done, write a `README.md` file in your repository, save all your files, and commit and push everything (your Python files, `sounds.py`, and your README) to GitHub.  There is no need to export your project to ZIP: your pushed repository is your submission, and your latest pushed commit before the deadline is what will be graded.  If a Canvas submission link is posted, you may also paste your repository's URL there as a secondary confirmation.  **In your README, answer any bolded questions presented on this page.**  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+
+## Before You Submit: Self-Check
+
+Before you submit, walk through this checklist - if you can check every box, you're in great shape!
+
+- [ ] Each program runs from top to bottom without errors when I run it fresh (including a fresh run after installing `scipy` and `pyaudio`).
+- [ ] My frequency program asks for a base frequency and a number of half-steps, and its answers match the note frequency table for both positive and negative steps.
+- [ ] My program plays the computed note out loud with `sounds.sine_tone`, and `sounds.py` is saved in my repository.
+- [ ] My song program plays a recognizable melody, using different durations (like 1/2 and 1/8 notes) where the song calls for them.
+- [ ] My phone-number program plays the correct `dtmf_tone` frequency pair for each digit.
+- [ ] I ran my code through pylint and addressed the warnings (see the [Code Quality and Linting module](../Modules/Pylint/Module)).
+- [ ] Every file and function has a comment or docstring explaining its purpose, inputs, and output.
+- [ ] My `README.md` answers every bolded question on this page and explains how to run each program.
+- [ ] I committed AND pushed my work to GitHub, and I can see my final version on github.com in my browser.
 
 ## Note: For Mac Users
 

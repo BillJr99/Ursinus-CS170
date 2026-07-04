@@ -15,34 +15,34 @@ info:
   rubric:
     - weight: 60
       description: Algorithm Implementation
-      preemerging: The algorithm fails on the test inputs due to major issues, or the program fails to compile and/or run
-      beginning: The algorithm fails on the test inputs due to one or more minor issues
-      progressing: The algorithm is implemented to solve the problem correctly according to given test inputs, but would fail if executed in a general case due to a minor issue or omission in the algorithm design or implementation
-      proficient: A reasonable algorithm is implemented to solve the problem which correctly solves the problem according to the given test inputs, and would be reasonably expected to solve the problem in the general case
+      preemerging: "The program does not run, or it fails to download the Federalist Papers text and split it into individual papers"
+      beginning: "The program runs but a core step has a logic slip, such as get_federalist_paper failing on the last paper (where there is no next FEDERALIST No. marker), papers grouped under the wrong author, or boilerplate text like PUBLIUS and the author names left in the text being analyzed"
+      progressing: "The program groups all 85 papers by author, accumulates word frequencies with count_words_fast, and predicts an author for each paper with compute_score, but one component has a minor issue: for example, the overall accuracy percentage is not computed, the joint MADISON, HAMILTON papers are not handled in their own bucket, or the top-10 bar chart does not display"
+      proficient: "The program downloads and splits all 85 papers (correctly handling the last paper and papers that cannot be found), groups them by author including the joint MADISON, HAMILTON bucket, accumulates per-author word frequencies, predicts each paper's author using compute_score and prints the prediction beside the actual author, reports the overall accuracy percentage, and displays the top-10 word frequency bar chart for each author"
     - weight: 10
       description: Code Indentation and Spacing
-      preemerging: Code indentation and spacing are generally inappropriate or inconsistent
-      beginning: Code indentation or spacing are generally appropriate but inconsistent in a few isolated instances
-      progressing: Code indentation or spacing are appropriate or consistent, with minor adjustments needed
-      proficient: Code indentation and spacing are appropriate and consistent
+      preemerging: "Indentation and spacing are inconsistent enough to make the program hard to follow, or indentation errors inside the loops or functions prevent the program from running"
+      beginning: "Indentation and spacing are mostly consistent, with a few isolated issues such as uneven indentation inside the paper-processing loop or around function definitions"
+      progressing: "Indentation and spacing are consistent, with only a minor adjustment needed (for example, missing blank lines between function definitions)"
+      proficient: "Indentation and spacing are consistent throughout: function and loop bodies are indented uniformly, blank lines separate each function definition, and long expressions are spaced consistently"
     - weight: 10
       description: Code Quality
-      preemerging: Prior code quality feedback and style guide standards are not reflected in the submitted code to a great extent
-      beginning: Code quality conforms to several standards in the course Style Guide, and progress is demonstrated in improving code quality from prior feedback
-      progressing: Code quality conforms to the standards in the course Style Guide to a great extent, with a few identified areas of improvement
-      proficient: Code quality substantially conforms to the standards in the course Style Guide
+      preemerging: "The code has not been run through pylint, and there are widespread style issues such as unclear names or the paper-extraction logic copy-pasted instead of written as the get_federalist_paper function"
+      beginning: "pylint reports several warnings that were not addressed (for example, unused variables, or shadowing the built-in input name), or logic is duplicated where the planned functions (read_web, get_federalist_paper, count_words_fast, predict_author, compute_score) would do"
+      progressing: "The code runs nearly clean through pylint with only one or two unaddressed warnings; the program is organized into the planned functions with descriptive snake_case names, with a few isolated style issues remaining"
+      proficient: "The code follows the course style guide and runs cleanly through pylint (no warnings other than those the instructor has designated as acceptable): the program is organized into the planned functions (read_web, get_federalist_paper, count_words_fast, predict_author, compute_score, plot_counts), names are descriptive snake_case, and there are no unused variables or duplicated blocks"
     - weight: 10
       description: Code Documentation
-      preemerging: Code commenting and structure are absent, or code structure departs significantly from best practice
-      beginning: Code commenting and structure is limited in ways that reduce the readability of the program; specifically, descriptive comments are present for some functions
-      progressing: Code documentation is present that re-states the explicit code definitions
-      proficient: Code is documented at non-trivial points in a manner that enhances the readability of the program; specifically, descriptive comments are present for all functions
+      preemerging: "The code contains no comments, or comments are so sparse that a reader cannot follow the analysis pipeline"
+      beginning: "Some functions are commented, but key steps such as extracting a paper between its FEDERALIST No. markers or scoring an author by word-rank differences are unexplained"
+      progressing: "Comments are present for each function, but they mostly restate the code rather than explaining why (for example, why short words are excluded, or why the score is inverted with 1/score)"
+      proficient: "Every function has a comment or docstring stating its purpose, inputs, and output (with the adapted count_words_fast code cited to its source); non-obvious steps such as why short words are excluded from the counts and why the rank-difference score is inverted are explained; comments explain why, not just what"
     - weight: 10
       description: Writeup and Submission
-      preemerging: An incomplete submission is provided, or the README file submitted is blank
-      beginning: The program is submitted, but not according to the directions in one or more ways (for example, because it is lacking a readme writeup or missing answers to written questions)
-      progressing: The program is submitted according to the directions with a minor omission or correction needed, including a readme writeup describing the solution and answering nearly all questions posed in the instructions
-      proficient: The program is submitted according to the directions, including a readme writeup describing the solution and answering all questions posed in the instructions    
+      preemerging: "No README.md is committed to the repository, or the repository is missing the Python files needed to run the analysis"
+      beginning: "A README.md is committed, but it does not address the Follow-Up questions (modifying the program to remove the unknown paper from the training set, and what the word frequencies suggest about each author's values and collaborations), or the final version was not pushed to GitHub before the deadline"
+      progressing: "The README.md addresses the Follow-Up questions and reports the prediction accuracy, with a minor omission such as not describing how to run the program"
+      proficient: "The README.md addresses both Follow-Up questions, reports the prediction accuracy percentage, explains how to run the program and what each function does, and the final version of all files is committed and pushed to GitHub"
       
 tags:
   - python
@@ -73,6 +73,12 @@ The first step to writing any program is making a plan.  We want to break the pr
 4. To visualize our results, we'll make a bar graph of the top 10 most common words for each author.
 
 As you can see, each of these steps would be quite labor intensive to do by hand!  Using a computer program, we'll automate this process so that we can do this much more quickly and easily.
+
+## Getting Started with GitHub
+
+Accept the assignment invitation using the GitHub Classroom link, and clone your repository to your computer to get started.  As you work through the steps below, commit your changes early and often with meaningful messages, and push them before the deadline: your latest pushed commit is what is graded.  If this is new to you, the [Using Git and GitHub](../Modules/Github/Module) and [Cloning an Assignment with GitHub Classroom](../Modules/GithubClassroom/Module) modules walk you through it step-by-step.
+
+Your Code Quality score is informed by pylint: see the [Code Quality and Linting module](../Modules/Pylint/Module) for how to run it and read its output.
 
 ## The Program
 It is helpful to think of these steps as &quot;functions&quot;, so that we can describe how each step works in isolation from the others.  That way, we can focus on each step of the process, one at a time.
@@ -363,4 +369,18 @@ In historical context, can you infer who had more common values from their word 
 
 ## What to Turn In
 
-When you're done, write a README for your project, and save all your files, before exporting your project to ZIP.  **In your README, answer any bolded questions presented on this page.**  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+When you're done, write a `README.md` file in your repository, save all your files, and commit and push everything (your Python files and your README) to GitHub.  There is no need to export your project to ZIP: your pushed repository is your submission, and your latest pushed commit before the deadline is what will be graded.  If a Canvas submission link is posted, you may also paste your repository's URL there as a secondary confirmation.  **In your README, answer any bolded questions presented on this page,** including the Follow-Up questions above.  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+
+## Before You Submit: Self-Check
+
+Before you submit, walk through this checklist - if you can check every box, you're in great shape!
+
+- [ ] My program runs from top to bottom without errors when I run it fresh, downloading the Federalist Papers from the web.
+- [ ] `get_federalist_paper` works on the tricky cases: the first paper, the last paper (which has no "next paper" marker), and a paper number that doesn't exist.
+- [ ] Boilerplate text like "PUBLIUS" and the author names is stripped out before analysis, and jointly authored papers go into their own "MADISON, HAMILTON" bucket.
+- [ ] My program prints a prediction and the actual author for all 85 papers, plus the overall accuracy percentage.
+- [ ] The top-10 word frequency bar chart displays for all three authors.
+- [ ] I ran my code through pylint and addressed the warnings (see the [Code Quality and Linting module](../Modules/Pylint/Module)).
+- [ ] Every function has a comment or docstring explaining its purpose, inputs, and output, and the adapted `count_words_fast` code is cited.
+- [ ] My `README.md` addresses the Follow-Up questions about the training approach and each author's writing style.
+- [ ] I committed AND pushed my work to GitHub, and I can see my final version on github.com in my browser.

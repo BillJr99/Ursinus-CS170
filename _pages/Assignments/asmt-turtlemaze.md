@@ -12,16 +12,16 @@ info:
   rubric:
     - weight: 90
       description: Algorithm Implementation
-      preemerging: The algorithm fails on the test inputs due to major issues, or the program fails to compile and/or run
-      beginning: The algorithm fails on the test inputs due to one or more minor issues
-      progressing: The algorithm is implemented to solve the problem correctly according to given test inputs, but would fail if executed in a general case due to a minor issue or omission in the algorithm design or implementation
-      proficient: A reasonable algorithm is implemented to solve the problem which correctly solves the problem according to the given test inputs, and would be reasonably expected to solve the problem in the general case
+      preemerging: "The programs do not run (for example, due to a syntax error or because the maze image file name does not match the one loaded with turtle.bgpic), or the turtle does not make meaningful progress into any maze"
+      beginning: "The programs run but the turtle fails to reach the exit arrow on one or more mazes due to a logic slip such as a wrong turn angle, an incorrect forward distance, or a missing turn, and the path crosses through a wall"
+      progressing: "The turtle reaches the exit of all four provided mazes, but with a minor issue: for example, the starting turtle.goto position was not adjusted on a maze where the turtle begins outside the entrance, the path clips through a wall corner, or one maze file loads the wrong image"
+      proficient: "The turtle travels from the entry arrow to the exit arrow of all four provided mazes without crossing any walls; each maze solution is in its own Python file that loads the correct maze image, and the starting turtle.goto position has been adjusted wherever the turtle did not begin at the maze entrance"
     - weight: 10
       description: Writeup and Submission
-      preemerging: An incomplete submission is provided, or the README file submitted is blank
-      beginning: The program is submitted, but not according to the directions in one or more ways (for example, because it is lacking a readme writeup or missing answers to written questions)
-      progressing: The program is submitted according to the directions with a minor omission or correction needed, including a readme writeup describing the solution and answering nearly all questions posed in the instructions
-      proficient: The program is submitted according to the directions, including a readme writeup describing the solution and answering all questions posed in the instructions
+      preemerging: "No README.md is committed to the repository, or the repository is missing the Python files or maze images needed to run the programs"
+      beginning: "A README.md is committed, but it does not answer the bolded planning question (writing down and describing the steps the turtle needs to make), or the final version of the code was not pushed to GitHub before the deadline"
+      progressing: "The README.md answers the bolded planning question and describes how to run the maze programs, with a minor omission such as not saying which image file one of the programs needs"
+      proficient: "The README.md answers the bolded planning question, explains how to run each of the four maze programs and which image file each one needs, describes what you did and how in a few paragraphs, and the final version of all files is committed and pushed to GitHub"
     
 tags:
   - python
@@ -52,6 +52,12 @@ turtle.forward(100) # move forward up the screen, to the original spot
 Notice the `#` character on each line: this is called a **comment**, and we can annotate our code to tell the reader what's going on.  This won't be seen as code by the computer, so we can write anything we want on a line following the `#` character.
 
 ## What to Do
+
+### Getting Started with GitHub
+
+We will use GitHub to manage and submit our work in this course.  Accept the assignment invitation using the GitHub Classroom link, and clone your repository to your computer to get started.  As you work, commit your changes early and often with meaningful messages, and push them before the deadline: your latest pushed commit is what is graded.  If this is new to you, the [Using Git and GitHub](../Modules/Github/Module) and [Cloning an Assignment with GitHub Classroom](../Modules/GithubClassroom/Module) modules walk you through it step-by-step.
+
+Your Code Quality score is informed by pylint: see the [Code Quality and Linting module](../Modules/Pylint/Module) for how to run it and read its output.
 
 ### Create a New Project
 First, create a new project.  Create a new Python text file, and name it `turtlemaze.py`.  **Do NOT name it `turtle.py` since we are using a library called turtle!**
@@ -97,7 +103,20 @@ In a paint program on your computer, generate your own maze.  Exchange it with a
 
 ## What to Turn In
 
-When you're done, write a README for your project, and save all your files, before exporting your project to ZIP.  **In your README, answer any bolded questions presented on this page.**  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+When you're done, write a `README.md` file in your repository, save all your files, and commit and push everything (your Python files, your maze images, and your README) to GitHub.  There is no need to export your project to ZIP: your pushed repository is your submission, and your latest pushed commit before the deadline is what will be graded.  If a Canvas submission link is posted, you may also paste your repository's URL there as a secondary confirmation.  **In your README, answer any bolded questions presented on this page.**  In addition, write a few paragraphs describing what you did, how you did it, and how to use your program.  If your program requires the user to type something in, describe that here.  If you wrote functions to help solve your problem, what are they, and what do they do?  Imagine that you are giving your program to another student in the class, and you want to explain to them how to use it.  What would you tell them?  Imagine also that another student had given you the functions that you wrote for your program: what would you have wished that you knew about how to call those functions?
+
+## Before You Submit: Self-Check
+
+Before you submit, walk through this checklist - if you can check every box, you're in great shape!
+
+- [ ] Each maze program runs from top to bottom without errors when I run it fresh.
+- [ ] The turtle travels from the entry arrow to the exit arrow of maze 1, 2, 3, and 4 without crossing any walls.
+- [ ] I adjusted the `turtle.goto` starting position on any maze where the turtle did not begin at the entrance.
+- [ ] Each maze's image file (`maze1.png` through `maze4.png`) is saved in my repository and loaded by the matching program.
+- [ ] I ran my code through pylint and addressed the warnings (see the [Code Quality and Linting module](../Modules/Pylint/Module)).
+- [ ] My code has comments explaining what each group of moves does (for example, "turn the corner at the top of the maze").
+- [ ] My `README.md` answers the bolded planning question and explains how to run each program.
+- [ ] I committed AND pushed my work to GitHub, and I can see my final version on github.com in my browser.
 
 ## References
 

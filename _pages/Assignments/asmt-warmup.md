@@ -62,6 +62,10 @@ You can access the Ursinus network remotely by using a Virtual Private Network (
 If you are not a commuter student, please skip this step!
 {% endif %}
 
+### Looking Ahead: GitHub
+
+This assignment is submitted entirely through {{ page.info.chatname }}, so there is nothing to set up on GitHub yet.  However, our later programming assignments will be submitted through GitHub, a website for storing and sharing code.  When you have a few minutes, skim the [Using Git and GitHub](../Modules/Github/Module) and [Cloning an Assignment with GitHub Classroom](../Modules/GithubClassroom/Module) modules to preview how that will work - no action needed today!
+
 ## Syllabus (5 Pts)
 
 Please take a moment to familiarize yourself with [the course syllabus]({{ site.baseurl }}). Then, **please send me a third and final message on {{ page.info.chatname }} with the answers to the following questions**
@@ -78,3 +82,14 @@ Please take a moment to familiarize yourself with [the course syllabus]({{ site.
 10.  How many slack days do you have to use throughout the semester for extensions?
 <!--11.  What happens if you show up after the lecture has already started?-->
 <!--12.  Extra credit (+2) Send me a selfie of yourself inside of the help room.-->
+
+## Before You Submit: Self-Check
+
+Before you wrap up, walk through this quick checklist:
+
+- [ ] I sent my personal survey answers (with a headshot attached) as a private message on {{ page.info.chatname }}.
+- [ ] I posted an introduction on the Canvas Introductions discussion forum and replied to at least one classmate.
+- [ ] I filled out the office hours web poll.
+- [ ] I can open the class notebook from the link above.
+- [ ] I sent my syllabus question answers as a message on {{ page.info.chatname }}.
+- [ ] (Optional, for later) I skimmed the GitHub modules linked above to preview how future assignments will be submitted.
