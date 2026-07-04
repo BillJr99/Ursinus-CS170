@@ -44,3 +44,162 @@ tags:
   
 ---
 
+*Note: this activity is offered as an **optional enrichment activity**.  The class session it previously occupied is now used for more hands-on Python practice - but if it looks fun (it is!), you are warmly encouraged to try it with a partner during open lab time or office hours.*
+
+## Notes and Walkthrough
+
+Imagine trying to count how many times *each* person in the room says hello to you.  With two or three people, you could use a separate variable for each: `alice_count`, `bob_count`, `carol_count`...  But what about 30 people?  Creating 30 variables (and 30 nearly identical pieces of code to update them) would be exhausting.  This is exactly the problem **arrays** solve.  An array is a single variable that holds a whole numbered list of values.  In Python:
+
+```python
+seen = [0, 0, 0, 0, 0]
+```
+
+creates one variable, `seen`, holding five counters.  Each slot has an **index** - its position in the list - and (here's the part everyone trips on at first) **indices start at 0**, not 1.  So `seen[0]` is the first slot and `seen[4]` is the last.  The magic is that the index can be a *variable*: `seen[radio_number]` means "the counter belonging to whichever device number just messaged me."  One line of code updates the right counter no matter who is talking!
+
+In this activity, each person's micro:bit repeatedly broadcasts its own ID number (its "radio number"), and everyone else counts the messages they hear from each ID.  The more messages you've heard from someone, the longer you've been near them - just like the "vicinity tracking" that contact-tracing apps performed during the COVID-19 pandemic.
+
+### A Worked Example
+
+Here's a complete program.  Each device broadcasts its own `radio_number` every second; when it hears a number from someone else, it adds 1 to that person's slot in the array.  Pressing A picks your ID; pressing B cycles through the array and shows each count.
+
+```python
+radio.set_group(1)
+seen = [0, 0, 0, 0, 0]
+radio_number = 0
+show_index = 0
+
+def on_forever():
+    radio.send_number(radio_number)
+    basic.pause(1000)
+basic.forever(on_forever)
+
+def on_received_number(receivedNumber):
+    global seen
+    if receivedNumber != radio_number:
+        seen[receivedNumber] = seen[receivedNumber] + 1
+radio.on_received_number(on_received_number)
+
+def on_button_pressed_a():
+    global radio_number
+    radio_number = (radio_number + 1) % 5
+    basic.show_number(radio_number)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_button_pressed_b():
+    global show_index
+    basic.show_number(seen[show_index])
+    show_index = (show_index + 1) % 5
+input.on_button_pressed(Button.B, on_button_pressed_b)
+```
+
+On the LED display: pressing A scrolls your own ID number, and each press of B scrolls the message count for the next person in the array.  The `% 5` keeps both numbers inside the array's valid indices, 0 through 4 - a bigger number would crash the program.
+
+### Tracing the Array
+
+Suppose you are device 2, and devices 1 and 3 are nearby broadcasting once per second.  Let's trace your `seen` array as messages arrive:
+
+| Event | `receivedNumber` | Is it my own ID (2)? | `seen` array after |
+|--------------------------|------------------|----------------------|---------------------|
+| Program starts           | -                | -                    | `[0, 0, 0, 0, 0]`   |
+| Message from device 1    | 1                | No - count it        | `[0, 1, 0, 0, 0]`   |
+| Message from device 3    | 3                | No - count it        | `[0, 1, 0, 1, 0]`   |
+| Message from device 1    | 1                | No - count it        | `[0, 2, 0, 1, 0]`   |
+| Message from device 3    | 3                | No - count it        | `[0, 2, 0, 2, 0]`   |
+| Message from device 1    | 1                | No - count it        | `[0, 3, 0, 2, 0]`   |
+
+After five messages, `seen[1]` is 3 and `seen[3]` is 2: you've been near device 1 for about 3 seconds and device 3 for about 2 seconds.  Notice that only one slot changes per message, and the received number itself picks the slot.  Since each device broadcasts once per second, *messages heard ≈ seconds spent nearby* - that's the conversion the last model question asks about.
+
+### Common Mistakes
+
+* **Off-by-one indexing**: the first slot is `seen[0]`, and a 5-slot array has no `seen[5]`.  Asking for an index that doesn't exist stops the program.
+* **Forgetting `radio.set_group(...)`**: devices on different groups never hear each other, and every count stays 0.
+* **Two people with the same radio number**: their messages land in the same array slot, and the counts get merged.  That's why you display your ID when choosing it - so you can make sure it's unique.
+* **Counting your own broadcasts**: without the `receivedNumber != radio_number` check, some radio setups can let you hear yourself, inflating your own slot.
+
+## Practice Exercises
+
+All of these run in the [MakeCode simulator](https://makecode.microbit.org/) - a second micro:bit appears automatically when your program uses the radio.  Exercise 4 is best with a partner and real devices.
+
+### Exercise 1 (warm-up)
+
+Without a computer, trace this code by hand and write down the final array: start with `counts = [0, 0, 0]`, then run `counts[1] = counts[1] + 1`, then `counts[0] = counts[0] + 5`, then `counts[1] = counts[1] + 1`.
+
+<details>
+<summary>Click to reveal a solution to Exercise 1</summary>
+
+```python
+counts = [0, 0, 0]
+counts[1] = counts[1] + 1   # [0, 1, 0]
+counts[0] = counts[0] + 5   # [5, 1, 0]
+counts[1] = counts[1] + 1   # [5, 2, 0]
+# final answer: [5, 2, 0]
+```
+
+Each line changes exactly one slot and leaves the others alone.  Note that `counts[1]` is the *second* slot, because indices start at 0.
+
+</details>
+
+### Exercise 2
+
+In the simulator, build a mini version: when A is pressed, send the number 1 over the radio; when a number is received, add 1 to that slot of a `seen = [0, 0]` array and show the updated count.  Press A on one simulated micro:bit and watch the other.
+
+<details>
+<summary>Click to reveal a solution to Exercise 2</summary>
+
+```python
+radio.set_group(1)
+seen = [0, 0]
+
+def on_button_pressed_a():
+    radio.send_number(1)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_received_number(receivedNumber):
+    global seen
+    seen[receivedNumber] = seen[receivedNumber] + 1
+    basic.show_number(seen[receivedNumber])
+radio.on_received_number(on_received_number)
+```
+
+Every press of A on one device makes the other device's count climb: 1, 2, 3...  The received number (1) is used directly as the array index, so the message itself tells us *whose* counter to increase.
+
+</details>
+
+### Exercise 3
+
+Our array has 5 slots, but the A button uses `% 5` so IDs run from 0 to 4.  Change the program to support 10 people.  What (at least) two lines must change, and what happens if you change only one of them?
+
+<details>
+<summary>Click to reveal a solution to Exercise 3</summary>
+
+```python
+seen = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+def on_button_pressed_a():
+    global radio_number
+    radio_number = (radio_number + 1) % 10
+    basic.show_number(radio_number)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+```
+
+Both the array size and the `% 10` (in the A *and* B handlers) must agree.  If you enlarge only the `%` but not the array, someone can choose ID 7 - and the first message from them tries to update `seen[7]`, a slot that doesn't exist, crashing the program.  Keeping related numbers in sync is a classic source of bugs!
+
+</details>
+
+### Exercise 4 (partner)
+
+With a partner (in the simulator or on hardware), run the full program.  Pick different IDs, let the devices chat for 30 seconds or so, then press B to read your counts.  Do the counts roughly match the number of seconds you were "near" each other?  Discuss: how would you convert "messages heard" into "seconds together" if the broadcast paused 2000 ms instead of 1000 ms?
+
+<details>
+<summary>Click to reveal a solution to Exercise 4</summary>
+
+```python
+# With a 2000 ms pause, each heard message represents about 2 seconds:
+seconds_together = seen[show_index] * 2
+basic.show_number(seconds_together)
+```
+
+Since each broadcast is one message every 2 seconds, multiplying the count by 2 estimates the time spent nearby.  This is like guessing how long someone spoke by counting their words and multiplying by the average time per word - the model questions above were hinting at exactly this!
+
+</details>
+

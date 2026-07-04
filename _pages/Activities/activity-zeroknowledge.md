@@ -183,3 +183,127 @@ Here is the program for the hashing version of the Zero Knowledge Coin Flip:
 <iframe height="600px" width="100%" src="https://www.billmongan.com/Ursinus-CS170/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FUrsinus-CS170%2Fgh-pages%2Ffiles%2Freplit%2FZeroKnowledgeCoinFlip.zip&title=Zero%20Knowledge%20Coin%20Flip" scrolling="yes" frameborder="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin"></iframe>
 </p>
 
+## Key Ideas in Review
+
+There's a lot going on above, so let's boil it down to the two ideas that make the whole thing work:
+
+* A **commitment**: before the guesser guesses, the flipper hands over a piece of evidence (the phone number, or the hash) that *locks in* the coin flip.  The flipper can't change their answer later, because the evidence wouldn't match.
+* A **one-way function**: the evidence must be easy to check but nearly impossible to reverse.  Looking up a phone number *from a name* is easy; finding a name *from a phone number* in a paper phone book is hopeless.  A cryptographic **hash** like SHA-256 is the industrial-strength version: any text goes in, a scrambled fixed-length code comes out, and there is no practical way to run it backward.
+
+Put together, neither player has to trust the other: the flipper commits before hearing the guess, and the guesser can verify the commitment after the reveal.  That's a **zero-knowledge**-style exchange - proof without a spoiler.
+
+### Tracing One Round
+
+Here's one full round of the hash version between Priya (the flipper) and Quinn (the guesser).  Priya's random "salt" phrase is `purple elephant`:
+
+| Step | Who acts | What happens | What Quinn actually learns |
+|------|----------|--------------|-----------------------------|
+| 1 | Priya | Flips the coin: it's **Heads**.  Builds the string `purple elephant Heads` and hashes it, getting (say) `3f8a9c...` | Nothing yet |
+| 2 | Priya → Quinn | Sends only the hash `3f8a9c...` | A scrambled code - no way to tell Heads from Tails, but Priya is now locked in |
+| 3 | Quinn → Priya | Guesses **Tails** | Priya learns the guess *after* committing, so she can't cheat |
+| 4 | Priya → Quinn | Reveals `purple elephant Heads` | The result: Heads.  Quinn lost - but should he believe it? |
+| 5 | Quinn | Hashes `purple elephant Heads` himself and gets `3f8a9c...` - it matches step 2! | Proof that Priya committed to Heads *before* hearing the guess |
+
+If Priya had tried to switch her answer in step 4, her revealed string would hash to something completely different from the code she sent in step 2, and Quinn would catch her instantly.
+
+### Common Mistakes
+
+* **Hashing just "Heads" or "Tails" with no salt**: there are only two possible answers, so Quinn could hash both himself, compare against the commitment, and *know the flip before guessing*.  The random phrase makes the input unguessable - that's why the salt matters.
+* **Revealing the salt early**: the salt is part of the secret until the reveal step; sharing it beforehand reopens the two-hashes attack above.
+* **Changing even one character between commit and reveal**: hashes are extremely sensitive - `purple elephant Heads` and `Purple elephant Heads` produce totally different codes, so send the string *exactly* as hashed.
+* **In the micro:bit version, forgetting to set the radio group** (or two pairs sharing group 1): another team's `num:` and `name:` messages will barge into your protocol.
+* **Skipping the split-at-`:` convention**: message strings like `num:5551234` carry the *type* on the left of the colon and the *data* on the right; grabbing index 0 when you need index 1 hands you the word `num` instead of the phone number.
+
+## Practice Exercises
+
+Exercises 1 and 2 need only pencil and paper (or any Python environment); Exercise 3 uses the MakeCode simulator, which shows two micro:bits so you can play both roles.  Exercise 4 is a discussion/partner challenge.
+
+### Exercise 1 (warm-up)
+
+Using the phone book version: the flipper sends you the phone number 555-0182, you guess Tails, and then the flipper reveals the name "Nancy Harrison."  Walk through the verification.  Who won, and what exactly did you check?
+
+<details>
+<summary>Click to reveal a solution to Exercise 1</summary>
+
+```python
+# Check 1: look up "Harrison, Nancy" in the phone book -> 555-0182 (matches!)
+# Check 2: the last name starts with "H" -> the flip was Heads
+# You guessed Tails, so you lost - but fairly.
+```
+
+You verify two things: the name really maps to the committed phone number (so the flipper didn't swap people after your guess), and the first letter of the name encodes the result.  You lost, but you have proof nobody cheated.
+
+</details>
+
+### Exercise 2
+
+The salt matters!  Suppose the flipper lazily hashes just the word `Heads` or `Tails`, with no random phrase.  Explain, step by step, how the guesser can win every single time.
+
+<details>
+<summary>Click to reveal a solution to Exercise 2</summary>
+
+```python
+import hashlib
+h1 = hashlib.sha256("Heads".encode("utf-8")).hexdigest()
+h2 = hashlib.sha256("Tails".encode("utf-8")).hexdigest()
+# Compare the commitment you received to h1 and h2:
+# if it equals h1, the flip was Heads -- guess Heads!
+```
+
+With only two possible inputs, the guesser just hashes both candidates and sees which one matches the commitment.  A random salt makes the input space astronomically large, so this "try every possibility" attack becomes hopeless.
+
+</details>
+
+### Exercise 3 (simulator)
+
+Build a mini commitment exchange in MakeCode: player 0 presses A to choose heads (0) or tails (1), then presses B to send the *hint string* (a fake "phone number": send `num:1234` for heads or `num:9876` for tails, agreed secretly in advance with... no one!).  Player 1's device shows the hint when it arrives.  Run it on the two simulated micro:bits.
+
+<details>
+<summary>Click to reveal a solution to Exercise 3</summary>
+
+```python
+radio.set_group(1)
+heads_tails = 0
+
+def on_button_pressed_a():
+    global heads_tails
+    heads_tails = (heads_tails + 1) % 2
+    basic.show_number(heads_tails)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_button_pressed_b():
+    if heads_tails == 0:
+        radio.send_string("num:1234")
+    else:
+        radio.send_string("num:9876")
+input.on_button_pressed(Button.B, on_button_pressed_b)
+
+def on_received_string(receivedString):
+    basic.show_string(receivedString.split(":")[1])
+radio.on_received_string(on_received_string)
+```
+
+The receiving device scrolls `1234` or `9876` across its LEDs.  Notice this toy version has the Exercise 2 flaw: with only two possible hints, a clever opponent learns the mapping after one round.  What would you add to fix it?  (A different number pair each round - a salt!)
+
+</details>
+
+### Exercise 4 (challenge, partner)
+
+Rock-paper-scissors normally requires both players to reveal *simultaneously* - hard to do over radio!  Design (on paper, or in code) a commitment scheme that lets two micro:bits play fairly even though one message must arrive first.  Hint: both players commit first, then both reveal.
+
+<details>
+<summary>Click to reveal a solution to Exercise 4</summary>
+
+```python
+# Protocol sketch (each player, with their own secret salt):
+# 1. Pick a play: rock/paper/scissors (0/1/2).
+# 2. Send commit = hash(salt + str(play))     <- both players do this first
+# 3. Only after receiving the other commit, send "salt play" in the clear.
+# 4. Verify: hash their salt + play and compare to their earlier commit.
+# 5. If it matches, apply the normal rules to decide the winner.
+```
+
+Because each player commits before seeing anything from the other, neither can wait for the opponent's choice and then pick the winning move.  The reveal-and-verify step catches anyone who tries to change their play afterward.  This "commit, then reveal" pattern is used for real in online auctions, voting protocols, and blockchain games.
+
+</details>
+

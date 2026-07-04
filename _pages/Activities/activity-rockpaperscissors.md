@@ -303,3 +303,119 @@ Here's my finished product, available at [https://www.billmongan.com/rock-paper-
 Here is the code in Python:
 <p align="center">
 <script src="https://gist.github.com/BillJr99/2e8019816a7b14746a600988fce855f1.js"></script>
+</p>
+
+## Key Ideas in Review
+
+Stepping back from the details, this activity is really about two big ideas:
+
+* A **protocol** is an agreed-upon set of rules for a conversation: what messages exist (`request`, `response`, `acknowledge`, `play`), what each one contains, and who says what when.  As long as both sides follow the rules, they can cooperate without ever seeing each other.
+* A **state machine** is how each program remembers where it is in that conversation.  Our `protocol_state` variable takes the values 0 (searching), 1 (mid-handshake), 2 (paired), 3 (I've played), 4 (they've played), and 5 (game over) - and every message handler first *checks* the state before acting, then *updates* it afterward.  Checking the state is what stops a stray message (someone else's `response`, a duplicate `play`) from derailing your game.
+
+### Tracing the Three-Way Handshake
+
+Here's a trace of two devices pairing up.  Ava's micro:bit has `my_id = 5` and Ben's has `my_id = 9`; both start in state 0.
+
+| Step | Radio message (heard by everyone) | Ava (id 5) state / `sender` | Ben (id 9) state / `sender` |
+|------|-----------------------------------|------------------------------|------------------------------|
+| 1    | Ava broadcasts `request 5`        | 0 / -                        | 0 / -                        |
+| 2    | Ben hears it: state is 0 and 5 ≠ 9, so he replies `response 5 9` | 0 / - | **1** / `sender = 5` |
+| 3    | Ava hears `response 5 9`: state is 0 and it's addressed to id 5, so she replies `acknowledge 9 5` | **2** / `sender = 9` | 1 / 5 |
+| 4    | Ben hears `acknowledge 9 5`: state is 1, it's addressed to 9, and it's from his `sender` (5) | 2 / 9 | **2** / 5 |
+
+Three messages, and both sides end in state 2 knowing exactly who their partner is.  Notice a third device, Cai (id 7), could hear *every one* of these messages - but her checks fail each time (the `response` isn't addressed to 7, and she never set `sender = 5`), so she keeps searching.  That's the protocol doing its job.  This same three-message pattern (called SYN, SYN-ACK, ACK) is how your computer opens every connection on the Internet using a protocol named TCP.
+
+### Common Mistakes
+
+* **Forgetting `radio.set_group(...)`** (or having groups differ): nobody hears anybody, and everyone stays in state 0 forever.
+* **Missing `global`** in a handler: assigning to `protocol_state` without declaring it `global` silently creates a local copy, and the state machine never advances.
+* **Skipping the address check**: if you don't verify that a message names *your* ID and comes from *your* `sender`, one player's `play` message can be picked up by every device in the room.
+* **Off-by-one in `split`**: in `response 5 9`, index 0 is the word `response`, index 1 is the recipient (5), and index 2 is the sender (9).  Reading index 1 when you meant 2 pairs you with yourself!
+
+## Practice Exercises
+
+Exercises 1-3 work in the [MakeCode simulator](https://makecode.microbit.org/), which shows a second micro:bit whenever your program uses the radio.  Exercise 4 is most fun in a room full of classmates with real devices.
+
+### Exercise 1 (warm-up)
+
+The B button cycles the guess with `rps = (rps + 1) % 3`.  Without running any code, trace `rps` through six presses of B, starting from 0.  What pattern do you see, and why does `% 3` guarantee `rps` is always a legal guess?
+
+<details>
+<summary>Click to reveal a solution to Exercise 1</summary>
+
+```python
+# press 1: (0 + 1) % 3 = 1
+# press 2: (1 + 1) % 3 = 2
+# press 3: (2 + 1) % 3 = 0   <- wraps around!
+# press 4: 1,  press 5: 2,  press 6: 0
+```
+
+The sequence is 1, 2, 0, 1, 2, 0 - it cycles forever.  Because a remainder after dividing by 3 can only be 0, 1, or 2, `rps` can never escape the set of legal guesses (rock, paper, scissors), no matter how many times you press B.
+
+</details>
+
+### Exercise 2
+
+Trace `check_play()` by hand for these three rounds and say what icon each player sees: (a) you play rock (0), opponent plays scissors (2); (b) you play paper (1), opponent plays paper (1); (c) you play scissors (2), opponent plays rock (0).
+
+<details>
+<summary>Click to reveal a solution to Exercise 2</summary>
+
+```python
+# (a) rps=0, opponent_rps=2: matches "rps == 0 and opponent_rps == 2"
+#     -> result = 1 (win): happy face
+# (b) rps=1, opponent_rps=1: matches "rps == opponent_rps"
+#     -> result = 2 (tie): stick figure
+# (c) rps=2, opponent_rps=0: no win rule matches
+#     -> falls to else, result = 0 (loss): sad face
+```
+
+The `if`/`elif` chain checks the tie first, then the three winning combinations; anything left over must be a loss.  Your opponent's device runs the same function with the values swapped, so in round (a) they see the sad face - the two screens always agree on who won.
+
+</details>
+
+### Exercise 3
+
+In the simulator, run the finished program on both micro:bits.  Give them IDs 1 and 2 with the A button, let them pair up, and play a round.  Then try to *break* it: press A+B to play before pairing finishes.  Which `if` check stops anything bad from happening, and what would go wrong without it?
+
+<details>
+<summary>Click to reveal a solution to Exercise 3</summary>
+
+```python
+def on_button_pressed_ab():
+    global protocol_state, sender, my_id, rps
+    if protocol_state >= 2:   # <- this is the guard!
+        radio.send_string("play ...")
+```
+
+The `protocol_state >= 2` check means "only send a play if we actually have a partner."  Without it, pressing A+B in state 0 would broadcast a `play` message addressed to `sender = 0` - a partner who doesn't exist - and could confuse any device still searching.  Guarding every action with a state check is the heart of writing a reliable protocol.
+
+</details>
+
+### Exercise 4 (challenge, partner/classroom)
+
+Add a scoreboard: keep `wins` and `losses` variables, update them inside `check_play()`, and show the score (for example, `2:1`) when the game reaches the finished state.  If you have a room of devices, play a mini-tournament - and notice how everyone shares the same airwaves without interfering.
+
+<details>
+<summary>Click to reveal a solution to Exercise 4</summary>
+
+```python
+wins = 0
+losses = 0
+
+def check_play():
+    global result, wins, losses
+    # ... existing comparison code sets result ...
+    if result == 1:
+        wins += 1
+        basic.show_icon(IconNames.HAPPY)
+    elif result == 0:
+        losses += 1
+        basic.show_icon(IconNames.SAD)
+    basic.pause(1000)
+    basic.show_string(str(wins) + ":" + str(losses))
+```
+
+Since `check_play()` is the one place that decides the outcome, it's also the one right place to update the score - another payoff of putting shared logic in a function.  The pause keeps the win/loss icon visible before the score scrolls by.
+
+</details>

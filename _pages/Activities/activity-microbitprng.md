@@ -89,4 +89,140 @@ You can connect the micro:bit to your computer by plugging in the USB cable.  Ho
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bIMv63Ue1C0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Notes and Walkthrough
+
+Computers are deterministic machines: given the same instructions and the same starting information, they will do exactly the same thing every time.  That's usually a feature!  But it means a computer can't truly "pick a number at random" the way you might feel like you do.  Instead, computers use a **pseudorandom number generator** (PRNG): a formula that produces a sequence of numbers that *looks* random, even though each number is completely determined by the one before it.  "Pseudo" just means "sort of" or "fake" - these numbers only pretend to be random!
+
+One classic PRNG is the **Linear Congruential Generator** (LCG).  Don't let the name scare you; it's just this formula:
+
+\\(X_{next} = (a \times X_{current} + c) \bmod m\\)
+
+In plain English: take your current number, multiply it by some constant `a` (the **multiplier**), add another constant `c` (the **adder**), and then take the remainder after dividing by `m` (the **modulus**).  That remainder becomes your next "random" number.  The very first value of `X` is called the **seed**: it's where the sequence starts, and anyone who uses the same seed (and the same `a`, `c`, and `m`) will get exactly the same sequence of "random" numbers.  That's why video games often seed their generators with something that's different every time, like the number of milliseconds since the device powered on.
+
+### A Worked Example on the micro:bit
+
+Here's a complete MakeCode Python program that sets up the formula's variables in `on start`, and generates (and shows) the next pseudorandom number each time you press the A button:
+
+```python
+multiplier = 5
+adder = 3
+modulus = 16
+current = 7  # this is our seed!
+
+basic.show_number(current)
+
+def on_button_pressed_a():
+    global current
+    current = (multiplier * current + adder) % modulus
+    basic.show_number(current)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+```
+
+When this program starts, the LED display scrolls the seed value `7`.  Then, each time you press A, the display scrolls the next number in the sequence.  Notice the line `global current` - because we're *changing* the variable inside a function, we have to tell Python that we mean the `current` variable from the main program, not a brand-new one that lives only inside the function.
+
+### Tracing the Formula
+
+Let's trace three presses of the A button by hand, using `a = 5`, `c = 3`, and `m = 16`, starting from the seed `7`.  Tracing means playing computer: we compute each step ourselves with concrete numbers.
+
+| Press | `current` before | \\(a \times X + c\\) | \\(\bmod~16\\) (remainder) | `current` after (shown on screen) |
+|-------|------------------|----------------------|----------------------------|-----------------------------------|
+| 1     | 7                | \\(5 \times 7 + 3 = 38\\)  | \\(38 \bmod 16 = 6\\)      | 6                                 |
+| 2     | 6                | \\(5 \times 6 + 3 = 33\\)  | \\(33 \bmod 16 = 1\\)      | 1                                 |
+| 3     | 1                | \\(5 \times 1 + 3 = 8\\)   | \\(8 \bmod 16 = 8\\)       | 8                                 |
+
+The sequence 7, 6, 1, 8, ... looks scattered and unpredictable - but if your neighbor starts with seed 7 too, they'll get 6, 1, 8 in exactly the same order.  Also notice that the result of `mod 16` is always between 0 and 15, so this generator can only ever produce numbers in that range.
+
+### Common Mistakes
+
+* **Forgetting `global`**: if you assign to `current` inside a function without `global current`, Python quietly creates a new local variable, and your sequence never advances.
+* **Confusing `mod` with division**: `38 % 16` is the *remainder* (6), not the quotient (2).
+* **Reusing the seed**: if you set `current` back to the seed inside the button handler, you'll get the same number every press instead of a sequence.
+* **Choosing `m = 0`**: you can't take a remainder after dividing by zero - the program will crash.
+
+## Practice Exercises
+
+All of these can be done in the [MakeCode simulator](https://makecode.microbit.org/) without any hardware - just click the on-screen A button!
+
+### Exercise 1 (warm-up)
+
+By hand (no computer!), trace the LCG with `a = 3`, `c = 1`, `m = 10`, and seed `X = 4` for three steps.  What three numbers do you get?
+
+<details>
+<summary>Click to reveal a solution to Exercise 1</summary>
+
+```python
+# Step 1: (3 * 4 + 1) % 10 = 13 % 10 = 3
+# Step 2: (3 * 3 + 1) % 10 = 10 % 10 = 0
+# Step 3: (3 * 0 + 1) % 10 =  1 % 10 = 1
+# The sequence is 3, 0, 1
+```
+
+Each step feeds its answer back in as the new `X`.  Because we're taking `mod 10`, every number in the sequence is a single digit from 0 to 9.
+
+</details>
+
+### Exercise 2
+
+Type the worked example above into MakeCode and run it in the simulator.  Then change only the seed (`current`) to a different starting value and press A a few times.  Does the sequence change?  Now change it back to `7` - do you get 6, 1, 8 again?
+
+<details>
+<summary>Click to reveal a solution to Exercise 2</summary>
+
+```python
+multiplier = 5
+adder = 3
+modulus = 16
+current = 12  # try a new seed here
+
+basic.show_number(current)
+
+def on_button_pressed_a():
+    global current
+    current = (multiplier * current + adder) % modulus
+    basic.show_number(current)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+```
+
+With seed 12 you get 63 % 16 = 15, then 78 % 16 = 14, and so on - a different sequence.  Returning the seed to 7 reproduces 6, 1, 8 exactly, which demonstrates why these numbers are "pseudo" random: the same seed always gives the same sequence.
+
+</details>
+
+### Exercise 3
+
+Our generator produces numbers from 0 to 15, but suppose you want to simulate a six-sided die (numbers 1 through 6).  Modify the button handler so that, after computing `current`, it shows `(current % 6) + 1` instead.  Why do we add the 1?
+
+<details>
+<summary>Click to reveal a solution to Exercise 3</summary>
+
+```python
+def on_button_pressed_a():
+    global current
+    current = (multiplier * current + adder) % modulus
+    basic.show_number((current % 6) + 1)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+```
+
+`current % 6` gives a remainder between 0 and 5, so adding 1 shifts the range to 1 through 6, just like a real die.  Without the `+ 1`, you could roll a zero - and never roll a six!
+
+</details>
+
+### Exercise 4 (challenge)
+
+Every micro:bit running the same program produces the same sequence - not very useful for games!  Add an `on shake` event that changes the seed, for example by setting `current` to `input.running_time() % modulus` (the number of milliseconds since the program started).  Why does this make the sequence hard to predict?
+
+<details>
+<summary>Click to reveal a solution to Exercise 4</summary>
+
+```python
+def on_gesture_shake():
+    global current
+    current = input.running_time() % modulus
+    basic.show_icon(IconNames.DIAMOND)
+input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+```
+
+Nobody can predict the exact millisecond at which you'll shake the device, so the seed - and therefore the entire sequence that follows - is different every run.  This is exactly how real programs seed their PRNGs: they grab something unpredictable from the outside world, like the clock.
+
+</details>
+
 
