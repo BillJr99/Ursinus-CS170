@@ -92,22 +92,16 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Install pylint
-        run: pip install pylint
       - name: Run the pylint autograder
         id: pylint
         uses: rlalik/autograding-pylint-grader@v1
         with:
-          max_score: 10
-          path: '.'
-      - name: Report the score
-        run: 'echo "Pylint score: ${{ steps.pylint.outputs.score }} / ${{ steps.pylint.outputs.max-score }}"'
+          max-score: 10
+          files: FINDALL
+      - name: Report the result
+        run: 'echo "${{ steps.pylint.outputs.result }}"'
 ```
 
-What this does, line by line: on every `push`, GitHub starts a fresh little Linux machine (`runs-on: ubuntu-latest`), checks out your repository, installs Python and pylint, runs pylint over your `.py` files, and converts the pylint rating into a score.  In GitHub Classroom, this score can feed directly into the autograding results the instructor sees — the same rubric row you see as "Code Quality."
+What this does, line by line: on every `push`, GitHub starts a fresh little Linux machine (`runs-on: ubuntu-latest`), checks out your repository, and runs the grader action, which runs pylint over every `.py` file it finds (`files: FINDALL`), and converts the pylint rating into a score.  In GitHub Classroom, this score can feed directly into the autograding results the instructor sees — the same rubric row you see as "Code Quality."
 
 **A note on honesty**: the linter checks style, not correctness.  A program can score 10/10 on pylint and still compute the wrong answer — so run your *program* on the sample inputs too, not just the linter.  The "Before You Submit" self-check on each assignment page walks you through both.

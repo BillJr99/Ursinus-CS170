@@ -1,7 +1,7 @@
 ---
 layout: module
 permalink: /Modules/GithubClassroom/Module
-title: "CS170: Programming for the World Around Us - Cloning an Assignment with Github Classroom"
+title: "CS170: Programming for the World Around Us - Cloning an Assignment with GitHub Classroom"
 
 
 info:
