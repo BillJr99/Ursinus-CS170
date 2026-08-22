@@ -188,7 +188,7 @@ schedule:
 - week: "0"
   date: "0"
   title: "Course Overview"
-  link: "../Ursinus-CS170-Overview"
+  link: "https://www.billmongan.com/Ursinus-CS170-Overview"
   deliverables:  
   - dtitle: "Programming Assignment: Warmup Handed Out"
     dlink: "./Assignments/Warmup"
