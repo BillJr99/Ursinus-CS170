@@ -74,6 +74,7 @@ Because you submit your work by pushing to GitHub, we can have GitHub run pylint
 
 Instructors (or curious students) can enable this in any assignment repository by adding a file named `.github/workflows/lint.yml` with the following contents, committing, and pushing:
 
+{% raw %}
 ```yaml
 name: Lint
 
@@ -101,6 +102,7 @@ jobs:
       - name: Report the result
         run: 'echo "${{ steps.pylint.outputs.result }}"'
 ```
+{% endraw %}
 
 What this does, line by line: on every `push`, GitHub starts a fresh little Linux machine (`runs-on: ubuntu-latest`), checks out your repository, and runs the grader action, which runs pylint over every `.py` file it finds (`files: FINDALL`), and converts the pylint rating into a score.  In GitHub Classroom, this score can feed directly into the autograding results the instructor sees — the same rubric row you see as "Code Quality."
 

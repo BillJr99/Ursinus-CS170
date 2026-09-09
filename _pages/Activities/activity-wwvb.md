@@ -61,13 +61,13 @@ This modulation strategy is called Pulse-Width Modulation.  WWVB uses three kind
 Here is an example signal that sends a marker bit followed by two zero bits.  Notice that the first bit is quiet for almost one second (0.8 seconds), and then loud for the remainder of the second (0.2 seconds).  That's a marker.  The second and third bits reverse that trend, and a requiet for only 0.2 seconds and then loud for the remainder of the second (0.8 seconds).  These are zero bits.  This signal transmitted a marker, followed by a 0, followed by a 0.
 
 <p align="center">
-<img style="max-width:100%;" alt="A marker followed by two zero bits from WWVB using PWM" src="{{ site.baseurl }}/images/activity-wwvb/marker-zero-zero.png">
+<img style="max-width:100%;" alt="A marker followed by two zero bits from WWVB using PWM" src="https://www.billmongan.com/Ursinus-CS170-Fall2024/images/activity-wwvb/marker-zero-zero.png">
 </p>
 
 Here's another example that sends a zero, a one, and a one bit.
 
 <p align="center">
-<img style="max-width:100%;" alt="A zero followed by two one bits from WWVB using PWM" src="{{ site.baseurl }}/images/activity-wwvb/zero-one-one.png">
+<img style="max-width:100%;" alt="A zero followed by two one bits from WWVB using PWM" src="https://www.billmongan.com/Ursinus-CS170-Fall2024/images/activity-wwvb/zero-one-one.png">
 </p>
 
 If we listen carefully (or observe the strength of the radio signal), we can decipher the entire code.  Over the course of one minute, WWVB will send 60 bit signals.  Each one tells us something about the current time.  Here's what they mean:
@@ -222,7 +222,7 @@ Notice that WWVB modulates its signal at 1000 Hz.  Could it be posssible to enco
 Here's my finished product for the WWVB decoder:
 
 <p align="center">
-<iframe height="600px" width="100%" src="{{ site.baseurl }}/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FUrsinus-CS170%2Fgh-pages%2Ffiles%2Freplit%2FWWVB-Decoder.zip&title=WWVB%20Decoder" scrolling="yes" frameborder="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin"></iframe>
+<iframe height="600px" width="100%" src="https://www.billmongan.com/Ursinus-CS170-Fall2024/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FUrsinus-CS170%2Fgh-pages%2Ffiles%2Freplit%2FWWVB-Decoder.zip&title=WWVB%20Decoder" scrolling="yes" frameborder="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin"></iframe>
 </p>
 
 The complete source code for all the programs is available at [https://www.github.com/BillJr99/WWVB/](https://www.github.com/BillJr99/WWVB/).

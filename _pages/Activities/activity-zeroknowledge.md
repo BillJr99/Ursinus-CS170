@@ -180,7 +180,7 @@ Here's my finished product, available at [https://www.billmongan.com/minizerokno
 Here is the program for the hashing version of the Zero Knowledge Coin Flip:
 
 <p align="center">
-<iframe height="600px" width="100%" src="{{ site.baseurl }}/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FUrsinus-CS170%2Fgh-pages%2Ffiles%2Freplit%2FZeroKnowledgeCoinFlip.zip&title=Zero%20Knowledge%20Coin%20Flip" scrolling="yes" frameborder="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin"></iframe>
+<iframe height="600px" width="100%" src="https://www.billmongan.com/Ursinus-CS170-Fall2024/assets/code-viewer.html?zip=https%3A%2F%2Fraw.githubusercontent.com%2FBillJr99%2FUrsinus-CS170%2Fgh-pages%2Ffiles%2Freplit%2FZeroKnowledgeCoinFlip.zip&title=Zero%20Knowledge%20Coin%20Flip" scrolling="yes" frameborder="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin"></iframe>
 </p>
 
 ## Key Ideas in Review
