@@ -1,0 +1,1 @@
+(code-viz: stopped the drawing after 1000 drawing calls; the figure shows the canvas then)
