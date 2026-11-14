@@ -145,12 +145,14 @@ Before we can branch, we need a way to ask a question.  A **boolean expression**
 
 Notice that *checking* equality uses **two** equals signs (`==`), while *assignment* (storing a value) uses one (`=`).  This is probably the number one typo in all of programming, so keep an eye out!  You can print a boolean expression just like anything else:
 
+<!-- run: id=cs170-activity-pythonconditionals-1 viz=env -->
 ```python
 age = 21
 print(age >= 18)
 print(age >= 35)
 print(age == 21)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-1) <!-- code-viz link -->
 
 This program prints:
 
@@ -163,6 +165,7 @@ True
 ### The if Statement: Running Code Only Sometimes
 An `if` statement takes a boolean expression (called the **condition**) and a block of code, and runs the block *only* when the condition is `True`.  You've seen the presidential-age example in the model above — here it is again with one extra line, which turns out to be an important experiment:
 
+<!-- run: id=cs170-activity-pythonconditionals-2 viz=env -->
 ```python
 age = 38
 
@@ -170,6 +173,7 @@ if age >= 35:
     print("You are old enough to run for President of the United States!")
 print("Thanks for checking!")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-2) <!-- code-viz link -->
 
 This program prints:
 
@@ -183,6 +187,7 @@ Three things to notice.  First, the condition ends with a colon (`:`) — that's
 ### else: What to Do Otherwise
 Often we want to do one thing when the condition is `True` and something *different* when it's `False`.  That's the job of `else` — it has no condition of its own, because it simply catches everything the `if` didn't:
 
+<!-- run: id=cs170-activity-pythonconditionals-3 viz=env -->
 ```python
 age = 21
 
@@ -191,6 +196,7 @@ if age >= 35:
 else:
     print("You're too young to run for President.")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-3) <!-- code-viz link -->
 
 This program prints:
 
@@ -242,6 +248,7 @@ Sometimes one comparison isn't enough.  "You can vote but *not* run for Presiden
 
 Let's finish the compound conditional from the model, and add a movie-ticket example.  Many theaters give a discount to children *or* seniors:
 
+<!-- run: id=cs170-activity-pythonconditionals-4 viz=env -->
 ```python
 age = 25
 
@@ -253,6 +260,7 @@ if age <= 12 or age >= 65:
 else:
     print("You pay full price. Sorry!")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-4) <!-- code-viz link -->
 
 This program prints:
 
@@ -271,6 +279,7 @@ Why is the first condition `age < 35` and not `age <= 35`?  Because a 35-year-ol
 
 And `not`?  It's great for readability: `if not raining:` reads almost like English.  Recall the model question about going outside — here's one way to write it:
 
+<!-- run: id=cs170-activity-pythonconditionals-5 viz=env -->
 ```python
 temperature = 72
 raining = False
@@ -280,6 +289,7 @@ if temperature >= 60 and not raining:
 else:
     print("Maybe stay in with some hot chocolate.")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-5) <!-- code-viz link -->
 
 This program prints:
 

@@ -325,6 +325,7 @@ Write a Python function `decode_minutes(bits)` that takes a list of the eight mi
 <details>
 <summary>Click to reveal a solution to Exercise 3</summary>
 
+<!-- run: id=cs170-activity-wwvb-1 viz=env -->
 ```python
 def decode_minutes(bits):
     weights = [40, 20, 10, 0, 8, 4, 2, 1]  # 0 for the unused slot
@@ -336,6 +337,7 @@ def decode_minutes(bits):
 print(decode_minutes([1, 0, 1, 0, 0, 1, 0, 1]))  # 55
 print(decode_minutes([1, 0, 1, 0, 0, 0, 1, 0]))  # 52
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-wwvb-1) <!-- code-viz link -->
 
 Multiplying each bit by its weight is a neat trick: a 1 bit contributes its full weight, and a 0 bit contributes nothing, so we don't even need an `if` statement.  Giving the unused slot a weight of 0 keeps the positions lined up.
 
@@ -348,6 +350,7 @@ A late listener tunes in mid-broadcast and hears this stream of symbols (M = mar
 <details>
 <summary>Click to reveal a solution to Exercise 4</summary>
 
+<!-- run: id=cs170-activity-wwvb-2 viz=env -->
 ```python
 symbols = [1, 0, 2, 2, 1, 0, 0]  # 2 means marker
 
@@ -356,6 +359,7 @@ for i in range(1, len(symbols)):
         print("New minute starts at index", i)  # prints 3
         break
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-wwvb-2) <!-- code-viz link -->
 
 A single marker just separates fields, but every minute *ends* with a marker (second 59) and *begins* with another (second 0) - so two markers back-to-back can only mean a frame boundary.  The second marker of the pair (index 3 here) is bit 0 of the new minute, and decoding can begin.
 

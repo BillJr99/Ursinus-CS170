@@ -68,6 +68,7 @@ There are two separate moments in a function's life, and keeping them straight i
 1. **Defining** the function — writing the recipe card.  This starts with the keyword `def`, and it does *not* run the code inside.  It just teaches Python the recipe and files it away under a name.
 2. **Calling** the function — actually making the cookies.  You write the function's name followed by parentheses `()`, and *that* is when the code inside runs.
 
+<!-- run: id=cs170-activity-pythonfunctions-1 viz=env -->
 ```python
 def greet():
     print("Hello there!")
@@ -78,6 +79,7 @@ greet()
 greet()
 print("Done greeting.")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-1) <!-- code-viz link -->
 
 This program prints:
 
@@ -98,6 +100,7 @@ The parentheses matter more than you'd think.  `greet()` *calls* the function; `
 
 Our `greet` function says the same thing every time.  Recipes get interesting when you can hand them details.  A **parameter** is a variable named in the function definition that acts as a placeholder for information the caller will supply.  An **argument** is the actual value you pass in when you call the function.  (Students mix these up constantly, and honestly, professionals are loose about it too — but here's the memory trick: **p**arameter = **p**laceholder, **a**rgument = **a**ctual value.)
 
+<!-- run: id=cs170-activity-pythonfunctions-2 viz=env -->
 ```python
 def greet(name):
     print("Hello,", name, "- welcome to CS170!")
@@ -105,6 +108,7 @@ def greet(name):
 greet("Ada")
 greet("Grace")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-2) <!-- code-viz link -->
 
 This program prints:
 
@@ -123,6 +127,7 @@ Printing is nice, but often you want a function to *compute something and hand t
 
 This is the difference between a friend who *tells you* the answer to a math problem out loud (`print`) and one who *hands you a slip of paper* with the answer that you can keep using (`return`).
 
+<!-- run: id=cs170-activity-pythonfunctions-3 viz=env -->
 ```python
 def circleArea(radius):
     area = 3.14159 * radius ** 2
@@ -132,6 +137,7 @@ a = circleArea(10)
 print("The area is", a)
 print("Twice the area is", circleArea(10) * 2)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-3) <!-- code-viz link -->
 
 This program prints:
 
@@ -153,6 +159,7 @@ Let's trace the first call, `a = circleArea(10)`, end to end — watch the value
 
 One subtle but crucial point: `return` and `print` are *not* the same.  A function that prints its answer but doesn't return it gives you nothing to work with:
 
+<!-- run: id=cs170-activity-pythonfunctions-4 viz=env -->
 ```python
 def circleAreaPrinter(radius):
     print(3.14159 * radius ** 2)   # prints, but returns nothing
@@ -160,6 +167,7 @@ def circleAreaPrinter(radius):
 result = circleAreaPrinter(10)
 print("result is:", result)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-4) <!-- code-viz link -->
 
 This program prints:
 
@@ -178,6 +186,7 @@ Look back at the trace: `radius` and `area` exist *inside* `circleArea` while it
 
 Here's where it gets fun: the body of a function can call *other* functions.  Big programs are built exactly this way — small, trustworthy pieces combined into larger ones.
 
+<!-- run: id=cs170-activity-pythonfunctions-5 viz=env -->
 ```python
 def circleArea(radius):
     return 3.14159 * radius ** 2
@@ -192,6 +201,7 @@ def main():
 
 main()
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-5) <!-- code-viz link -->
 
 This program prints:
 
@@ -239,6 +249,7 @@ Go CS170 go!
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
+<!-- run: id=cs170-activity-pythonfunctions-6 viz=env -->
 ```python
 def cheer(name):
     print("Go", name, "go!")   # name holds whatever argument was passed in
@@ -247,6 +258,7 @@ cheer("Bears")   # the argument "Bears" is copied into the parameter name
 cheer("Ada")
 cheer("CS170")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-6) <!-- code-viz link -->
 
 The definition runs zero times on its own; each call runs the body once with a different value in the parameter `name`.
 
@@ -263,6 +275,7 @@ Total area: 219
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
+<!-- run: id=cs170-activity-pythonfunctions-7 viz=env -->
 ```python
 def rectangleArea(width, height):
     return width * height        # hand the answer back to the caller
@@ -270,6 +283,7 @@ def rectangleArea(width, height):
 total = rectangleArea(10, 12) + rectangleArea(9, 11)   # 120 + 99
 print("Total area:", total)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-7) <!-- code-viz link -->
 
 Because the function *returns* a number, each call acts like a number in the expression, and we can add two calls together.  A version that printed instead of returning couldn't do this — that's the whole reason `return` exists.
 
@@ -291,6 +305,7 @@ Write a function `isEven(n)` that returns `True` if `n` is even and `False` othe
 <details>
 <summary>Click to reveal a solution to Exercise 3</summary>
 
+<!-- run: id=cs170-activity-pythonfunctions-8 viz=env -->
 ```python
 def isEven(n):
     return n % 2 == 0     # this comparison IS a True/False value - return it directly
@@ -298,6 +313,7 @@ def isEven(n):
 for i in range(1, 7):     # 1 through 6
     print(i, isEven(i))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-8) <!-- code-viz link -->
 
 Two ideas meet here: functions can return booleans (perfect for naming a *question* your program asks), and a returned value can be used immediately inside another call like `print`.  Note there's no need for `if n % 2 == 0: return True` — the comparison already produces `True` or `False`.
 
@@ -322,6 +338,7 @@ Try `report(10)` and `report(20)` too — what should they say?
 <details>
 <summary>Click to reveal a solution to Exercise 4</summary>
 
+<!-- run: id=cs170-activity-pythonfunctions-9 viz=env -->
 ```python
 def toFahrenheit(celsius):
     return celsius * 9 / 5 + 32
@@ -342,6 +359,7 @@ print(report(30))    # 30 C -> 86.0 F -> "hot"
 print(report(10))    # 10 C -> 50.0 F -> "nice"
 print(report(20))    # 20 C -> 68.0 F -> "nice"
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-9) <!-- code-viz link -->
 
 `report` never does the math or the categorizing itself — it delegates to the two smaller functions and just assembles the sentence.  Each piece can be tested alone (does `toFahrenheit(0)` give 32.0?), which is exactly why we break programs into functions.
 

@@ -292,6 +292,7 @@ Colors are described with three numbers from 0 to 255 for the amounts of **red, 
 
 Let's put that together in a small example.  Text first, then code: we'll open a window, paint the sky, and draw a sun in the top-right area.
 
+<!-- run: id=cs170-activity-graphicssound-1 viz=plain -->
 ```python
 from ezgraphics import GraphicsWindow
 
@@ -310,6 +311,7 @@ canvas.drawOval(300, 30, 60, 60)
 
 win.wait()
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-graphicssound-1) <!-- code-viz link -->
 
 This program prints nothing, but a 400-by-300 window appears titled "Sunny Day": the entire window is light blue, with a yellow circle 60 pixels across whose top-left corner sits at `(300, 30)` — up near the right edge.  The window stays open until you close it, because `win.wait()` tells the program to pause and wait for you.
 
@@ -387,6 +389,7 @@ Expected result: a window showing a gray vertical rectangle with red, yellow, an
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
+<!-- run: id=cs170-activity-graphicssound-2 viz=plain -->
 ```python
 from ezgraphics import GraphicsWindow
 
@@ -413,6 +416,7 @@ canvas.drawOval(70, 280, 60, 60)
 
 win.wait()
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-graphicssound-2) <!-- code-viz link -->
 
 The two key ideas: the housing is drawn first so the circles paint on top of it, and the red light gets the *smallest* y coordinate because y grows downward.
 
@@ -427,6 +431,7 @@ Expected result: five evenly spaced blue squares in a row across the middle of t
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
+<!-- run: id=cs170-activity-graphicssound-3 viz=plain -->
 ```python
 from ezgraphics import GraphicsWindow
 
@@ -443,6 +448,7 @@ for i in range(5):
 
 win.wait()
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-graphicssound-3) <!-- code-viz link -->
 
 The formula `x = 40 + i * 70` is the whole trick: as `i` counts 0, 1, 2, 3, 4, the x coordinate steps 40, 110, 180, 250, 320.  Whenever you find yourself copying and pasting a drawing call with one number changed, a loop with a formula can do it for you.
 

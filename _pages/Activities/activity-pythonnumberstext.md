@@ -100,12 +100,14 @@ pizzas = 3
 
 we're telling Python: "make a locker named `pizzas` and put the value 3 inside."  The `=` sign here doesn't mean "equals" like it does in math class — it means **assignment**: "take whatever is on the right, and store it in the name on the left."  What do you think happens if we assign to the same name twice?  Try it out!
 
+<!-- run: id=cs170-activity-pythonnumberstext-1 viz=env -->
 ```python
 pizzas = 3
 print(pizzas)
 pizzas = 5
 print(pizzas)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonnumberstext-1) <!-- code-viz link -->
 
 This program prints:
 
@@ -119,6 +121,7 @@ The second assignment *replaces* the old value — the locker only holds one thi
 ### Expressions: Letting Python Do the Math
 An **expression** is anything Python can compute down to a single value, like `2 + 3` or `pizzas * 8`.  Python evaluates the right-hand side of an assignment *first*, and only then stores the result.  Remember the operator table in the model above?  Let's put it to work.  Suppose each pizza has 8 slices, and we want to share them among 6 people:
 
+<!-- run: id=cs170-activity-pythonnumberstext-2 viz=env -->
 ```python
 pizzas = 3
 slices = pizzas * 8       # multiplication
@@ -129,6 +132,7 @@ print(slices)
 print(each)
 print(leftover)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonnumberstext-2) <!-- code-viz link -->
 
 This program prints:
 
@@ -156,11 +160,13 @@ What do you think `7 % 2` is?  What about `8 % 2`?  Can you see how `%` could te
 ### Strings: Storing Text
 Numbers are great, but programs also work with text: names, addresses, messages.  A piece of text is called a **string** (think of it as a *string of characters*), and we write it inside quotation marks so Python knows where the text starts and ends:
 
+<!-- run: id=cs170-activity-pythonnumberstext-3 viz=env -->
 ```python
 name = "Grizz"
 greeting = "Hello, " + name + "!"
 print(greeting)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonnumberstext-3) <!-- code-viz link -->
 
 This program prints:
 
@@ -259,11 +265,13 @@ Sample expected output (if your favorite number is 7):
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
+<!-- run: id=cs170-activity-pythonnumberstext-4 viz=env -->
 ```python
 favorite_number = 7        # store the value in a variable
 print(favorite_number)     # print it
 print(favorite_number ** 2)  # ** is exponentiation: 7 to the power 2
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonnumberstext-4) <!-- code-viz link -->
 
 The key idea: a variable stores a value once, and you can use it as many times as you like afterward.
 

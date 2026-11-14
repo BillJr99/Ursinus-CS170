@@ -75,6 +75,7 @@ We write a dictionary with curly braces `{}` (notice: *curly* braces, not the sq
 
 To add a pair, we write the key in square brackets after the dictionary's name and assign it a value -- it looks just like assigning to a list index, except the "index" is a key we made up ourselves:
 
+<!-- run: id=cs170-activity-pythondictionaries-1 viz=env -->
 ```python
 phonebook = {}                     # an empty dictionary
 phonebook["Taylor"] = "555-1234"   # add a key-value pair
@@ -85,6 +86,7 @@ print(phonebook)
 menu = {"coffee": 3, "bagel": 2, "muffin": 4}
 print(menu)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-1) <!-- code-viz link -->
 
 This program prints:
 
@@ -99,6 +101,7 @@ Try it out!  What do you think happens if you assign to a key that's *already* i
 
 To look up a value, we write the key in square brackets -- and to update a value, we just assign to that key again.  Because keys are unique, assigning to an existing key *replaces* the old value rather than adding a second copy:
 
+<!-- run: id=cs170-activity-pythondictionaries-2 viz=env -->
 ```python
 menu = {"coffee": 3, "bagel": 2, "muffin": 4}
 
@@ -109,6 +112,7 @@ menu["tea"] = 2             # a brand new key: this ADDS a pair
 
 print(menu)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-2) <!-- code-viz link -->
 
 This program prints:
 
@@ -134,6 +138,7 @@ But what if you look up a key that isn't there, like `menu["pizza"]`?  Python st
 
 Before looking up a key you're not sure about, you can ask whether it exists using the `in` keyword.  The expression `key in dictionary` is `True` if the key is present and `False` if it isn't -- perfect for an `if` statement:
 
+<!-- run: id=cs170-activity-pythondictionaries-3 viz=env -->
 ```python
 menu = {"coffee": 3, "bagel": 2, "muffin": 4}
 
@@ -144,6 +149,7 @@ else:
 
 print("coffee" in menu)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-3) <!-- code-viz link -->
 
 This program prints:
 
@@ -158,6 +164,7 @@ One subtlety: `in` checks the *keys*, not the values.  `3 in menu` is `False` he
 
 Just like a list, we can visit everything in a dictionary with a loop.  If you loop over a dictionary directly, Python hands you each *key*, and you can look up its value inside the loop.  Or, you can use the dictionary's `.items()` method to get each key *and* value together in one step -- you saw this in the model at the top of the page:
 
+<!-- run: id=cs170-activity-pythondictionaries-4 viz=env -->
 ```python
 menu = {"coffee": 3, "bagel": 2, "muffin": 4}
 
@@ -167,6 +174,7 @@ for item in menu:                  # loops over the KEYS
 for item, price in menu.items():   # keys AND values together
     print("{}: ${}".format(item, price))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-4) <!-- code-viz link -->
 
 This program prints:
 
@@ -185,6 +193,7 @@ Both loops visit the same pairs -- `.items()` just saves you the lookup step ins
 
 Here's one of the most useful patterns in all of programming.  Suppose we want to count how many times each word appears in a sentence.  With a dictionary, the plan is simple: the keys are the words we've seen, and the values are the counts.  For each word, if we've seen it before, add one to its count; if it's brand new, start its count at 1.  Notice how `in` protects us from a `KeyError`:
 
+<!-- run: id=cs170-activity-pythondictionaries-5 viz=env -->
 ```python
 words = ["duck", "duck", "goose", "duck"]
 counts = {}
@@ -197,6 +206,7 @@ for word in words:
 
 print(counts)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-5) <!-- code-viz link -->
 
 This program prints:
 
@@ -251,12 +261,14 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
+<!-- run: id=cs170-activity-pythondictionaries-6 viz=env -->
 ```python
 ages = {}          # start with an empty dictionary (curly braces!)
 ages["Alex"] = 19  # add a pair: key "Alex", value 19
 ages["Lee"] = 20   # add another pair
 print(ages["Lee"]) # look up the value by its key
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-6) <!-- code-viz link -->
 
 You could also create it all at once with `ages = {"Alex": 19, "Lee": 20}` -- both are correct.
 
@@ -275,12 +287,14 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
+<!-- run: id=cs170-activity-pythondictionaries-7 viz=env -->
 ```python
 stock = {"apples": 5, "bananas": 2}
 stock["bananas"] = stock["bananas"] - 1  # look up the old value, subtract, store it back
 stock["oranges"] = 10                    # new key, so this ADDS a pair
 print(stock)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-7) <!-- code-viz link -->
 
 The key idea: the same square-bracket assignment either updates an existing key or adds a new one, depending on whether the key is already there.
 
@@ -302,6 +316,7 @@ Sam: Feb 29
 <details>
 <summary>Click to reveal a solution to Exercise 3</summary>
 
+<!-- run: id=cs170-activity-pythondictionaries-8 viz=env -->
 ```python
 birthdays = {"Alex": "May 4", "Lee": "Oct 31", "Sam": "Feb 29"}
 
@@ -311,6 +326,7 @@ if "Jordan" not in birthdays:            # 'in' checks the KEYS
 for name, day in birthdays.items():      # keys and values together
     print("{}: {}".format(name, day))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-8) <!-- code-viz link -->
 
 The key idea: checking with `in` before looking up avoids a `KeyError`, and `.items()` hands you each key and value as a pair.
 
@@ -331,6 +347,7 @@ C: 1
 <details>
 <summary>Click to reveal a solution to Exercise 4</summary>
 
+<!-- run: id=cs170-activity-pythondictionaries-9 viz=env -->
 ```python
 grades = ["A", "B", "A", "C", "B", "A"]
 counts = {}                            # keys will be grades, values will be counts
@@ -344,6 +361,7 @@ for grade in grades:
 for grade, count in counts.items():
     print("{}: {}".format(grade, count))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-9) <!-- code-viz link -->
 
 This is the counting pattern from the notes: check membership with `in`, then either update or add.  Try tracing `counts` after each loop pass, just like the duck-duck-goose table above!
 

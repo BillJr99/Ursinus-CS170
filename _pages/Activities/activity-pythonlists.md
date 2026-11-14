@@ -85,6 +85,7 @@ A **list** is an ordered collection of data stored under a single variable name.
 
 Before we can put anything in a list, we need to create one.  In Python, we write a list using square brackets `[]`, with the elements separated by commas.  We can also start with an empty list -- just the brackets with nothing inside -- and fill it up later.
 
+<!-- run: id=cs170-activity-pythonlists-1 viz=env -->
 ```python
 snacks = ["pretzels", "apples", "popcorn"]
 print(snacks)
@@ -92,6 +93,7 @@ print(snacks)
 empty_cart = []
 print(empty_cart)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-1) <!-- code-viz link -->
 
 This program prints:
 
@@ -108,6 +110,7 @@ How do we get just one element back out?  Every element in a list has a position
 
 We write the index in square brackets after the list's name.  We can also ask Python how many elements a list has using the `len()` function (short for "length").
 
+<!-- run: id=cs170-activity-pythonlists-2 viz=env -->
 ```python
 snacks = ["pretzels", "apples", "popcorn"]
 print(snacks[0])
@@ -115,6 +118,7 @@ print(snacks[2])
 print(len(snacks))
 print(snacks[-1])
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-2) <!-- code-viz link -->
 
 This program prints:
 
@@ -137,6 +141,7 @@ Lists are not "read-only" -- we can change them as our program runs.  There are 
 * **Appending** adds a new element onto the *end* of the list, making the list one element longer.  The word comes from "append," meaning to attach at the end.
 * **Removing** takes an element out of the list, and everything after it slides down to fill the gap.
 
+<!-- run: id=cs170-activity-pythonlists-3 viz=env -->
 ```python
 snacks = ["pretzels", "apples", "popcorn"]
 snacks[1] = "grapes"        # replace apples with grapes
@@ -145,6 +150,7 @@ snacks.remove("pretzels")   # take pretzels out
 print(snacks)
 print(len(snacks))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-3) <!-- code-viz link -->
 
 This program prints:
 
@@ -172,11 +178,13 @@ Here's where lists really shine.  Because a list keeps its elements in order, we
 
 The first way says "for each item in the list, do this."  Python hands us each element, one at a time, in order:
 
+<!-- run: id=cs170-activity-pythonlists-4 viz=env -->
 ```python
 scores = [88, 95, 73]
 for score in scores:
     print(score)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-4) <!-- code-viz link -->
 
 This program prints:
 
@@ -188,6 +196,7 @@ This program prints:
 
 The second way loops over the *indices* using `range(len(scores))`, which counts `0, 1, 2` for a list of length 3.  This is a little wordier, but it's the way to go when you need to know *where* you are in the list, or when you want to change elements as you visit them:
 
+<!-- run: id=cs170-activity-pythonlists-5 viz=env -->
 ```python
 scores = [88, 95, 73]
 for i in range(len(scores)):
@@ -195,6 +204,7 @@ for i in range(len(scores)):
     scores[i] = scores[i] + 5   # everyone gets 5 bonus points!
 print(scores)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-5) <!-- code-viz link -->
 
 This program prints:
 
@@ -211,6 +221,7 @@ Which style should you use?  If you only need the values, `for score in scores` 
 
 One of the most common patterns in all of programming is walking through a list while building up an answer as you go -- a running total, a count, or a "best so far."  The variable that collects the answer is called an **accumulator**.  The recipe is always the same: start the accumulator before the loop, update it inside the loop, and use it after the loop.  Here we compute both the total and the largest value in one pass:
 
+<!-- run: id=cs170-activity-pythonlists-6 viz=env -->
 ```python
 scores = [88, 95, 73]
 
@@ -226,6 +237,7 @@ print("The total is {}".format(total))
 print("The average is {}".format(total / len(scores)))
 print("The highest score is {}".format(biggest))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-6) <!-- code-viz link -->
 
 This program prints:
 
@@ -275,12 +287,14 @@ Fri
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
+<!-- run: id=cs170-activity-pythonlists-7 viz=env -->
 ```python
 days = ["Mon", "Wed", "Fri"]  # create the list with square brackets
 print(days[0])    # index 0 is the FIRST element
 print(days[-1])   # index -1 counts backwards: the LAST element
 print(len(days))  # len() gives the number of elements
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-7) <!-- code-viz link -->
 
 The key idea: indices start at 0, and negative indices count from the end.
 
@@ -299,6 +313,7 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
+<!-- run: id=cs170-activity-pythonlists-8 viz=env -->
 ```python
 todo = []                 # start with an empty list
 todo.append("study")      # todo is now ['study']
@@ -307,6 +322,7 @@ todo.append("sleep")      # todo is now ['study', 'eat', 'sleep']
 todo[1] = "exercise"      # replace the element at index 1
 print(todo)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-8) <!-- code-viz link -->
 
 The key idea: `append` grows the list at the end, while assigning to an index replaces one element without changing the length.
 
@@ -325,6 +341,7 @@ The average temperature is 71.0
 <details>
 <summary>Click to reveal a solution to Exercise 3</summary>
 
+<!-- run: id=cs170-activity-pythonlists-9 viz=env -->
 ```python
 temps = [68, 72, 75, 71, 69]
 
@@ -335,6 +352,7 @@ for temp in temps:
 average = total / len(temps)  # divide the sum by how many there are
 print("The average temperature is {}".format(average))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-9) <!-- code-viz link -->
 
 The key idea: initialize the accumulator *before* the loop, update it *inside* the loop, and use it *after* the loop.
 

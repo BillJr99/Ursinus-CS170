@@ -122,6 +122,7 @@ The good news: anything you can do with one, you can do with the other!  They're
 
 A `while` loop looks a lot like the `if` statement you've already seen.  It checks a **condition** (a boolean expression that is either `True` or `False`), and if the condition is `True`, it runs the indented code underneath.  The difference is what happens next: an `if` statement moves on, but a `while` loop jumps *back up* and checks the condition again.  It keeps doing this until the condition becomes `False`.
 
+<!-- run: id=cs170-activity-pythoniteration-1 viz=env -->
 ```python
 countdown = 3
 while countdown > 0:
@@ -129,6 +130,7 @@ while countdown > 0:
     countdown = countdown - 1
 print("Liftoff!")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-1) <!-- code-viz link -->
 
 This program prints:
 
@@ -205,6 +207,7 @@ The `for` loop also quietly does the bookkeeping that we had to do by hand with 
 
 `range()` can take up to three values: a **start**, a **stop**, and a **step** (how much to count by):
 
+<!-- run: id=cs170-activity-pythoniteration-2 viz=env -->
 ```python
 for i in range(1, 11):      # start at 1, stop before 11
     print(i, end=" ")
@@ -218,6 +221,7 @@ for i in range(3, 0, -1):   # count DOWN by using a negative step
     print(i, end=" ")
 print("Liftoff!")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-2) <!-- code-viz link -->
 
 This program prints:
 
@@ -233,6 +237,7 @@ This program prints:
 
 Loops become truly powerful when they *build up* an answer across iterations.  A variable that collects a result as the loop runs is called an **accumulator**.  The recipe is always the same: (1) create the accumulator *before* the loop, starting it at a sensible empty value (0 for a sum or a count, `""` for text); (2) update it *inside* the loop; (3) use it *after* the loop.
 
+<!-- run: id=cs170-activity-pythoniteration-3 viz=env -->
 ```python
 total = 0
 for i in range(1, 5):
@@ -240,6 +245,7 @@ for i in range(1, 5):
     print("Added", i, "- total is now", total)
 print("Final total:", total)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-3) <!-- code-viz link -->
 
 This program prints:
 
@@ -268,6 +274,7 @@ Counting is just accumulating by 1.  The coin-flipping model above uses exactly 
 
 A `for` loop can walk through more than just numbers.  A string is a sequence of characters, and `for letter in text:` visits each character one at a time — no `range()` needed:
 
+<!-- run: id=cs170-activity-pythoniteration-4 viz=env -->
 ```python
 text = "micro:bit"
 vowels = 0
@@ -276,6 +283,7 @@ for letter in text:
         vowels += 1
 print("Found", vowels, "vowels")
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-4) <!-- code-viz link -->
 
 This program prints:
 
@@ -289,11 +297,13 @@ Each iteration, `letter` holds the next character: first `'m'`, then `'i'`, then
 
 You can put a loop inside another loop; we call these **nested loops**.  For each single iteration of the *outer* loop, the *inner* loop runs all of its iterations from the beginning.  Think of a clock: the hour hand (outer loop) moves once for every full trip of the minute hand (inner loop).
 
+<!-- run: id=cs170-activity-pythoniteration-5 viz=env -->
 ```python
 for row in range(3):
     for col in range(2):
         print("row", row, "col", col)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-5) <!-- code-viz link -->
 
 This program prints:
 
@@ -334,11 +344,13 @@ Use a `for` loop with `range()` to print the even numbers from 2 through 20, one
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
+<!-- run: id=cs170-activity-pythoniteration-6 viz=env -->
 ```python
 # Start at 2, stop before 22 (so 20 is included), step by 2
 for number in range(2, 22, 2):
     print(number)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-6) <!-- code-viz link -->
 
 The key idea is the third value to `range()`: the step.  We stop at 22, not 20, because `range()` never includes its stop value — a classic off-by-one to watch for.
 
@@ -357,12 +369,14 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
+<!-- run: id=cs170-activity-pythoniteration-7 viz=env -->
 ```python
 total = 0                 # accumulator: create it BEFORE the loop
 for i in range(1, 101):   # 1 through 100
     total += i            # update it INSIDE the loop
 print(total)              # use it AFTER the loop (note the indentation!)
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-7) <!-- code-viz link -->
 
 This is the accumulator pattern in its purest form.  If your answer printed 100 lines, check the indentation of the `print` — it belongs outside the loop.
 
@@ -414,6 +428,7 @@ Then, as a bonus, use a *nested* loop to print a small triangle of stars:
 <details>
 <summary>Click to reveal a solution to Exercise 4</summary>
 
+<!-- run: id=cs170-activity-pythoniteration-8 viz=env -->
 ```python
 # Part 1: count the letter s with a running commentary
 text = "mississippi state"
@@ -431,6 +446,7 @@ for row in range(1, 4):        # rows 1, 2, 3
         print("*", end="")     # end="" keeps the stars on one line
     print()                    # move to the next line after each row
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-8) <!-- code-viz link -->
 
 Part 1 combines looping over a string with the accumulator pattern.  In Part 2, notice that the inner loop's `range(row)` depends on the outer loop's variable — that's what makes each row longer than the last.
 

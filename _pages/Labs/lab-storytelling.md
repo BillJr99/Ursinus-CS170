@@ -89,6 +89,7 @@ while not room.startswith("end"):
 ### Getting Started Template
 Here is a template to help you begin:
 
+<!-- run: id=cs170-lab-storytelling-1 viz=env -->
 ```python
 story = {}
 story['start'] = {}
@@ -100,6 +101,7 @@ room = 'start'
 print(story[room]['narrative'])
 print("Where to next? {}".format(story[room]['next']))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-lab-storytelling-1) <!-- code-viz link -->
 
 Once you put this into a loop, you'll notice that your last room doesn't print out.  That's because the loop terminates when your room equals the ending room (without printing the story for that room in the loop!).  Copy your print statement to just below the loop so that it executes one last time on the last room of your story.
 

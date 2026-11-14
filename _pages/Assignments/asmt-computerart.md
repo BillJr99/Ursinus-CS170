@@ -54,6 +54,7 @@ Every image you see on a screen - every photo, video game, and movie effect - is
 
 Computer graphics are drawn by creating pixels of various colors and displaying them on a screen.  A pixel (short for "picture element") is the smallest unit of drawing size on the screen - one of the many "dots" that make up the screen.  You can use one of several libraries in Python to draw on the screen, and here is an example that uses one of them:
 
+<!-- run: id=cs170-asmt-computerart-1 viz=plain -->
 ```python
 import ezgraphics 
 
@@ -74,6 +75,7 @@ canvas.drawRectangle(200, 200, 150, 50) # top, left, width, height
 
 win.wait()
 ``` 
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-asmt-computerart-1) <!-- code-viz link -->
 
 ### Installing the EZGraphics Library
 You can install the EzGraphics library in your shell by typing this command:
