@@ -14,6 +14,7 @@ info:
     - model: |
         Conditionals can be used to repeatedly execute code.  There are two varieties of these &quot;loops:&quot; the for loop (which is useful when counting the number of iterations that are needed), and the while loop (which is useful for executing until something is true).
         <br>    
+        <!-- run: id=cs170-activity-pythoniteration-9 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         import random
         
@@ -30,24 +31,28 @@ info:
 
             raining = checkIfRaining() # made up function!
         ]]></script>        
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-9">Visualize this example</a> <!-- code-viz link -->
       title: The <code>while</code> Loop
       questions:
         - Modify this code to implement a <code>checkIfRaining()</code> function that generates a random number between 1 and 10, and returns <code>true</code> if the number is greater than 7 (and return <code>false</code> otherwise).
         - "Modify this program to ensure that the number of minutes is never 0 (make it at least 1)."
         - "Write a program to ask the user for their age, but keep asking until they enter a positive number."       
     - model: |
+        <!-- run: id=cs170-activity-pythoniteration-10 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         i = 0
         while i < 10:
             print(i)
             i += 1
         ]]></script>    
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-10">Visualize this example</a> <!-- code-viz link -->
       title: The <code>for</code> Loop
       questions:
         - The code prints the numbers from 0 through 9.  Why doesn’t it also print the value 10?
         - What could you do to change this to print the values 0 through 10?  
         - What could you do to print the values 1 through 10?
     - model: |
+        <!-- run: id=cs170-activity-pythoniteration-11 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         i = 0
         j = 0
@@ -62,6 +67,7 @@ info:
                 
             i += 1
         ]]></script>     
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-11">Visualize this example</a> <!-- code-viz link -->
       title: Nested Loops
       questions:
         - How many times does the inner loop print statement execute?
@@ -344,13 +350,11 @@ Use a `for` loop with `range()` to print the even numbers from 2 through 20, one
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
-<!-- run: id=cs170-activity-pythoniteration-6 viz=env -->
 ```python
 # Start at 2, stop before 22 (so 20 is included), step by 2
 for number in range(2, 22, 2):
     print(number)
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-6) <!-- code-viz link -->
 
 The key idea is the third value to `range()`: the step.  We stop at 22, not 20, because `range()` never includes its stop value — a classic off-by-one to watch for.
 
@@ -369,14 +373,12 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
-<!-- run: id=cs170-activity-pythoniteration-7 viz=env -->
 ```python
 total = 0                 # accumulator: create it BEFORE the loop
 for i in range(1, 101):   # 1 through 100
     total += i            # update it INSIDE the loop
 print(total)              # use it AFTER the loop (note the indentation!)
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-7) <!-- code-viz link -->
 
 This is the accumulator pattern in its purest form.  If your answer printed 100 lines, check the indentation of the `print` — it belongs outside the loop.
 
@@ -428,7 +430,6 @@ Then, as a bonus, use a *nested* loop to print a small triangle of stars:
 <details>
 <summary>Click to reveal a solution to Exercise 4</summary>
 
-<!-- run: id=cs170-activity-pythoniteration-8 viz=env -->
 ```python
 # Part 1: count the letter s with a running commentary
 text = "mississippi state"
@@ -446,7 +447,6 @@ for row in range(1, 4):        # rows 1, 2, 3
         print("*", end="")     # end="" keeps the stars on one line
     print()                    # move to the next line after each row
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythoniteration-8) <!-- code-viz link -->
 
 Part 1 combines looping over a string with the accumulator pattern.  In Part 2, notice that the inner loop's `range(row)` depends on the outer loop's variable — that's what makes each row longer than the last.
 

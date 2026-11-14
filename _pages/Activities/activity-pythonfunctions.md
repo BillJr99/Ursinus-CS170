@@ -249,7 +249,6 @@ Go CS170 go!
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
-<!-- run: id=cs170-activity-pythonfunctions-6 viz=env -->
 ```python
 def cheer(name):
     print("Go", name, "go!")   # name holds whatever argument was passed in
@@ -258,7 +257,6 @@ cheer("Bears")   # the argument "Bears" is copied into the parameter name
 cheer("Ada")
 cheer("CS170")
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-6) <!-- code-viz link -->
 
 The definition runs zero times on its own; each call runs the body once with a different value in the parameter `name`.
 
@@ -275,7 +273,6 @@ Total area: 219
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
-<!-- run: id=cs170-activity-pythonfunctions-7 viz=env -->
 ```python
 def rectangleArea(width, height):
     return width * height        # hand the answer back to the caller
@@ -283,7 +280,6 @@ def rectangleArea(width, height):
 total = rectangleArea(10, 12) + rectangleArea(9, 11)   # 120 + 99
 print("Total area:", total)
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-7) <!-- code-viz link -->
 
 Because the function *returns* a number, each call acts like a number in the expression, and we can add two calls together.  A version that printed instead of returning couldn't do this — that's the whole reason `return` exists.
 
@@ -305,7 +301,6 @@ Write a function `isEven(n)` that returns `True` if `n` is even and `False` othe
 <details>
 <summary>Click to reveal a solution to Exercise 3</summary>
 
-<!-- run: id=cs170-activity-pythonfunctions-8 viz=env -->
 ```python
 def isEven(n):
     return n % 2 == 0     # this comparison IS a True/False value - return it directly
@@ -313,7 +308,6 @@ def isEven(n):
 for i in range(1, 7):     # 1 through 6
     print(i, isEven(i))
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-8) <!-- code-viz link -->
 
 Two ideas meet here: functions can return booleans (perfect for naming a *question* your program asks), and a returned value can be used immediately inside another call like `print`.  Note there's no need for `if n % 2 == 0: return True` — the comparison already produces `True` or `False`.
 
@@ -338,7 +332,6 @@ Try `report(10)` and `report(20)` too — what should they say?
 <details>
 <summary>Click to reveal a solution to Exercise 4</summary>
 
-<!-- run: id=cs170-activity-pythonfunctions-9 viz=env -->
 ```python
 def toFahrenheit(celsius):
     return celsius * 9 / 5 + 32
@@ -359,7 +352,6 @@ print(report(30))    # 30 C -> 86.0 F -> "hot"
 print(report(10))    # 10 C -> 50.0 F -> "nice"
 print(report(20))    # 20 C -> 68.0 F -> "nice"
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfunctions-9) <!-- code-viz link -->
 
 `report` never does the math or the categorizing itself — it delegates to the two smaller functions and just assembles the sentence.  Each piece can be tested alone (does `toFahrenheit(0)` give 32.0?), which is exactly why we break programs into functions.
 

@@ -14,6 +14,7 @@ info:
   models:
     - title: "Reading a CSV File into Parallel Lists"
       model: |
+        <!-- run: id=cs170-activity-datapython-1 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         # snacks.csv contains lines like:
         # name,category,price
@@ -38,12 +39,14 @@ info:
         print(names)
         print(prices)
         ]]></script>     
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-datapython-1">Visualize this example</a> <!-- code-viz link -->
       questions:
         - "Why do we skip the first row of the file?  What would happen to <code>float(parts[2])</code> if we didn't?"
         - "What does <code>line.strip()</code> remove, and what could go wrong without it?"
         - "These three lists are called <em>parallel lists</em>: <code>names[2]</code>, <code>categories[2]</code>, and <code>prices[2]</code> all describe the same snack.  What is at index 1 of each list?"
     - title: "Computing Statistics with a Loop"
       model: |
+        <!-- run: id=cs170-activity-datapython-2 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         prices = [2.50, 0.75, 3.25, 1.00, 2.00]
         
@@ -54,11 +57,13 @@ info:
         average = total / len(prices)
         print("Average price:", average)
         ]]></script>     
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-datapython-2">Visualize this example</a> <!-- code-viz link -->
       questions:
         - "Trace this loop by hand: what is <code>total</code> after each of the five iterations?"
         - "Modify the loop to also find the largest price, and use parallel lists to print the <em>name</em> of that most expensive snack."
     - title: "Grouping and Counting with a Dictionary"
       model: |
+        <!-- run: id=cs170-activity-datapython-3 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         categories = ["salty", "fruit", "salty", "candy", "fruit"]
         
@@ -71,6 +76,7 @@ info:
         
         print(counts)
         ]]></script>     
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-datapython-3">Visualize this example</a> <!-- code-viz link -->
       questions:
         - "What does this program print?  Trace the dictionary's contents after each loop iteration to check yourself."
         - "Why do we need the <code>if category in counts</code> check?  What error do you get without it?"
@@ -156,6 +162,7 @@ Average price: 1.9
 
 **What's the most expensive snack?**  Track the best-so-far *index*, so the parallel lists can tell you its name:
 
+<!-- run: id=cs170-activity-datapython-4 viz=env setup=cs170-activity-datapython-1,cs170-activity-datapython-2 -->
 ```python
 biggest = 0  # index of the priciest snack seen so far
 for i in range(len(prices)):
@@ -163,6 +170,7 @@ for i in range(len(prices)):
         biggest = i
 print("Most expensive:", names[biggest], "at $" + str(prices[biggest]))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-datapython-4) <!-- code-viz link -->
 
 Trace it against our data — `prices` is `[2.5, 0.75, 3.25, 1.0, 2.0]`:
 

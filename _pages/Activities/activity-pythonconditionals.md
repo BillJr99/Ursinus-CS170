@@ -13,17 +13,20 @@ info:
     - To implement complex conditional statements using boolean expression operators
   models:
     - model: |
+        <!-- run: id=cs170-activity-pythonconditionals-6 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         age = 38
         
         if age >= 35:
             print("You are old enough to run for President of the United States!")
         ]]></script>     
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-6">Visualize this example</a> <!-- code-viz link -->
       title: Conditionals for Selective Execution with <code>if</code> Statements
       questions:
         - Try running the above program for different ages (say, 18, 34, 35, and 36).
         - "What is the purpose of the indented text below the <code>if</code> line?  What would happen if you removed that indentation, or added another print statement below that was not indented?"
     - model: |
+        <!-- run: id=cs170-activity-pythonconditionals-7 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         age = 38
         
@@ -32,11 +35,13 @@ info:
         else:
             print("You're too young to run for President.")
         ]]></script>     
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-7">Visualize this example</a> <!-- code-viz link -->
       title: Conditionals for Selective Execution with <code>if</code>/<code>else</code> Statements        
       questions:
         - Write and execute an <code>if</code>/<code>else</code> statement that determines if it is warm and not raining outside, and prints out whether or not it is appropriate to go outside.
     - model: |
         <div>
+        <!-- run: id=cs170-activity-pythonconditionals-8 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         age = 38
         
@@ -50,9 +55,11 @@ info:
         else:
             print("You're too young to run for President, and too young to vote.")
         ]]></script>    
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-8">Visualize this example</a> <!-- code-viz link -->
         </div>
         <br>
         <div>
+        <!-- run: id=cs170-activity-pythonconditionals-9 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         age = 21
             
@@ -63,6 +70,7 @@ info:
         else:
             print("You’re too young to run for President, and too young to vote.")
         ]]></script>  
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-9">Visualize this example</a> <!-- code-viz link -->
         </div>
       title: Creating a Waterfall of Possibilities by combining <code>else</code> and <code>if</code>
       questions:
@@ -70,12 +78,14 @@ info:
         - "What does it mean to put an <code>if</code> statement inside of the body of another <code>if</code> statement?  Give a scenario in which each line of code will execute, and a scenario in which it will not."
         - "Can you switch the order of the <code>if</code> statements in either example?  Why or why not?"
     - model: |
+        <!-- run: id=cs170-activity-pythonconditionals-10 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         age = 25
         
         if age >= 18 and age < 35: # Why < 35 and not <= 35?
             print("???") # What should we say here?
         ]]></script>      
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonconditionals-10">Visualize this example</a> <!-- code-viz link -->
       title: "Compound <code>if</code> conditionals"
       questions: 
         - What text should go into the <code>print</code> statement to indicate whether the person can vote (at least age 18) but also is too young to run for president (at least age 35)?

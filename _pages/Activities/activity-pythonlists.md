@@ -16,6 +16,7 @@ info:
   models:
     - title: "Lists in Python"
       model: |
+        <!-- run: id=cs170-activity-pythonlists-10 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         grades = []
         
@@ -25,6 +26,7 @@ info:
         for i in range(len(grades)):
             print(grades[i])
         ]]></script>  
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-10">Visualize this example</a> <!-- code-viz link -->
       questions: 
         - "Comment each line of this program.  What do you think it does?  Try running it."
         - What is the size of the <code>grades</code> list?
@@ -287,14 +289,12 @@ Fri
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
-<!-- run: id=cs170-activity-pythonlists-7 viz=env -->
 ```python
 days = ["Mon", "Wed", "Fri"]  # create the list with square brackets
 print(days[0])    # index 0 is the FIRST element
 print(days[-1])   # index -1 counts backwards: the LAST element
 print(len(days))  # len() gives the number of elements
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-7) <!-- code-viz link -->
 
 The key idea: indices start at 0, and negative indices count from the end.
 
@@ -313,7 +313,6 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
-<!-- run: id=cs170-activity-pythonlists-8 viz=env -->
 ```python
 todo = []                 # start with an empty list
 todo.append("study")      # todo is now ['study']
@@ -322,7 +321,6 @@ todo.append("sleep")      # todo is now ['study', 'eat', 'sleep']
 todo[1] = "exercise"      # replace the element at index 1
 print(todo)
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-8) <!-- code-viz link -->
 
 The key idea: `append` grows the list at the end, while assigning to an index replaces one element without changing the length.
 
@@ -341,7 +339,6 @@ The average temperature is 71.0
 <details>
 <summary>Click to reveal a solution to Exercise 3</summary>
 
-<!-- run: id=cs170-activity-pythonlists-9 viz=env -->
 ```python
 temps = [68, 72, 75, 71, 69]
 
@@ -352,7 +349,6 @@ for temp in temps:
 average = total / len(temps)  # divide the sum by how many there are
 print("The average temperature is {}".format(average))
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonlists-9) <!-- code-viz link -->
 
 The key idea: initialize the accumulator *before* the loop, update it *inside* the loop, and use it *after* the loop.
 

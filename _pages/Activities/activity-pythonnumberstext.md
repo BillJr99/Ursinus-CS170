@@ -265,13 +265,11 @@ Sample expected output (if your favorite number is 7):
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
-<!-- run: id=cs170-activity-pythonnumberstext-4 viz=env -->
 ```python
 favorite_number = 7        # store the value in a variable
 print(favorite_number)     # print it
 print(favorite_number ** 2)  # ** is exponentiation: 7 to the power 2
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonnumberstext-4) <!-- code-viz link -->
 
 The key idea: a variable stores a value once, and you can use it as many times as you like afterward.
 

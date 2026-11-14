@@ -14,26 +14,6 @@
    "steps": 0
   },
   {
-   "id": "cs170-activity-graphicssound-2",
-   "viz": "plain",
-   "lang": "python",
-   "page": "_pages/Activities/activity-graphicssound.md",
-   "line": 393,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-graphicssound",
-   "error": null,
-   "steps": 0
-  },
-  {
-   "id": "cs170-activity-graphicssound-3",
-   "viz": "plain",
-   "lang": "python",
-   "page": "_pages/Activities/activity-graphicssound.md",
-   "line": 435,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-graphicssound",
-   "error": null,
-   "steps": 0
-  },
-  {
    "id": "cs170-activity-pythonconditionals-1",
    "viz": "env",
    "lang": "python",
@@ -134,46 +114,6 @@
    "steps": 17
   },
   {
-   "id": "cs170-activity-pythondictionaries-6",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythondictionaries.md",
-   "line": 265,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythondictionaries",
-   "error": null,
-   "steps": 5
-  },
-  {
-   "id": "cs170-activity-pythondictionaries-7",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythondictionaries.md",
-   "line": 291,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythondictionaries",
-   "error": null,
-   "steps": 5
-  },
-  {
-   "id": "cs170-activity-pythondictionaries-8",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythondictionaries.md",
-   "line": 320,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythondictionaries",
-   "error": null,
-   "steps": 11
-  },
-  {
-   "id": "cs170-activity-pythondictionaries-9",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythondictionaries.md",
-   "line": 351,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythondictionaries",
-   "error": null,
-   "steps": 29
-  },
-  {
    "id": "cs170-activity-pythonfunctions-1",
    "viz": "env",
    "lang": "python",
@@ -224,46 +164,6 @@
    "steps": 12
   },
   {
-   "id": "cs170-activity-pythonfunctions-6",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonfunctions.md",
-   "line": 253,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonfunctions",
-   "error": null,
-   "steps": 11
-  },
-  {
-   "id": "cs170-activity-pythonfunctions-7",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonfunctions.md",
-   "line": 279,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonfunctions",
-   "error": null,
-   "steps": 8
-  },
-  {
-   "id": "cs170-activity-pythonfunctions-8",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonfunctions.md",
-   "line": 309,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonfunctions",
-   "error": null,
-   "steps": 27
-  },
-  {
-   "id": "cs170-activity-pythonfunctions-9",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonfunctions.md",
-   "line": 342,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonfunctions",
-   "error": null,
-   "steps": 34
-  },
-  {
    "id": "cs170-activity-pythoniteration-1",
    "viz": "env",
    "lang": "python",
@@ -312,36 +212,6 @@
    "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythoniteration",
    "error": null,
    "steps": 20
-  },
-  {
-   "id": "cs170-activity-pythoniteration-6",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythoniteration.md",
-   "line": 348,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythoniteration",
-   "error": null,
-   "steps": 22
-  },
-  {
-   "id": "cs170-activity-pythoniteration-7",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythoniteration.md",
-   "line": 373,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythoniteration",
-   "error": null,
-   "steps": 204
-  },
-  {
-   "id": "cs170-activity-pythoniteration-8",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythoniteration.md",
-   "line": 432,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythoniteration",
-   "error": null,
-   "steps": 88
   },
   {
    "id": "cs170-activity-pythonlists-1",
@@ -404,36 +274,6 @@
    "steps": 18
   },
   {
-   "id": "cs170-activity-pythonlists-7",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonlists.md",
-   "line": 291,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonlists",
-   "error": null,
-   "steps": 5
-  },
-  {
-   "id": "cs170-activity-pythonlists-8",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonlists.md",
-   "line": 317,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonlists",
-   "error": null,
-   "steps": 7
-  },
-  {
-   "id": "cs170-activity-pythonlists-9",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonlists.md",
-   "line": 345,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonlists",
-   "error": null,
-   "steps": 16
-  },
-  {
    "id": "cs170-activity-pythonnumberstext-1",
    "viz": "env",
    "lang": "python",
@@ -462,36 +302,6 @@
    "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonnumberstext",
    "error": null,
    "steps": 4
-  },
-  {
-   "id": "cs170-activity-pythonnumberstext-4",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-pythonnumberstext.md",
-   "line": 269,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-pythonnumberstext",
-   "error": null,
-   "steps": 4
-  },
-  {
-   "id": "cs170-activity-wwvb-1",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-wwvb.md",
-   "line": 329,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-wwvb",
-   "error": null,
-   "steps": 46
-  },
-  {
-   "id": "cs170-activity-wwvb-2",
-   "viz": "env",
-   "lang": "python",
-   "page": "_pages/Activities/activity-wwvb.md",
-   "line": 354,
-   "page_url": "https://billjr99.github.io/Ursinus-CS170/Activities/activity-wwvb",
-   "error": null,
-   "steps": 10
   },
   {
    "id": "cs170-asmt-computerart-1",

@@ -20,6 +20,7 @@ info:
         - In computing, we tend to say that we map keys to values.  For the phone book and dictionary, what is the key, and what is the value?  
     - title: "Dictionaries in Python"
       model: |
+        <!-- run: id=cs170-activity-pythondictionaries-10 viz=env -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[   
         courses = {}
         
@@ -32,6 +33,7 @@ info:
         for key, value in courses.items():
             print("{} is taught by: {}".format(key, value))
         ]]></script>  
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-10">Visualize this example</a> <!-- code-viz link -->
       questions: 
         - What would you change in the program above to store the number of students enrolled in each course, instead of the instructor of each course?
         - "Suppose you are developing a web browser that accesses web pages.  You want to <strong>cache</strong> the pages, so that you only access them once, to save on I/O, network calls, and your data plan.  How might a <code>HashMap</code> help you to do this?  What would be the key and the value?"
@@ -261,14 +263,12 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
-<!-- run: id=cs170-activity-pythondictionaries-6 viz=env -->
 ```python
 ages = {}          # start with an empty dictionary (curly braces!)
 ages["Alex"] = 19  # add a pair: key "Alex", value 19
 ages["Lee"] = 20   # add another pair
 print(ages["Lee"]) # look up the value by its key
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-6) <!-- code-viz link -->
 
 You could also create it all at once with `ages = {"Alex": 19, "Lee": 20}` -- both are correct.
 
@@ -287,14 +287,12 @@ Expected output:
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
-<!-- run: id=cs170-activity-pythondictionaries-7 viz=env -->
 ```python
 stock = {"apples": 5, "bananas": 2}
 stock["bananas"] = stock["bananas"] - 1  # look up the old value, subtract, store it back
 stock["oranges"] = 10                    # new key, so this ADDS a pair
 print(stock)
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-7) <!-- code-viz link -->
 
 The key idea: the same square-bracket assignment either updates an existing key or adds a new one, depending on whether the key is already there.
 
@@ -316,7 +314,6 @@ Sam: Feb 29
 <details>
 <summary>Click to reveal a solution to Exercise 3</summary>
 
-<!-- run: id=cs170-activity-pythondictionaries-8 viz=env -->
 ```python
 birthdays = {"Alex": "May 4", "Lee": "Oct 31", "Sam": "Feb 29"}
 
@@ -326,7 +323,6 @@ if "Jordan" not in birthdays:            # 'in' checks the KEYS
 for name, day in birthdays.items():      # keys and values together
     print("{}: {}".format(name, day))
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-8) <!-- code-viz link -->
 
 The key idea: checking with `in` before looking up avoids a `KeyError`, and `.items()` hands you each key and value as a pair.
 
@@ -347,7 +343,6 @@ C: 1
 <details>
 <summary>Click to reveal a solution to Exercise 4</summary>
 
-<!-- run: id=cs170-activity-pythondictionaries-9 viz=env -->
 ```python
 grades = ["A", "B", "A", "C", "B", "A"]
 counts = {}                            # keys will be grades, values will be counts
@@ -361,7 +356,6 @@ for grade in grades:
 for grade, count in counts.items():
     print("{}: {}".format(grade, count))
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythondictionaries-9) <!-- code-viz link -->
 
 This is the counting pattern from the notes: check membership with `in`, then either update or add.  Try tracing `counts` after each loop pass, just like the duck-duck-goose table above!
 

@@ -77,6 +77,7 @@ bread
 
 Here's a program that reads it and prints each item with a number:
 
+<!-- run: id=cs170-activity-pythonfileio-2 viz=env -->
 ```python
 file = open("groceries.txt", "r")
 
@@ -87,6 +88,7 @@ for line in file:
 
 file.close()
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfileio-2) <!-- code-viz link -->
 
 This program prints:
 
@@ -103,6 +105,7 @@ Wait — why is everything double-spaced?  We didn't ask for blank lines!  Here'
 
 The fix is the **`strip()`** function, which removes whitespace (spaces, tabs, and newlines) from the beginning and end of a string:
 
+<!-- run: id=cs170-activity-pythonfileio-3 viz=env -->
 ```python
 file = open("groceries.txt", "r")
 
@@ -114,6 +117,7 @@ for line in file:
 
 file.close()
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfileio-3) <!-- code-viz link -->
 
 This program prints:
 
@@ -170,6 +174,7 @@ Alan,91
 
 Each piece on a line is called a **field**.  We can pull the fields apart with the **`split()`** function, which chops a string into a list wherever a separator character appears.  One thing to watch out for: everything read from a file is a *string*, even things that look like numbers.  `"95"` is not the number `95` — so if we want to do math, we need `int()` to convert it:
 
+<!-- run: id=cs170-activity-pythonfileio-4 viz=env -->
 ```python
 file = open("scores.txt", "r")
 
@@ -186,6 +191,7 @@ for line in file:
 file.close()
 print("Average: " + str(total / count))
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfileio-4) <!-- code-viz link -->
 
 This program prints:
 
@@ -224,11 +230,13 @@ When you're done with a file, call **`close()`**.  This returns your "library bo
 
 Because forgetting `close()` is such a common slip, Python gives us a construct that closes the file for us automatically, no matter what:
 
+<!-- run: id=cs170-activity-pythonfileio-5 viz=env -->
 ```python
 with open("groceries.txt", "r") as file:
     for line in file:
         print(line.strip())
 ```
+[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-pythonfileio-5) <!-- code-viz link -->
 
 This program prints:
 

@@ -10,6 +10,7 @@ info:
   models:
     - title: "Graphics"
       model: |
+        <!-- run: id=cs170-activity-graphicssound-4 viz=plain -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         from ezgraphics import GraphicsWindow
 
@@ -27,11 +28,13 @@ info:
 
         win.wait()
         ]]></script>  
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-graphicssound-4">Visualize this example</a> <!-- code-viz link -->
       questions: 
         - "Run this code in your terminal: <code>http://www.ezgraphics.org/uploads/Software/Download/ezgraphics-2.2.tar.gz && pip install ezgraphics-2.2.tar.gz</code> to install the ezgraphics library, and run this program.  What does it do?"
         - "Experiment with the functions and generate your own shapes.  Can you draw a house or a stick figure?  Make a function that does this, given the <code>x</code> and <code>y</code> midpoint as parameters."
     - title: "Animation"
       model: |
+        <!-- run: id=cs170-activity-graphicssound-2 viz=plain -->
         <script type="syntaxhighlighter" class="brush: python"><![CDATA[
         from ezgraphics import GraphicsWindow
         import random
@@ -77,6 +80,7 @@ info:
           
         win.wait()
         ]]></script>  
+        <a href="https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-graphicssound-2">Visualize this example</a> <!-- code-viz link -->
       questions: 
         - "Comment this program; what does it do?  You will find it helpful to run the program first, and may find it helpful to set a breakpoint and use the debugger!"
     - title: "Sound"
@@ -389,7 +393,6 @@ Expected result: a window showing a gray vertical rectangle with red, yellow, an
 <details>
 <summary>Click to reveal a solution to Exercise 1</summary>
 
-<!-- run: id=cs170-activity-graphicssound-2 viz=plain -->
 ```python
 from ezgraphics import GraphicsWindow
 
@@ -416,7 +419,6 @@ canvas.drawOval(70, 280, 60, 60)
 
 win.wait()
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-graphicssound-2) <!-- code-viz link -->
 
 The two key ideas: the housing is drawn first so the circles paint on top of it, and the red light gets the *smallest* y coordinate because y grows downward.
 
@@ -431,7 +433,6 @@ Expected result: five evenly spaced blue squares in a row across the middle of t
 <details>
 <summary>Click to reveal a solution to Exercise 2</summary>
 
-<!-- run: id=cs170-activity-graphicssound-3 viz=plain -->
 ```python
 from ezgraphics import GraphicsWindow
 
@@ -448,7 +449,6 @@ for i in range(5):
 
 win.wait()
 ```
-[Visualize this example](https://billjr99.github.io/Ursinus-CS170/viz/#cs170-activity-graphicssound-3) <!-- code-viz link -->
 
 The formula `x = 40 + i * 70` is the whole trick: as `i` counts 0, 1, 2, 3, 4, the x coordinate steps 40, 110, 180, 250, 320.  Whenever you find yourself copying and pasting a drawing call with one number changed, a loop with a formula can do it for you.
 
