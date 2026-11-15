@@ -1,0 +1,26 @@
+{
+ "version": 1,
+ "example": "cs170-activity-pythoniteration-1",
+ "title": "The while loop",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "kind": "reveal",
+   "lines": "1-5",
+   "description": "Lines 1-5 run the main code and print the results."
+  },
+  {
+   "kind": "focus",
+   "lines": "2",
+   "description": "Line 2 repeats while `countdown > 0` is true."
+  },
+  {
+   "kind": "run",
+   "trace_step": 12,
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "lines": "5"
+  }
+ ]
+}

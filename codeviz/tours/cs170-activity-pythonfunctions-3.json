@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "example": "cs170-activity-pythonfunctions-3",
+ "title": "Return values: getting an answer back",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "kind": "reveal",
+   "lines": "1-3",
+   "description": "Lines 1-3 define `circleArea(radius)`."
+  },
+  {
+   "kind": "focus",
+   "lines": "3",
+   "description": "Line 3 returns `area`."
+  },
+  {
+   "kind": "reveal",
+   "lines": "5-7",
+   "description": "Lines 5-7 run the main code and print the results."
+  },
+  {
+   "kind": "run",
+   "trace_step": 2,
+   "lines": "2",
+   "description": "Here `circleArea` is called for the first time; its frame appears on the right."
+  },
+  {
+   "kind": "run",
+   "trace_step": 4,
+   "lines": "3",
+   "description": "Here `circleArea` returns, the first time it does."
+  },
+  {
+   "kind": "run",
+   "trace_step": 10,
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "lines": "7"
+  }
+ ]
+}

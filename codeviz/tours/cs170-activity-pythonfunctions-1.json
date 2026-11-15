@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "example": "cs170-activity-pythonfunctions-1",
+ "title": "Defining a function vs. calling a function",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "kind": "reveal",
+   "lines": "1-3",
+   "description": "Lines 1-3 define `greet()`."
+  },
+  {
+   "kind": "reveal",
+   "lines": "5-8",
+   "description": "Lines 5-8 run the main code and print the results."
+  },
+  {
+   "kind": "run",
+   "trace_step": 3,
+   "lines": "2",
+   "description": "Here `greet` is called for the first time; its frame appears on the right."
+  },
+  {
+   "kind": "run",
+   "trace_step": 5,
+   "lines": "3",
+   "description": "Here `greet` returns, the first time it does."
+  },
+  {
+   "kind": "run",
+   "trace_step": 11,
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "lines": "8"
+  }
+ ]
+}

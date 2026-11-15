@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "example": "cs170-activity-pythonfunctions-5",
+ "title": "Functions calling functions",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "kind": "reveal",
+   "lines": "1-2",
+   "description": "Lines 1-2 define `circleArea(radius)`."
+  },
+  {
+   "kind": "focus",
+   "lines": "2",
+   "description": "Line 2 returns `3.14159 * radius ** 2`."
+  },
+  {
+   "kind": "reveal",
+   "lines": "4-6",
+   "description": "Lines 4-6 define `cylinderVolume(radius, height)`."
+  },
+  {
+   "kind": "focus",
+   "lines": "6",
+   "description": "Line 6 returns `circleArea(radius) * height`."
+  },
+  {
+   "kind": "reveal",
+   "lines": "8-10",
+   "description": "Lines 8-10 define `main()`."
+  },
+  {
+   "kind": "reveal",
+   "lines": "12",
+   "description": "Line 12 runs the main code."
+  },
+  {
+   "kind": "run",
+   "trace_step": 6,
+   "lines": "2",
+   "description": "Here `circleArea` is called for the first time; its frame appears on the right."
+  },
+  {
+   "kind": "run",
+   "trace_step": 7,
+   "lines": "2",
+   "description": "Here `circleArea` returns, the first time it does."
+  },
+  {
+   "kind": "run",
+   "trace_step": 5,
+   "lines": "6",
+   "description": "Here `cylinderVolume` is called for the first time; its frame appears on the right."
+  },
+  {
+   "kind": "run",
+   "trace_step": 8,
+   "lines": "6",
+   "description": "Here `cylinderVolume` returns, the first time it does."
+  },
+  {
+   "kind": "run",
+   "trace_step": 11,
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "lines": "12"
+  }
+ ]
+}
