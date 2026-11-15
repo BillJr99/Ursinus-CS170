@@ -1,21 +1,32 @@
 {
- "version": 1,
- "example": "cs170-activity-pythonnumberstext-1",
- "title": "What is a Variable?",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
- "reviewed": false,
- "source": "skeleton",
- "steps": [
-  {
-   "kind": "reveal",
-   "lines": "1-4",
-   "description": "Lines 1-4 run the main code and print the results."
-  },
-  {
-   "kind": "run",
-   "trace_step": 4,
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "lines": "4"
-  }
- ]
+  "version": 1,
+  "example": "cs170-activity-pythonnumberstext-1",
+  "title": "Assigning and Reassigning a Variable",
+  "description": "See how assigning a new value to pizzas replaces the old value stored in that variable.",
+  "reviewed": false,
+  "source": "draft: agy free model",
+  "steps": [
+    {
+      "kind": "reveal",
+      "lines": "1-2",
+      "description": "Store the number 3 in the variable pizzas on line 1 and print its value on line 2."
+    },
+    {
+      "kind": "predict",
+      "lines": "1-4",
+      "question": "What happens to the 3 stored in pizzas when line 3 runs pizzas = 5?",
+      "answer": "The assignment pizzas = 5 replaces the 3 in pizzas with 5, so line 4 prints 5."
+    },
+    {
+      "kind": "reveal",
+      "lines": "3-4",
+      "description": "Reassign pizzas = 5 on line 3 and print pizzas again on line 4."
+    },
+    {
+      "kind": "run",
+      "trace_step": 3,
+      "lines": "4",
+      "description": "Watch pizzas update from 3 to 5 in memory before the second print statement runs."
+    }
+  ]
 }

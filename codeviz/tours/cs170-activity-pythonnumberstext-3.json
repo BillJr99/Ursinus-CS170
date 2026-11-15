@@ -1,21 +1,37 @@
 {
- "version": 1,
- "example": "cs170-activity-pythonnumberstext-3",
- "title": "Strings: Storing Text",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
- "reviewed": false,
- "source": "skeleton",
- "steps": [
-  {
-   "kind": "reveal",
-   "lines": "1-3",
-   "description": "Lines 1-3 run the main code and print the results."
-  },
-  {
-   "kind": "run",
-   "trace_step": 3,
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "lines": "3"
-  }
- ]
+  "version": 1,
+  "example": "cs170-activity-pythonnumberstext-3",
+  "title": "Storing and Joining Strings with +",
+  "description": "Store text in a string variable and join strings together using the + operator.",
+  "reviewed": false,
+  "source": "draft: agy free model",
+  "steps": [
+    {
+      "kind": "reveal",
+      "lines": "1",
+      "description": "Store the string 'Grizz' in the variable name on line 1."
+    },
+    {
+      "kind": "reveal",
+      "lines": "2",
+      "description": "Use the + operator on line 2 to join 'Hello, ', name, and '!' into a single string stored in greeting."
+    },
+    {
+      "kind": "predict",
+      "lines": "1-3",
+      "question": "What exact string is stored in greeting and printed on line 3?",
+      "answer": "Joining 'Hello, ' + 'Grizz' + '!' end to end produces 'Hello, Grizz!'."
+    },
+    {
+      "kind": "reveal",
+      "lines": "3",
+      "description": "Print greeting on line 3."
+    },
+    {
+      "kind": "run",
+      "trace_step": 2,
+      "lines": "3",
+      "description": "See name and greeting in memory right as print(greeting) outputs 'Hello, Grizz!'."
+    }
+  ]
 }

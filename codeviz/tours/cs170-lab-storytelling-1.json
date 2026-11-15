@@ -1,21 +1,37 @@
 {
- "version": 1,
- "example": "cs170-lab-storytelling-1",
- "title": "Getting Started Template",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
- "reviewed": false,
- "source": "skeleton",
- "steps": [
-  {
-   "kind": "reveal",
-   "lines": "1-9",
-   "description": "Lines 1-9 run the main code and print the results."
-  },
-  {
-   "kind": "run",
-   "trace_step": 7,
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "lines": "9"
-  }
- ]
+  "version": 1,
+  "example": "cs170-lab-storytelling-1",
+  "title": "Nested Dictionaries for an Interactive Story",
+  "description": "Store room narratives and next-room choices in a nested dictionary and look them up using a room variable.",
+  "reviewed": false,
+  "source": "draft: agy free model",
+  "steps": [
+    {
+      "kind": "reveal",
+      "lines": "1-4",
+      "description": "Create an empty dictionary story, add an inner dictionary at story['start'], and populate its 'narrative' string and 'next' list of destination rooms."
+    },
+    {
+      "kind": "reveal",
+      "lines": "6-7",
+      "description": "Set the current room variable room = 'start'."
+    },
+    {
+      "kind": "predict",
+      "lines": "6,8-9",
+      "question": "When room is 'start', what values do story[room]['narrative'] and story[room]['next'] look up?",
+      "answer": "story[room] accesses story['start'], so story[room]['narrative'] returns 'It was a dark and stormy night...' and story[room]['next'] returns the list ['forest', 'diner']."
+    },
+    {
+      "kind": "reveal",
+      "lines": "8-9",
+      "description": "Print the current room's narrative on line 8 and its list of next rooms on line 9."
+    },
+    {
+      "kind": "run",
+      "trace_step": 5,
+      "lines": "8",
+      "description": "Inspect the nested story dictionary and room variable in memory as lines 8 and 9 print the start room."
+    }
+  ]
 }
