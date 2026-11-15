@@ -1,0 +1,23 @@
+{
+ "code": "phonebook = {}                     # an empty dictionary\nphonebook[\"Taylor\"] = \"555-1234\"   # add a key-value pair\nphonebook[\"Jordan\"] = \"555-9876\"   # add another\nprint(phonebook)\n\n# or, all at once:\nmenu = {\"coffee\": 3, \"bagel\": 2, \"muffin\": 4}\nprint(menu)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythondictionaries-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-8 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-8"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "8",
+   "trace_step": 6
+  }
+ ],
+ "title": "Creating a Dictionary and Adding Pairs",
+ "version": 1
+}

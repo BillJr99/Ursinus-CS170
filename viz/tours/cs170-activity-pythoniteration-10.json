@@ -1,0 +1,28 @@
+{
+ "code": "i = 0\nwhile i < 10:\n    print(i)\n    i += 1",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythoniteration-10",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-4 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-4"
+  },
+  {
+   "description": "Line 2 repeats while `i < 10` is true.",
+   "kind": "focus",
+   "lines": "2"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "2",
+   "trace_step": 32
+  }
+ ],
+ "title": "Example cs170-activity-pythoniteration-10",
+ "version": 1
+}

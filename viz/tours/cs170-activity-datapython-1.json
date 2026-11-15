@@ -1,0 +1,38 @@
+{
+ "code": "# snacks.csv contains lines like:\n# name,category,price\n# Pretzels,salty,2.50\n# Apple,fruit,0.75\n\nnames = []\ncategories = []\nprices = []\n\nf = open(\"snacks.csv\")\nrownum = 0\nfor line in f:\n    if rownum > 0:  # skip the header line\n        parts = line.strip().split(\",\")\n        names.append(parts[0])\n        categories.append(parts[1])\n        prices.append(float(parts[2]))\n    rownum = rownum + 1\nf.close()\n\nprint(names)\nprint(prices)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-datapython-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 6-18 run the main code.",
+   "kind": "reveal",
+   "lines": "6-18"
+  },
+  {
+   "description": "Line 12 loops over `f`.",
+   "kind": "focus",
+   "lines": "12"
+  },
+  {
+   "description": "Line 13 checks `rownum > 0`.",
+   "kind": "focus",
+   "lines": "13"
+  },
+  {
+   "description": "Lines 19-22 continue the main code and print the results.",
+   "kind": "reveal",
+   "lines": "19-22"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "22",
+   "trace_step": 47
+  }
+ ],
+ "title": "Example cs170-activity-datapython-1",
+ "version": 1
+}

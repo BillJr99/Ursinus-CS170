@@ -1,0 +1,27 @@
+{
+ "code": "from ezgraphics import GraphicsWindow\n\nwin = GraphicsWindow(400, 300)\nwin.setTitle(\"Sunny Day\")\n\ncanvas = win.canvas()\n\n# sky: a light blue rectangle covering the whole canvas\ncanvas.setFill(135, 206, 235)\ncanvas.drawRectangle(0, 0, 400, 300)\n\n# sun: a yellow oval near the top-right corner\ncanvas.setFill(255, 255, 0)\ncanvas.drawOval(300, 30, 60, 60)\n\nwin.wait()",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-graphicssound-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Line 1 imports `ezgraphics`.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "Lines 3-14 run the main code.",
+   "kind": "reveal",
+   "lines": "3-14"
+  },
+  {
+   "description": "Line 16 continues the main code.",
+   "kind": "reveal",
+   "lines": "16"
+  }
+ ],
+ "title": "How the computer thinks about pictures",
+ "version": 1
+}

@@ -1,0 +1,28 @@
+{
+ "code": "menu = {\"coffee\": 3, \"bagel\": 2, \"muffin\": 4}\n\nif \"pizza\" in menu:\n    print(\"Pizza costs ${}\".format(menu[\"pizza\"]))\nelse:\n    print(\"Sorry, we don't sell pizza.\")\n\nprint(\"coffee\" in menu)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythondictionaries-3",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-8 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-8"
+  },
+  {
+   "description": "Line 3 checks `\"pizza\" in menu`.",
+   "kind": "focus",
+   "lines": "3"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "8",
+   "trace_step": 4
+  }
+ ],
+ "title": "Checking Membership with in",
+ "version": 1
+}

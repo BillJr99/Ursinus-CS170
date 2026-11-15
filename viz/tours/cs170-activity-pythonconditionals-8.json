@@ -1,0 +1,33 @@
+{
+ "code": "age = 38\n\nif age >= 18:\n    print(\"You are old enough to vote!\")\n\n    if age >= 35:\n        print(\"... and you are old enough to run for President!\")\n    else:\n        print(\"... but not old enough to run for President!\")\nelse:\n    print(\"You're too young to run for President, and too young to vote.\")",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonconditionals-8",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-11 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-11"
+  },
+  {
+   "description": "Line 3 checks `age >= 18`.",
+   "kind": "focus",
+   "lines": "3"
+  },
+  {
+   "description": "Line 6 checks `age >= 35`.",
+   "kind": "focus",
+   "lines": "6"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "7",
+   "trace_step": 5
+  }
+ ],
+ "title": "Example cs170-activity-pythonconditionals-8",
+ "version": 1
+}

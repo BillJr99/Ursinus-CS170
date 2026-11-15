@@ -1,0 +1,28 @@
+{
+ "code": "courses = {}\n\ncourses[\"CS170\"] = \"Prof. Mongan\"\ncourses[\"CS174\"] = \"Prof. Tralie\"\ncourses[\"CS274\"] = \"Prof. Schilling\"\n\nprint(\"CS170 is taught by: {}\".format(courses[\"CS170\"]))\n\nfor key, value in courses.items():\n    print(\"{} is taught by: {}\".format(key, value))",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythondictionaries-10",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-10 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-10"
+  },
+  {
+   "description": "Line 9 loops over `courses.items()`.",
+   "kind": "focus",
+   "lines": "9"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "9",
+   "trace_step": 12
+  }
+ ],
+ "title": "Example cs170-activity-pythondictionaries-10",
+ "version": 1
+}

@@ -1,0 +1,28 @@
+{
+ "code": "countdown = 3\nwhile countdown > 0:\n    print(countdown)\n    countdown = countdown - 1\nprint(\"Liftoff!\")",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythoniteration-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-5 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-5"
+  },
+  {
+   "description": "Line 2 repeats while `countdown > 0` is true.",
+   "kind": "focus",
+   "lines": "2"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "5",
+   "trace_step": 12
+  }
+ ],
+ "title": "The while loop",
+ "version": 1
+}

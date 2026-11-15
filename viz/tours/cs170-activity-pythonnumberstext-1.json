@@ -1,0 +1,23 @@
+{
+ "code": "pizzas = 3\nprint(pizzas)\npizzas = 5\nprint(pizzas)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonnumberstext-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-4 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-4"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "4",
+   "trace_step": 4
+  }
+ ],
+ "title": "What is a Variable?",
+ "version": 1
+}

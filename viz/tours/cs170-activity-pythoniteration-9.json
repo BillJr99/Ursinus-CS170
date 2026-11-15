@@ -1,0 +1,55 @@
+{
+ "code": "import random\n\ndef checkIfRaining():\n    return True\n\nraining = False;\n\nwhile not raining:\n    randVal = random.random() # 0 to 1\n    minutes = round(randVal * 20) # whole numbers 0 to 20\n\n    print(\"Play outside for {} minutes!\".format(minutes))\n\n    raining = checkIfRaining() # made up function!",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythoniteration-9",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Line 1 imports `random`.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "Lines 3-4 define `checkIfRaining()`.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "description": "Line 4 returns `True`.",
+   "kind": "focus",
+   "lines": "4"
+  },
+  {
+   "description": "Lines 6-14 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "6-14"
+  },
+  {
+   "description": "Line 8 repeats while `not raining` is true.",
+   "kind": "focus",
+   "lines": "8"
+  },
+  {
+   "description": "Here `checkIfRaining` is called for the first time; its frame appears on the right.",
+   "kind": "run",
+   "lines": "4",
+   "trace_step": 8
+  },
+  {
+   "description": "Here `checkIfRaining` returns, the first time it does.",
+   "kind": "run",
+   "lines": "4",
+   "trace_step": 9
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "8",
+   "trace_step": 11
+  }
+ ],
+ "title": "Example cs170-activity-pythoniteration-9",
+ "version": 1
+}

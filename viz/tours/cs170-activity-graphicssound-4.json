@@ -1,0 +1,22 @@
+{
+ "code": "from ezgraphics import GraphicsWindow\n\nwin = GraphicsWindow(640, 480)\nwin.setTitle(\"My First Drawing\")\n\ncanvas = win.canvas()\n\ncanvas.setFill(255, 0, 0)\ncanvas.drawRectangle(40, 40, 100, 200)\n\ncanvas.setFill(255, 255, 255)\ncanvas.setOutline(0, 255, 0)\ncanvas.drawRectangle(200, 200, 150, 50)\n\nwin.wait()",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-graphicssound-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Line 1 imports `ezgraphics`.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "Lines 3-15 run the main code.",
+   "kind": "reveal",
+   "lines": "3-15"
+  }
+ ],
+ "title": "Example cs170-activity-graphicssound-4",
+ "version": 1
+}

@@ -1,0 +1,28 @@
+{
+ "code": "total = 0\nfor i in range(1, 5):\n    total = total + i\n    print(\"Added\", i, \"- total is now\", total)\nprint(\"Final total:\", total)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythoniteration-3",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-5 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-5"
+  },
+  {
+   "description": "Line 2 loops over `range(1, 5)`.",
+   "kind": "focus",
+   "lines": "2"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "5",
+   "trace_step": 15
+  }
+ ],
+ "title": "The accumulator pattern",
+ "version": 1
+}

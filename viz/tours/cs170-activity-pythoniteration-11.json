@@ -1,0 +1,33 @@
+{
+ "code": "i = 0\nj = 0\n\nwhile i < 10:\n    print(\"Team {}\".format(i))\n\n    while j < 10:\n        print(\"Team {}, turn #{}\".format(i, j))\n\n        j += 1\n\n    i += 1",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythoniteration-11",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-12 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-12"
+  },
+  {
+   "description": "Line 4 repeats while `i < 10` is true.",
+   "kind": "focus",
+   "lines": "4"
+  },
+  {
+   "description": "Line 7 repeats while `j < 10` is true.",
+   "kind": "focus",
+   "lines": "7"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "4",
+   "trace_step": 73
+  }
+ ],
+ "title": "Example cs170-activity-pythoniteration-11",
+ "version": 1
+}

@@ -1,0 +1,33 @@
+{
+ "code": "words = [\"duck\", \"duck\", \"goose\", \"duck\"]\ncounts = {}\n\nfor word in words:\n    if word in counts:\n        counts[word] = counts[word] + 1   # seen it before: add one\n    else:\n        counts[word] = 1                  # first sighting: start at 1\n\nprint(counts)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythondictionaries-5",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-10 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-10"
+  },
+  {
+   "description": "Line 4 loops over `words`.",
+   "kind": "focus",
+   "lines": "4"
+  },
+  {
+   "description": "Line 5 checks `word in counts`.",
+   "kind": "focus",
+   "lines": "5"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "10",
+   "trace_step": 16
+  }
+ ],
+ "title": "Counting Things with a Dictionary",
+ "version": 1
+}

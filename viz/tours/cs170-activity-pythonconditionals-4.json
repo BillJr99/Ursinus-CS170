@@ -1,0 +1,33 @@
+{
+ "code": "age = 25\n\nif age >= 18 and age < 35:\n    print(\"You can vote, but you can't run for President yet.\")\n\nif age <= 12 or age >= 65:\n    print(\"You get a discounted movie ticket!\")\nelse:\n    print(\"You pay full price. Sorry!\")",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonconditionals-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-9 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-9"
+  },
+  {
+   "description": "Line 3 checks `age >= 18 and age < 35`.",
+   "kind": "focus",
+   "lines": "3"
+  },
+  {
+   "description": "Line 6 checks `age <= 12 or age >= 65`.",
+   "kind": "focus",
+   "lines": "6"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "9",
+   "trace_step": 5
+  }
+ ],
+ "title": "Combining Conditions with and, or, and not",
+ "version": 1
+}

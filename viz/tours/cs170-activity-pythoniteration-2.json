@@ -1,0 +1,38 @@
+{
+ "code": "for i in range(1, 11):      # start at 1, stop before 11\n    print(i, end=\" \")\nprint()\n\nfor i in range(0, 20, 5):   # start at 0, stop before 20, count by 5\n    print(i, end=\" \")\nprint()\n\nfor i in range(3, 0, -1):   # count DOWN by using a negative step\n    print(i, end=\" \")\nprint(\"Liftoff!\")",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythoniteration-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-11 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-11"
+  },
+  {
+   "description": "Line 1 loops over `range(1, 11)`.",
+   "kind": "focus",
+   "lines": "1"
+  },
+  {
+   "description": "Line 5 loops over `range(0, 20, 5)`.",
+   "kind": "focus",
+   "lines": "5"
+  },
+  {
+   "description": "Line 9 loops over `range(3, 0, -1)`.",
+   "kind": "focus",
+   "lines": "9"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "11",
+   "trace_step": 40
+  }
+ ],
+ "title": "The for loop and range()",
+ "version": 1
+}

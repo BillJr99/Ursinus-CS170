@@ -1,0 +1,33 @@
+{
+ "code": "age = 21\n\nif age >= 35:\n    print(\"You are old enough to run for President of the United States!\")\nelif age >= 18:\n    print(\"You can’t run for President, but you are old enough to vote!\")\nelse:\n    print(\"You’re too young to run for President, and too young to vote.\")",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonconditionals-9",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-8 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-8"
+  },
+  {
+   "description": "Line 3 checks `age >= 35`.",
+   "kind": "focus",
+   "lines": "3"
+  },
+  {
+   "description": "Line 5 checks `age >= 18`.",
+   "kind": "focus",
+   "lines": "5"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "6",
+   "trace_step": 4
+  }
+ ],
+ "title": "Example cs170-activity-pythonconditionals-9",
+ "version": 1
+}

@@ -1,0 +1,23 @@
+{
+ "code": "menu = {\"coffee\": 3, \"bagel\": 2, \"muffin\": 4}\n\nprint(\"A bagel costs ${}\".format(menu[\"bagel\"]))\n\nmenu[\"coffee\"] = 4          # the price of coffee went up!\nmenu[\"tea\"] = 2             # a brand new key: this ADDS a pair\n\nprint(menu)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythondictionaries-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-8 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-8"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "8",
+   "trace_step": 5
+  }
+ ],
+ "title": "Looking Up and Updating Values",
+ "version": 1
+}

@@ -1,0 +1,40 @@
+{
+ "code": "def greet(name):\n    print(\"Hello,\", name, \"- welcome to CS170!\")\n\ngreet(\"Ada\")\ngreet(\"Grace\")",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonfunctions-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-2 define `greet(name)`.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "Lines 4-5 run the main code.",
+   "kind": "reveal",
+   "lines": "4-5"
+  },
+  {
+   "description": "Here `greet` is called for the first time; its frame appears on the right.",
+   "kind": "run",
+   "lines": "2",
+   "trace_step": 2
+  },
+  {
+   "description": "Here `greet` returns, the first time it does.",
+   "kind": "run",
+   "lines": "2",
+   "trace_step": 3
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "5",
+   "trace_step": 7
+  }
+ ],
+ "title": "Parameters and arguments: giving a function information",
+ "version": 1
+}

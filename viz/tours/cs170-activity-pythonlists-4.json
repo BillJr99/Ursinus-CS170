@@ -1,0 +1,28 @@
+{
+ "code": "scores = [88, 95, 73]\nfor score in scores:\n    print(score)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonlists-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-3 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-3"
+  },
+  {
+   "description": "Line 2 loops over `scores`.",
+   "kind": "focus",
+   "lines": "2"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "2",
+   "trace_step": 8
+  }
+ ],
+ "title": "Looping Over a List",
+ "version": 1
+}

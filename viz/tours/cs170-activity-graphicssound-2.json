@@ -1,0 +1,52 @@
+{
+ "code": "from ezgraphics import GraphicsWindow\nimport random\n\nwin = GraphicsWindow(640, 480)\nwin.setTitle(\"My First Drawing\")\n\ni = 0\nj = 0\nlasti = -1\nlastj = -1\n\ncanvas = win.canvas()\n\ncanvas.setFill(0,0,0)\ncanvas.drawRectangle(0, 0, 640, 480)\n\nwhile True:\n  if i > 0 and j > 0:\n    canvas.setFill(0,0,0)\n    canvas.drawRectangle(i-1, j-1, 10, 20)\n\n  canvas.setFill(255, 255, 255)\n  canvas.drawRectangle(i, j, 10, 20)\n\n  lasti = i\n  lastj = j\n\n  i = i + random.randint(-1, 1)\n  j = j + random.randint(-1, 1)\n\n  if i > 640:\n    i = 639\n  if j > 480:\n    j = 479\n\n  if i < 0:\n    i = 1\n  if j < 0:\n    j = 1\n\n  win.pause(1)\n\nwin.wait()",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-graphicssound-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-2 import `ezgraphics` and `random`.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "Lines 4-15 run the main code.",
+   "kind": "reveal",
+   "lines": "4-15"
+  },
+  {
+   "description": "Lines 17-41 continue the main code.",
+   "kind": "reveal",
+   "lines": "17-41"
+  },
+  {
+   "description": "Line 17 repeats while `True` is true.",
+   "kind": "focus",
+   "lines": "17"
+  },
+  {
+   "description": "Line 18 checks `i > 0 and j > 0`.",
+   "kind": "focus",
+   "lines": "18"
+  },
+  {
+   "description": "Line 33 checks `j > 480`.",
+   "kind": "focus",
+   "lines": "33"
+  },
+  {
+   "description": "Line 36 checks `i < 0`.",
+   "kind": "focus",
+   "lines": "36"
+  },
+  {
+   "description": "Line 43 continues the main code.",
+   "kind": "reveal",
+   "lines": "43"
+  }
+ ],
+ "title": "Example cs170-activity-graphicssound-2",
+ "version": 1
+}

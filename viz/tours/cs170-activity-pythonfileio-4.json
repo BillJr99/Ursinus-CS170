@@ -1,0 +1,33 @@
+{
+ "code": "file = open(\"scores.txt\", \"r\")\n\ntotal = 0\ncount = 0\nfor line in file:\n    fields = line.strip().split(\",\")\n    name = fields[0]\n    score = int(fields[1])\n    print(name + \" scored \" + str(score))\n    total = total + score\n    count = count + 1\n\nfile.close()\nprint(\"Average: \" + str(total / count))",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonfileio-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-13 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-13"
+  },
+  {
+   "description": "Line 5 loops over `file`.",
+   "kind": "focus",
+   "lines": "5"
+  },
+  {
+   "description": "Line 14 continues the main code and print the results.",
+   "kind": "reveal",
+   "lines": "14"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "14",
+   "trace_step": 27
+  }
+ ],
+ "title": "Splitting lines into fields",
+ "version": 1
+}

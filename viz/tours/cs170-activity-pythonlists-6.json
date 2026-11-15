@@ -1,0 +1,38 @@
+{
+ "code": "scores = [88, 95, 73]\n\ntotal = 0            # the accumulator starts at 0\nbiggest = scores[0]  # \"best so far\" starts as the first element\n\nfor score in scores:\n    total = total + score\n    if score > biggest:\n        biggest = score\n\nprint(\"The total is {}\".format(total))\nprint(\"The average is {}\".format(total / len(scores)))\nprint(\"The highest score is {}\".format(biggest))",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonlists-6",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-12 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-12"
+  },
+  {
+   "description": "Line 6 loops over `scores`.",
+   "kind": "focus",
+   "lines": "6"
+  },
+  {
+   "description": "Line 8 checks `score > biggest`.",
+   "kind": "focus",
+   "lines": "8"
+  },
+  {
+   "description": "Line 13 continues the main code and print the results.",
+   "kind": "reveal",
+   "lines": "13"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "13",
+   "trace_step": 17
+  }
+ ],
+ "title": "Accumulating Over a List",
+ "version": 1
+}

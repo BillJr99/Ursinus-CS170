@@ -1,0 +1,28 @@
+{
+ "code": "prices = [2.50, 0.75, 3.25, 1.00, 2.00]\n\ntotal = 0\nfor price in prices:\n    total = total + price\n\naverage = total / len(prices)\nprint(\"Average price:\", average)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-datapython-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-8 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-8"
+  },
+  {
+   "description": "Line 4 loops over `prices`.",
+   "kind": "focus",
+   "lines": "4"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "8",
+   "trace_step": 15
+  }
+ ],
+ "title": "Apple,fruit,0.75",
+ "version": 1
+}

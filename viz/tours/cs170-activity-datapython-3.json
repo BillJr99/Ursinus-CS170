@@ -1,0 +1,33 @@
+{
+ "code": "categories = [\"salty\", \"fruit\", \"salty\", \"candy\", \"fruit\"]\n\ncounts = {}\nfor category in categories:\n    if category in counts:\n        counts[category] = counts[category] + 1\n    else:\n        counts[category] = 1\n\nprint(counts)",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-datapython-3",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-10 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-10"
+  },
+  {
+   "description": "Line 4 loops over `categories`.",
+   "kind": "focus",
+   "lines": "4"
+  },
+  {
+   "description": "Line 5 checks `category in counts`.",
+   "kind": "focus",
+   "lines": "5"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "10",
+   "trace_step": 19
+  }
+ ],
+ "title": "Apple,fruit,0.75",
+ "version": 1
+}

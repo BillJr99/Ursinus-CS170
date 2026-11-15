@@ -1,0 +1,33 @@
+{
+ "code": "menu = {\"coffee\": 3, \"bagel\": 2, \"muffin\": 4}\n\nfor item in menu:                  # loops over the KEYS\n    print(\"{} costs ${}\".format(item, menu[item]))\n\nfor item, price in menu.items():   # keys AND values together\n    print(\"{}: ${}\".format(item, price))",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythondictionaries-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-7 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-7"
+  },
+  {
+   "description": "Line 3 loops over `menu`.",
+   "kind": "focus",
+   "lines": "3"
+  },
+  {
+   "description": "Line 6 loops over `menu.items()`.",
+   "kind": "focus",
+   "lines": "6"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "6",
+   "trace_step": 15
+  }
+ ],
+ "title": "Looping Over a Dictionary",
+ "version": 1
+}

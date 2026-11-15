@@ -1,0 +1,28 @@
+{
+ "code": "temperature = 72\nraining = False\n\nif temperature >= 60 and not raining:\n    print(\"It's a great day to go outside!\")\nelse:\n    print(\"Maybe stay in with some hot chocolate.\")",
+ "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "example": "cs170-activity-pythonconditionals-5",
+ "lang": "python",
+ "reviewed": false,
+ "source": "skeleton",
+ "steps": [
+  {
+   "description": "Lines 1-7 run the main code and print the results.",
+   "kind": "reveal",
+   "lines": "1-7"
+  },
+  {
+   "description": "Line 4 checks `temperature >= 60 and not raining`.",
+   "kind": "focus",
+   "lines": "4"
+  },
+  {
+   "description": "This is the end of the run: the final state, and all of the output.",
+   "kind": "run",
+   "lines": "5",
+   "trace_step": 4
+  }
+ ],
+ "title": "Combining Conditions with and, or, and not",
+ "version": 1
+}
