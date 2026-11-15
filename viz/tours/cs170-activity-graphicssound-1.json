@@ -1,27 +1,33 @@
 {
  "code": "from ezgraphics import GraphicsWindow\n\nwin = GraphicsWindow(400, 300)\nwin.setTitle(\"Sunny Day\")\n\ncanvas = win.canvas()\n\n# sky: a light blue rectangle covering the whole canvas\ncanvas.setFill(135, 206, 235)\ncanvas.drawRectangle(0, 0, 400, 300)\n\n# sun: a yellow oval near the top-right corner\ncanvas.setFill(255, 255, 0)\ncanvas.drawOval(300, 30, 60, 60)\n\nwin.wait()",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can follow window setup and two layers of drawing.",
  "example": "cs170-activity-graphicssound-1",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model + edit: codex",
  "steps": [
   {
-   "description": "Line 1 imports `ezgraphics`.",
+   "description": "You create a window titled Sunny Day. canvas names its drawing surface.",
    "kind": "reveal",
-   "lines": "1"
+   "lines": "1-6"
   },
   {
-   "description": "Lines 3-14 run the main code.",
+   "description": "setFill selects light blue using red, green and blue values. The rectangle starts at (0, 0) and covers the canvas.",
    "kind": "reveal",
-   "lines": "3-14"
+   "lines": "8-10"
   },
   {
-   "description": "Line 16 continues the main code.",
+   "answer": "It uses yellow, selected by setFill immediately before the oval is drawn.",
+   "kind": "predict",
+   "lines": "12-14",
+   "question": "Which fill color will the oval use?"
+  },
+  {
+   "description": "The tutorial describes a yellow circle near the top-right corner, over the blue sky. You finish with wait to keep the window open; this example supplies no text output.",
    "kind": "reveal",
-   "lines": "16"
+   "lines": "12-16"
   }
  ],
- "title": "How the computer thinks about pictures",
+ "title": "Drawing the sky before the sun",
  "version": 1
 }
