@@ -1,55 +1,33 @@
 {
  "code": "import random\n\ndef checkIfRaining():\n    return True\n\nraining = False;\n\nwhile not raining:\n    randVal = random.random() # 0 to 1\n    minutes = round(randVal * 20) # whole numbers 0 to 20\n\n    print(\"Play outside for {} minutes!\".format(minutes))\n\n    raining = checkIfRaining() # made up function!",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You follow the supplied rain-check function and its effect on the loop condition.",
  "example": "cs170-activity-pythoniteration-9",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Line 1 imports `random`.",
+   "description": "You import random and define checkIfRaining to return True. raining begins as False.",
    "kind": "reveal",
-   "lines": "1"
+   "lines": "1-6"
   },
   {
-   "description": "Lines 3-4 define `checkIfRaining()`.",
+   "description": "You enter the loop while not raining holds. Its body draws a random value, computes minutes, and formats a message.",
    "kind": "reveal",
-   "lines": "3-4"
+   "lines": "8-12"
   },
   {
-   "description": "Line 4 returns `True`.",
-   "kind": "focus",
-   "lines": "4"
+   "answer": "It returns True. The next test of not raining is therefore false.",
+   "kind": "predict",
+   "lines": "14",
+   "question": "What value does the supplied checkIfRaining assign to raining?"
   },
   {
-   "description": "Lines 6-14 run the main code and print the results.",
+   "description": "You update the condition variable at the end of the body. The recording contains one message from the loop before it ends.",
    "kind": "reveal",
-   "lines": "6-14"
-  },
-  {
-   "description": "Line 8 repeats while `not raining` is true.",
-   "kind": "focus",
-   "lines": "8"
-  },
-  {
-   "description": "Here `checkIfRaining` is called for the first time; its frame appears on the right.",
-   "kind": "run",
-   "lines": "4",
-   "trace_step": 8
-  },
-  {
-   "description": "Here `checkIfRaining` returns, the first time it does.",
-   "kind": "run",
-   "lines": "4",
-   "trace_step": 9
-  },
-  {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "8",
-   "trace_step": 11
+   "lines": "14"
   }
  ],
- "title": "Example cs170-activity-pythoniteration-9",
+ "title": "Update a while condition from a function",
  "version": 1
 }

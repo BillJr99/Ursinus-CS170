@@ -1,28 +1,33 @@
 {
  "code": "age = 25\n\nif age >= 18 and age < 35: # Why < 35 and not <= 35?\n    print(\"???\") # What should we say here?",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You inspect the condition and trace the existing print without replacing its text.",
  "example": "cs170-activity-pythonconditionals-10",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-4 run the main code and print the results.",
+   "description": "You assign age before the conditional. The following comparisons read this stored value.",
    "kind": "reveal",
-   "lines": "1-4"
+   "lines": "1"
   },
   {
-   "description": "Line 3 checks `age >= 18 and age < 35`.",
-   "kind": "focus",
+   "description": "You join two comparisons with and. Both appear in one if condition.",
+   "kind": "reveal",
    "lines": "3"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
+   "answer": "It displays the literal text ???. age appears in the condition, while the print argument is a string.",
+   "kind": "predict",
    "lines": "4",
-   "trace_step": 3
+   "question": "Does the existing print display age or the literal text between its quotes?"
+  },
+  {
+   "description": "You leave the placeholder text as supplied. The recording reaches this line and prints ???.",
+   "kind": "reveal",
+   "lines": "4"
   }
  ],
- "title": "Example cs170-activity-pythonconditionals-10",
+ "title": "Read a compound condition with a placeholder",
  "version": 1
 }

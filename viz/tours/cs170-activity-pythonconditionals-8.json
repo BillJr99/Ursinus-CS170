@@ -1,33 +1,33 @@
 {
  "code": "age = 38\n\nif age >= 18:\n    print(\"You are old enough to vote!\")\n\n    if age >= 35:\n        print(\"... and you are old enough to run for President!\")\n    else:\n        print(\"... but not old enough to run for President!\")\nelse:\n    print(\"You're too young to run for President, and too young to vote.\")",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You follow the recorded path through an outer comparison and its inner comparison.",
  "example": "cs170-activity-pythonconditionals-8",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-11 run the main code and print the results.",
+   "description": "You assign age and reach the outer comparison. Its selected branch begins with the voting message.",
    "kind": "reveal",
-   "lines": "1-11"
+   "lines": "1-4"
   },
   {
-   "description": "Line 3 checks `age >= 18`.",
+   "description": "You read the inner conditional and the separate outer else. Each branch contains its own message string.",
+   "kind": "reveal",
+   "lines": "6-11"
+  },
+  {
+   "answer": "Both comparisons read age. The only assignment to age is the initial statement.",
+   "kind": "predict",
+   "lines": "1,3,6",
+   "question": "Does either comparison assign a new value to age?"
+  },
+  {
+   "description": "You inspect the supplied trace and output. It reaches the voting message followed by the message about running for President.",
    "kind": "focus",
-   "lines": "3"
-  },
-  {
-   "description": "Line 6 checks `age >= 35`.",
-   "kind": "focus",
-   "lines": "6"
-  },
-  {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "7",
-   "trace_step": 5
+   "lines": "4,7"
   }
  ],
- "title": "Example cs170-activity-pythonconditionals-8",
+ "title": "Trace the supplied nested comparisons",
  "version": 1
 }

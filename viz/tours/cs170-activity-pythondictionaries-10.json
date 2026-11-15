@@ -1,28 +1,33 @@
 {
  "code": "courses = {}\n\ncourses[\"CS170\"] = \"Prof. Mongan\"\ncourses[\"CS174\"] = \"Prof. Tralie\"\ncourses[\"CS274\"] = \"Prof. Schilling\"\n\nprint(\"CS170 is taught by: {}\".format(courses[\"CS170\"]))\n\nfor key, value in courses.items():\n    print(\"{} is taught by: {}\".format(key, value))",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You associate course codes with instructor names and print those associations.",
  "example": "cs170-activity-pythondictionaries-10",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-10 run the main code and print the results.",
+   "description": "You create courses and assign instructor strings under course-code keys. Each assignment adds an association to the dictionary.",
    "kind": "reveal",
-   "lines": "1-10"
+   "lines": "1-5"
   },
   {
-   "description": "Line 9 loops over `courses.items()`.",
-   "kind": "focus",
-   "lines": "9"
+   "description": "You retrieve the instructor stored under CS170 and insert it into the printed sentence.",
+   "kind": "reveal",
+   "lines": "7"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "9",
-   "trace_step": 12
+   "answer": "It supplies a course-code key and its associated instructor value. The print formats both into the sentence.",
+   "kind": "predict",
+   "lines": "9-10",
+   "question": "What does items supply to key and value on each loop pass?"
+  },
+  {
+   "description": "You print every stored association after the earlier individual lookup. The recording therefore shows the CS170 sentence again during the loop.",
+   "kind": "reveal",
+   "lines": "9-10"
   }
  ],
- "title": "Example cs170-activity-pythondictionaries-10",
+ "title": "Look up and iterate over course entries",
  "version": 1
 }

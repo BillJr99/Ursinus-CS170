@@ -1,33 +1,33 @@
 {
  "code": "i = 0\nj = 0\n\nwhile i < 10:\n    print(\"Team {}\".format(i))\n\n    while j < 10:\n        print(\"Team {}, turn #{}\".format(i, j))\n\n        j += 1\n\n    i += 1",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You identify which counter each loop reads and updates in the supplied program.",
  "example": "cs170-activity-pythoniteration-11",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-12 run the main code and print the results.",
+   "description": "You initialize i and j before entering the outer loop. The first message formats the current i as a team label.",
    "kind": "reveal",
-   "lines": "1-12"
+   "lines": "1-5"
   },
   {
-   "description": "Line 4 repeats while `i < 10` is true.",
-   "kind": "focus",
-   "lines": "4"
+   "description": "You enter a second while loop that tests j. Its message includes both counters, and its update changes j.",
+   "kind": "reveal",
+   "lines": "7-10"
   },
   {
-   "description": "Line 7 repeats while `j < 10` is true.",
-   "kind": "focus",
-   "lines": "7"
+   "answer": "The outer body's final update changes i. The j update is inside the inner body.",
+   "kind": "predict",
+   "lines": "10,12",
+   "question": "Which counter changes at the end of the outer body?"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "4",
-   "trace_step": 73
+   "description": "You reach the outer update after the inner loop finishes. The recorded output contains team labels and turn labels, showing the two message forms.",
+   "kind": "reveal",
+   "lines": "12"
   }
  ],
- "title": "Example cs170-activity-pythoniteration-11",
+ "title": "Track two counters in nested loops",
  "version": 1
 }

@@ -1,33 +1,33 @@
 {
  "code": "biggest = 0  # index of the priciest snack seen so far\nfor i in range(len(prices)):\n    if prices[i] > prices[biggest]:\n        biggest = i\nprint(\"Most expensive:\", names[biggest], \"at $\" + str(prices[biggest]))",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You use one saved index to retrieve both a snack name and its price.",
  "example": "cs170-activity-datapython-4",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-5 run the main code and print the results.",
+   "description": "You initialize biggest to an index and visit each index in prices. biggest identifies the priciest snack seen so far.",
    "kind": "reveal",
-   "lines": "1-5"
+   "lines": "1-2"
   },
   {
-   "description": "Line 2 loops over `range(len(prices))`.",
-   "kind": "focus",
-   "lines": "2"
+   "answer": "It stores i, the current index. prices[biggest] retrieves the price at that saved position.",
+   "kind": "predict",
+   "lines": "3-4",
+   "question": "Does biggest store a price or an index after its assignment?"
   },
   {
-   "description": "Line 3 checks `prices[i] > prices[biggest]`.",
-   "kind": "focus",
-   "lines": "3"
+   "description": "You replace the saved index only when the current price exceeds its price. The strict comparison keeps the saved index when prices tie.",
+   "kind": "reveal",
+   "lines": "3-4"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "5",
-   "trace_step": 14
+   "description": "You use biggest in both parallel lists to print the matching name and price. The supplied recording identifies Trail Mix at $3.25.",
+   "kind": "reveal",
+   "lines": "5"
   }
  ],
- "title": "Step 2: Compute, Asking the Data Questions",
+ "title": "Keep the index of the largest price",
  "version": 1
 }

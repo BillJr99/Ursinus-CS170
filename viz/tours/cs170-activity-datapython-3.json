@@ -1,33 +1,33 @@
 {
  "code": "categories = [\"salty\", \"fruit\", \"salty\", \"candy\", \"fruit\"]\n\ncounts = {}\nfor category in categories:\n    if category in counts:\n        counts[category] = counts[category] + 1\n    else:\n        counts[category] = 1\n\nprint(counts)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You inspect how a dictionary stores a running count for each category.",
  "example": "cs170-activity-datapython-3",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-10 run the main code and print the results.",
+   "description": "You prepare category strings and an empty counts dictionary. The loop binds category to each string in turn.",
    "kind": "reveal",
-   "lines": "1-10"
+   "lines": "1-4"
   },
   {
-   "description": "Line 4 loops over `categories`.",
-   "kind": "focus",
-   "lines": "4"
+   "description": "You use the current category as a dictionary key. The two branches assign either an updated count or an initial count.",
+   "kind": "reveal",
+   "lines": "5-8"
   },
   {
-   "description": "Line 5 checks `category in counts`.",
-   "kind": "focus",
-   "lines": "5"
+   "answer": "category supplies the key in both branches. Each assignment stores its result under that current category.",
+   "kind": "predict",
+   "lines": "6,8",
+   "question": "Which variable supplies the key in both assignments?"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "10",
-   "trace_step": 19
+   "description": "You print the completed dictionary after the loop. Its entries associate category names with counts, rather than storing a separate list for each category.",
+   "kind": "reveal",
+   "lines": "10"
   }
  ],
- "title": "Apple,fruit,0.75",
+ "title": "Accumulate counts under category keys",
  "version": 1
 }

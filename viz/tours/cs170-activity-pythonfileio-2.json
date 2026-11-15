@@ -1,28 +1,33 @@
 {
  "code": "file = open(\"groceries.txt\", \"r\")\n\ncount = 1\nfor line in file:\n    print(str(count) + \": \" + line)\n    count = count + 1\n\nfile.close()",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You pair each incoming file line with an updated counter.",
  "example": "cs170-activity-pythonfileio-2",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-8 run the main code and print the results.",
+   "description": "You open groceries.txt for reading and initialize count. The counter starts before the loop.",
    "kind": "reveal",
-   "lines": "1-8"
+   "lines": "1-3"
   },
   {
-   "description": "Line 4 loops over `file`.",
-   "kind": "focus",
-   "lines": "4"
+   "description": "You receive one line per pass and concatenate it with the counter text. str converts count before the string addition.",
+   "kind": "reveal",
+   "lines": "4-5"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "8",
-   "trace_step": 13
+   "answer": "It uses count before the increment. The next pass receives the updated value.",
+   "kind": "predict",
+   "lines": "5-6",
+   "question": "Does the print use count before or after its increment?"
+  },
+  {
+   "description": "You increment the counter and close the file after the loop. The recording shows numbered grocery lines with blank lines between them.",
+   "kind": "reveal",
+   "lines": "6-8"
   }
  ],
- "title": "Reading a file line by line",
+ "title": "Number lines while reading a file",
  "version": 1
 }

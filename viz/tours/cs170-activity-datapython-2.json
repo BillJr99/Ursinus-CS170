@@ -1,28 +1,33 @@
 {
  "code": "prices = [2.50, 0.75, 3.25, 1.00, 2.00]\n\ntotal = 0\nfor price in prices:\n    total = total + price\n\naverage = total / len(prices)\nprint(\"Average price:\", average)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You separate the repeated addition from the calculation that follows the loop.",
  "example": "cs170-activity-datapython-2",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-8 run the main code and print the results.",
+   "description": "You store the supplied prices and initialize total to zero. total will retain the running sum.",
    "kind": "reveal",
-   "lines": "1-8"
+   "lines": "1-3"
   },
   {
-   "description": "Line 4 loops over `prices`.",
-   "kind": "focus",
-   "lines": "4"
+   "description": "You visit each price and add it to total. Assignment replaces total with the updated sum.",
+   "kind": "reveal",
+   "lines": "4-5"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "8",
-   "trace_step": 15
+   "answer": "It is assigned after the loop. The division uses the completed total and len(prices).",
+   "kind": "predict",
+   "lines": "7",
+   "question": "Does average change inside the loop or after all prices have been visited?"
+  },
+  {
+   "description": "You divide by the list length and print the result. The recording shows Average price: 1.9.",
+   "kind": "reveal",
+   "lines": "7-8"
   }
  ],
- "title": "Apple,fruit,0.75",
+ "title": "Compute a mean after accumulating prices",
  "version": 1
 }
