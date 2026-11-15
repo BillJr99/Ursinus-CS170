@@ -1,33 +1,33 @@
 {
  "code": "menu = {\"coffee\": 3, \"bagel\": 2, \"muffin\": 4}\n\nfor item in menu:                  # loops over the KEYS\n    print(\"{} costs ${}\".format(item, menu[item]))\n\nfor item, price in menu.items():   # keys AND values together\n    print(\"{}: ${}\".format(item, price))",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can read the same dictionary through two loop forms.",
  "example": "cs170-activity-pythondictionaries-4",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-7 run the main code and print the results.",
+   "description": "menu stores three item-price pairs. Looping over menu directly gives you each key as item.",
    "kind": "reveal",
-   "lines": "1-7"
+   "lines": "1-3"
   },
   {
-   "description": "Line 3 loops over `menu`.",
-   "kind": "focus",
-   "lines": "3"
+   "description": "You look up menu[item] to get the current key's price. The first loop prints one costs sentence per entry.",
+   "kind": "reveal",
+   "lines": "4"
   },
   {
-   "description": "Line 6 loops over `menu.items()`.",
-   "kind": "focus",
-   "lines": "6"
-  },
-  {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
+   "answer": "It assigns coffee to item and 3 to price. items supplies each key and value together.",
+   "kind": "predict",
    "lines": "6",
-   "trace_step": 15
+   "question": "What values does the second loop assign to item and price for coffee?"
+  },
+  {
+   "description": "You see coffee: $3, bagel: $2 and muffin: $4 after the first three sentences. Both loops read the same entries with different formatting.",
+   "kind": "reveal",
+   "lines": "6-7"
   }
  ],
- "title": "Looping Over a Dictionary",
+ "title": "Looping over keys and pairs",
  "version": 1
 }

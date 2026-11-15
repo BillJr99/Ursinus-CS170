@@ -1,28 +1,33 @@
 {
  "code": "menu = {\"coffee\": 3, \"bagel\": 2, \"muffin\": 4}\n\nif \"pizza\" in menu:\n    print(\"Pizza costs ${}\".format(menu[\"pizza\"]))\nelse:\n    print(\"Sorry, we don't sell pizza.\")\n\nprint(\"coffee\" in menu)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can use dictionary membership to choose a safe branch.",
  "example": "cs170-activity-pythondictionaries-3",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-8 run the main code and print the results.",
+   "description": "You create a menu with coffee, bagel and muffin as keys. pizza is absent from this dictionary.",
    "kind": "reveal",
-   "lines": "1-8"
+   "lines": "1"
   },
   {
-   "description": "Line 3 checks `\"pizza\" in menu`.",
-   "kind": "focus",
-   "lines": "3"
+   "answer": "No. The membership test is False, so execution goes to else before that lookup.",
+   "kind": "predict",
+   "lines": "3-4",
+   "question": "Will the program execute the lookup menu['pizza']?"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "8",
-   "trace_step": 4
+   "description": "You see Sorry, we don't sell pizza. The message comes from the branch for the missing key.",
+   "kind": "reveal",
+   "lines": "3-6"
+  },
+  {
+   "description": "The final membership test checks coffee, which is a key in menu. You see True after the pizza message.",
+   "kind": "reveal",
+   "lines": "8"
   }
  ],
- "title": "Checking Membership with in",
+ "title": "Checking a key before lookup",
  "version": 1
 }

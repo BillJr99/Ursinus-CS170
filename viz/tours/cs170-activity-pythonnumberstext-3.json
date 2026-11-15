@@ -1,23 +1,39 @@
 {
  "code": "name = \"Grizz\"\ngreeting = \"Hello, \" + name + \"!\"\nprint(greeting)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "Store text in a string variable and join strings together using the + operator.",
  "example": "cs170-activity-pythonnumberstext-3",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: agy free model",
  "steps": [
   {
-   "description": "Lines 1-3 run the main code and print the results.",
+   "description": "Store the string 'Grizz' in the variable name on line 1.",
    "kind": "reveal",
-   "lines": "1-3"
+   "lines": "1"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
+   "description": "Use the + operator on line 2 to join 'Hello, ', name, and '!' into a single string stored in greeting.",
+   "kind": "reveal",
+   "lines": "2"
+  },
+  {
+   "answer": "Joining 'Hello, ' + 'Grizz' + '!' end to end produces 'Hello, Grizz!'.",
+   "kind": "predict",
+   "lines": "1-3",
+   "question": "What exact string is stored in greeting and printed on line 3?"
+  },
+  {
+   "description": "Print greeting on line 3.",
+   "kind": "reveal",
+   "lines": "3"
+  },
+  {
+   "description": "See name and greeting in memory right as print(greeting) outputs 'Hello, Grizz!'.",
    "kind": "run",
    "lines": "3",
-   "trace_step": 3
+   "trace_step": 2
   }
  ],
- "title": "Strings: Storing Text",
+ "title": "Storing and Joining Strings with +",
  "version": 1
 }

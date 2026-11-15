@@ -1,28 +1,33 @@
 {
  "code": "total = 0\nfor i in range(1, 5):\n    total = total + i\n    print(\"Added\", i, \"- total is now\", total)\nprint(\"Final total:\", total)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can inspect an accumulator after each addition.",
  "example": "cs170-activity-pythoniteration-3",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-5 run the main code and print the results.",
+   "description": "You start total at zero before the loop. range(1, 5) supplies 1, 2, 3 and 4.",
    "kind": "reveal",
-   "lines": "1-5"
+   "lines": "1-2"
   },
   {
-   "description": "Line 2 loops over `range(1, 5)`.",
-   "kind": "focus",
-   "lines": "2"
+   "description": "The assignment adds i to the previous total. The next print shows the updated total on every pass.",
+   "kind": "reveal",
+   "lines": "3-4"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "5",
-   "trace_step": 15
+   "answer": "It is 6, after the earlier additions produced 1 and then 3.",
+   "kind": "predict",
+   "lines": "3",
+   "question": "What is total after adding 3?"
+  },
+  {
+   "description": "The running messages show totals 1, 3, 6 and 10. You see Final total: 10 after the loop.",
+   "kind": "reveal",
+   "lines": "5"
   }
  ],
- "title": "The accumulator pattern",
+ "title": "Watching a total grow",
  "version": 1
 }

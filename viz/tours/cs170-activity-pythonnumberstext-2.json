@@ -1,23 +1,39 @@
 {
  "code": "pizzas = 3\nslices = pizzas * 8       # multiplication\npeople = 6\neach = slices / people    # division\nleftover = slices % people  # modulus: the remainder after dividing\nprint(slices)\nprint(each)\nprint(leftover)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "Compute total slices, slices per person, and leftover slices using *, /, and %.",
  "example": "cs170-activity-pythonnumberstext-2",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: agy free model",
  "steps": [
   {
-   "description": "Lines 1-8 run the main code and print the results.",
+   "description": "Set pizzas = 3, multiply pizzas * 8 to store 24 in slices, and set people = 6.",
    "kind": "reveal",
-   "lines": "1-8"
+   "lines": "1-3"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
+   "description": "Divide slices / people to compute each, and use the modulus operator slices % people to compute the remainder leftover.",
+   "kind": "reveal",
+   "lines": "4-5"
+  },
+  {
+   "answer": "Division with / produces the floating-point number 4.0, and 24 % 6 produces the remainder 0.",
+   "kind": "predict",
+   "lines": "4-5",
+   "question": "When slices is 24 and people is 6, what values do slices / people and slices % people produce?"
+  },
+  {
+   "description": "Print slices, each, and leftover on lines 6 through 8.",
+   "kind": "reveal",
+   "lines": "6-8"
+  },
+  {
+   "description": "Inspect slices (24), each (4.0), and leftover (0) in the environment before printing them.",
    "kind": "run",
-   "lines": "8",
-   "trace_step": 8
+   "lines": "6",
+   "trace_step": 5
   }
  ],
- "title": "Expressions: Letting Python Do the Math",
+ "title": "Multiplication, Division, and Remainder with Variables",
  "version": 1
 }

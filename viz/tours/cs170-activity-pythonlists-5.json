@@ -1,28 +1,33 @@
 {
  "code": "scores = [88, 95, 73]\nfor i in range(len(scores)):\n    print(\"Score number {} is {}\".format(i, scores[i]))\n    scores[i] = scores[i] + 5   # everyone gets 5 bonus points!\nprint(scores)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can follow a loop that reads and replaces each list element.",
  "example": "cs170-activity-pythonlists-5",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-5 run the main code and print the results.",
+   "description": "scores contains three values. You loop over indices 0, 1 and 2 using range(len(scores)).",
    "kind": "reveal",
-   "lines": "1-5"
+   "lines": "1-2"
   },
   {
-   "description": "Line 2 loops over `range(len(scores))`.",
-   "kind": "focus",
-   "lines": "2"
+   "description": "Each iteration prints its index and current score. This print comes before the update.",
+   "kind": "reveal",
+   "lines": "3"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "5",
-   "trace_step": 12
+   "answer": "93 replaces it because the assignment adds five to scores[0].",
+   "kind": "predict",
+   "lines": "4",
+   "question": "What value replaces the first score, 88?"
+  },
+  {
+   "description": "You update all three elements and print [93, 100, 78]. The earlier score messages show the original values because they ran before each assignment.",
+   "kind": "reveal",
+   "lines": "4-5"
   }
  ],
- "title": "Looping Over a List",
+ "title": "Updating scores by index",
  "version": 1
 }

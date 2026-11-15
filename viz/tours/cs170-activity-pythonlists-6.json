@@ -1,38 +1,33 @@
 {
  "code": "scores = [88, 95, 73]\n\ntotal = 0            # the accumulator starts at 0\nbiggest = scores[0]  # \"best so far\" starts as the first element\n\nfor score in scores:\n    total = total + score\n    if score > biggest:\n        biggest = score\n\nprint(\"The total is {}\".format(total))\nprint(\"The average is {}\".format(total / len(scores)))\nprint(\"The highest score is {}\".format(biggest))",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can update two running answers in one pass through a list.",
  "example": "cs170-activity-pythonlists-6",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-12 run the main code and print the results.",
+   "description": "You initialize total to zero and biggest to the first score, 88. These variables hold the answers accumulated by the loop.",
    "kind": "reveal",
-   "lines": "1-12"
+   "lines": "1-4"
   },
   {
-   "description": "Line 6 loops over `scores`.",
-   "kind": "focus",
-   "lines": "6"
-  },
-  {
-   "description": "Line 8 checks `score > biggest`.",
-   "kind": "focus",
-   "lines": "8"
-  },
-  {
-   "description": "Line 13 continues the main code and print the results.",
+   "description": "Every score contributes to total. The loop visits 88, 95 and 73 in that order.",
    "kind": "reveal",
-   "lines": "13"
+   "lines": "6-7"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "13",
-   "trace_step": 17
+   "answer": "No. The comparison 73 > 95 is False, so biggest remains 95.",
+   "kind": "predict",
+   "lines": "8-9",
+   "question": "Will visiting 73 replace biggest after the loop has seen 95?"
+  },
+  {
+   "description": "You see total 256, average 85.33333333333333 and highest score 95. All three prints run after the loop completes.",
+   "kind": "reveal",
+   "lines": "8-13"
   }
  ],
- "title": "Accumulating Over a List",
+ "title": "Keeping a total and best score",
  "version": 1
 }

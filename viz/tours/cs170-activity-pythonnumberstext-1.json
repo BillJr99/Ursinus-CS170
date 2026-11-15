@@ -1,23 +1,34 @@
 {
  "code": "pizzas = 3\nprint(pizzas)\npizzas = 5\nprint(pizzas)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "See how assigning a new value to pizzas replaces the old value stored in that variable.",
  "example": "cs170-activity-pythonnumberstext-1",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: agy free model",
  "steps": [
   {
-   "description": "Lines 1-4 run the main code and print the results.",
+   "description": "Store the number 3 in the variable pizzas on line 1 and print its value on line 2.",
    "kind": "reveal",
-   "lines": "1-4"
+   "lines": "1-2"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
+   "answer": "The assignment pizzas = 5 replaces the 3 in pizzas with 5, so line 4 prints 5.",
+   "kind": "predict",
+   "lines": "1-4",
+   "question": "What happens to the 3 stored in pizzas when line 3 runs pizzas = 5?"
+  },
+  {
+   "description": "Reassign pizzas = 5 on line 3 and print pizzas again on line 4.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "description": "Watch pizzas update from 3 to 5 in memory before the second print statement runs.",
    "kind": "run",
    "lines": "4",
-   "trace_step": 4
+   "trace_step": 3
   }
  ],
- "title": "What is a Variable?",
+ "title": "Assigning and Reassigning a Variable",
  "version": 1
 }

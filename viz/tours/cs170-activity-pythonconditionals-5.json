@@ -1,28 +1,33 @@
 {
  "code": "temperature = 72\nraining = False\n\nif temperature >= 60 and not raining:\n    print(\"It's a great day to go outside!\")\nelse:\n    print(\"Maybe stay in with some hot chocolate.\")",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can evaluate both parts of the supplied weather condition.",
  "example": "cs170-activity-pythonconditionals-5",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-7 run the main code and print the results.",
+   "description": "You set temperature to 72 and raining to False. These values supply the two parts of the condition.",
    "kind": "reveal",
-   "lines": "1-7"
+   "lines": "1-2"
   },
   {
-   "description": "Line 4 checks `temperature >= 60 and not raining`.",
-   "kind": "focus",
-   "lines": "4"
+   "answer": "Yes. 72 >= 60 is True, and not False is True, so and combines two True values.",
+   "kind": "predict",
+   "lines": "4",
+   "question": "Is temperature >= 60 and not raining True for these values?"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "5",
-   "trace_step": 4
+   "description": "The True condition selects the first indented print. You take the branch with the message about going outside.",
+   "kind": "reveal",
+   "lines": "4-5"
+  },
+  {
+   "description": "The else branch supplies the alternative when the condition is False. This run prints only the going-outside message.",
+   "kind": "reveal",
+   "lines": "6-7"
   }
  ],
- "title": "Combining Conditions with and, or, and not",
+ "title": "Combining a comparison with not",
  "version": 1
 }

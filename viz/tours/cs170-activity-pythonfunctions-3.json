@@ -1,45 +1,33 @@
 {
  "code": "def circleArea(radius):\n    area = 3.14159 * radius ** 2\n    return area\n\na = circleArea(10)\nprint(\"The area is\", a)\nprint(\"Twice the area is\", circleArea(10) * 2)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can store a return value or use it directly in arithmetic.",
  "example": "cs170-activity-pythonfunctions-3",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-3 define `circleArea(radius)`.",
+   "description": "circleArea squares radius and multiplies by 3.14159. You return the computed area to the caller.",
    "kind": "reveal",
    "lines": "1-3"
   },
   {
-   "description": "Line 3 returns `area`.",
-   "kind": "focus",
-   "lines": "3"
-  },
-  {
-   "description": "Lines 5-7 run the main code and print the results.",
+   "description": "The first call supplies 10 and returns 314.159. You store that value in a and print it.",
    "kind": "reveal",
-   "lines": "5-7"
+   "lines": "5-6"
   },
   {
-   "description": "Here `circleArea` is called for the first time; its frame appears on the right.",
-   "kind": "run",
-   "lines": "2",
-   "trace_step": 2
-  },
-  {
-   "description": "Here `circleArea` returns, the first time it does.",
-   "kind": "run",
-   "lines": "3",
-   "trace_step": 4
-  },
-  {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
+   "answer": "It supplies 314.159 again, producing 628.318 after multiplication.",
+   "kind": "predict",
    "lines": "7",
-   "trace_step": 10
+   "question": "Which value does the second call supply to multiplication by two?"
+  },
+  {
+   "description": "You see Twice the area is 628.318. A returned value can participate directly in a larger expression.",
+   "kind": "reveal",
+   "lines": "7"
   }
  ],
- "title": "Return values: getting an answer back",
+ "title": "Using a returned circle area",
  "version": 1
 }

@@ -1,33 +1,33 @@
 {
  "code": "words = [\"duck\", \"duck\", \"goose\", \"duck\"]\ncounts = {}\n\nfor word in words:\n    if word in counts:\n        counts[word] = counts[word] + 1   # seen it before: add one\n    else:\n        counts[word] = 1                  # first sighting: start at 1\n\nprint(counts)",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can use words as dictionary keys and their frequencies as values.",
  "example": "cs170-activity-pythondictionaries-5",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-10 run the main code and print the results.",
+   "description": "You visit duck, duck, goose and duck in order. counts starts empty before the loop.",
    "kind": "reveal",
-   "lines": "1-10"
+   "lines": "1-4"
   },
   {
-   "description": "Line 4 loops over `words`.",
-   "kind": "focus",
-   "lines": "4"
+   "description": "The membership test selects between increasing an existing value and creating a new entry. The first duck starts at one.",
+   "kind": "reveal",
+   "lines": "5-8"
   },
   {
-   "description": "Line 5 checks `word in counts`.",
-   "kind": "focus",
-   "lines": "5"
+   "answer": "goose is absent from counts, so the else branch stores one for that key.",
+   "kind": "predict",
+   "lines": "5-8",
+   "question": "What happens when goose appears for the first time?"
   },
   {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
-   "lines": "10",
-   "trace_step": 16
+   "description": "You see {'duck': 3, 'goose': 1}. The repeated duck visits update one entry rather than creating duplicate keys.",
+   "kind": "reveal",
+   "lines": "10"
   }
  ],
- "title": "Counting Things with a Dictionary",
+ "title": "Counting repeated words",
  "version": 1
 }

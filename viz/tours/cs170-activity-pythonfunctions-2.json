@@ -1,40 +1,33 @@
 {
  "code": "def greet(name):\n    print(\"Hello,\", name, \"- welcome to CS170!\")\n\ngreet(\"Ada\")\ngreet(\"Grace\")",
- "description": "A walkthrough built from the code's structure: each part in reading order, then the moments to look at.",
+ "description": "You can use one function body with two names.",
  "example": "cs170-activity-pythonfunctions-2",
  "lang": "python",
  "reviewed": false,
- "source": "skeleton",
+ "source": "draft: codex free model",
  "steps": [
   {
-   "description": "Lines 1-2 define `greet(name)`.",
+   "description": "name is the parameter, a placeholder in the function definition. You use its value in the greeting's print call.",
    "kind": "reveal",
    "lines": "1-2"
   },
   {
-   "description": "Lines 4-5 run the main code.",
+   "description": "The first call supplies the argument Ada. Inside that call, name refers to Ada.",
    "kind": "reveal",
-   "lines": "4-5"
+   "lines": "4"
   },
   {
-   "description": "Here `greet` is called for the first time; its frame appears on the right.",
-   "kind": "run",
-   "lines": "2",
-   "trace_step": 2
-  },
-  {
-   "description": "Here `greet` returns, the first time it does.",
-   "kind": "run",
-   "lines": "2",
-   "trace_step": 3
-  },
-  {
-   "description": "This is the end of the run: the final state, and all of the output.",
-   "kind": "run",
+   "answer": "It includes Grace because the second call supplies Grace as its argument.",
+   "kind": "predict",
    "lines": "5",
-   "trace_step": 7
+   "question": "Which name will the second greeting include?"
+  },
+  {
+   "description": "You see a greeting for Ada followed by a greeting for Grace. Each call runs the same body with its own supplied name.",
+   "kind": "reveal",
+   "lines": "5"
   }
  ],
- "title": "Parameters and arguments: giving a function information",
+ "title": "Supplying a greeting argument",
  "version": 1
 }
