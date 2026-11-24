@@ -1,0 +1,33 @@
+{
+ "code": "snacks = [\"pretzels\", \"apples\", \"popcorn\"]\nsnacks[1] = \"grapes\"        # replace apples with grapes\nsnacks.append(\"cookies\")    # add cookies to the end\nsnacks.remove(\"pretzels\")   # take pretzels out\nprint(snacks)\nprint(len(snacks))",
+ "description": "You can follow replacement, addition and removal in order.",
+ "example": "cs170-activity-pythonlists-3",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You create three snacks and replace the element at index 1. grapes takes the place of apples.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "append places cookies at the end. The list now has four elements.",
+   "kind": "reveal",
+   "lines": "3"
+  },
+  {
+   "answer": "grapes becomes first because the remaining elements shift forward.",
+   "kind": "predict",
+   "lines": "4",
+   "question": "Which element becomes first after removing pretzels?"
+  },
+  {
+   "description": "You see ['grapes', 'popcorn', 'cookies'] and length 3. One append and one removal leave the original number of elements.",
+   "kind": "reveal",
+   "lines": "4-6"
+  }
+ ],
+ "title": "Changing a snack list",
+ "version": 1
+}

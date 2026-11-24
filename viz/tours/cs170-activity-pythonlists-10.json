@@ -1,0 +1,33 @@
+{
+ "code": "grades = []\n\nfor i in range(10):\n    grades.append(90 + i)\n\nfor i in range(len(grades)):\n    print(grades[i])",
+ "description": "You inspect the two loops' different uses of a list.",
+ "example": "cs170-activity-pythonlists-10",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You begin with an empty grades list. The following loop changes that list.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "You see append in the first loop. Its argument combines a fixed starting value with i.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "answer": "It reads existing elements through grades[i] and passes them to print.",
+   "kind": "predict",
+   "lines": "6-7",
+   "question": "Does the second loop append values or read existing elements?"
+  },
+  {
+   "description": "You compare the list-changing call with the indexed read. The supplied recording contains the values printed by the reading loop.",
+   "kind": "focus",
+   "lines": "4,7"
+  }
+ ],
+ "title": "Separate list construction from indexed access",
+ "version": 1
+}

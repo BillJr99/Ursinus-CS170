@@ -1,0 +1,33 @@
+{
+ "code": "def circleAreaPrinter(radius):\n    print(3.14159 * radius ** 2)   # prints, but returns nothing\n\nresult = circleAreaPrinter(10)\nprint(\"result is:\", result)",
+ "description": "You can distinguish the displayed area from the function's returned value.",
+ "example": "cs170-activity-pythonfunctions-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "circleAreaPrinter computes an area and passes it to print. You can see that its body has no return statement.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "The call supplies radius 10. The body prints 314.159 before control returns to this assignment.",
+   "kind": "reveal",
+   "lines": "4"
+  },
+  {
+   "answer": "It holds None, the value returned when this function reaches its end.",
+   "kind": "predict",
+   "lines": "5",
+   "question": "Which value does result hold after the call ends?"
+  },
+  {
+   "description": "You see result is: None after the numeric output. Displaying the area and returning a value are separate actions.",
+   "kind": "reveal",
+   "lines": "5"
+  }
+ ],
+ "title": "Printing inside a function",
+ "version": 1
+}

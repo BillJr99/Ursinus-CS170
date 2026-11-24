@@ -1,0 +1,33 @@
+{
+ "code": "def circleArea(radius):\n    return 3.14159 * radius ** 2\n\ndef cylinderVolume(radius, height):\n    # a cylinder is a circle \"stretched\" upward, so reuse circleArea!\n    return circleArea(radius) * height\n\ndef main():\n    v = cylinderVolume(10, 2)\n    print(\"The cylinder holds\", v, \"cubic units\")\n\nmain()",
+ "description": "You can track an area value as it becomes a cylinder volume.",
+ "example": "cs170-activity-pythonfunctions-5",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "circleArea returns the area computed from radius. You can reuse its returned number in another function.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "cylinderVolume calls circleArea with its radius parameter. It multiplies the returned area by height.",
+   "kind": "reveal",
+   "lines": "4-6"
+  },
+  {
+   "answer": "It receives 628.318, the area 314.159 multiplied by 2.",
+   "kind": "predict",
+   "lines": "8-10",
+   "question": "What volume does main receive for radius 10 and height 2?"
+  },
+  {
+   "description": "The final call starts main, which stores the volume in v. You see The cylinder holds 628.318 cubic units.",
+   "kind": "reveal",
+   "lines": "8-12"
+  }
+ ],
+ "title": "Following calls through three functions",
+ "version": 1
+}

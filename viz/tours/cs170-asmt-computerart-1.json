@@ -1,0 +1,33 @@
+{
+ "code": "import ezgraphics \n\nwidth = 640\nheight = 480\n\nwin = ezgraphics.GraphicsWindow(width, height)\nwin.setTitle(\"My First Drawing\")\n\ncanvas = win.canvas()\n\ncanvas.setFill(255, 0, 0) # red, green, blue; each from 0-255\ncanvas.drawRectangle(40, 40, 100, 200) # top, left, width, height\n\ncanvas.setFill(255, 255, 255)\ncanvas.setOutline(0, 255, 0)\ncanvas.drawRectangle(200, 200, 150, 50) # top, left, width, height\n\nwin.wait()",
+ "description": "Open an ezgraphics window, get its canvas, and draw two rectangles using RGB fill and outline colors.",
+ "example": "cs170-asmt-computerart-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: agy free model + edit: codex",
+ "steps": [
+  {
+   "description": "Import ezgraphics, create a GraphicsWindow titled 'My First Drawing' with the supplied dimensions, and get its drawing surface with win.canvas().",
+   "kind": "reveal",
+   "lines": "1-9"
+  },
+  {
+   "description": "Set the fill color to full red with zero green and blue, then draw a rectangle at the supplied position and dimensions.",
+   "kind": "reveal",
+   "lines": "11-12"
+  },
+  {
+   "answer": "The RGB fill mixes full red, green, and blue for white. The outline uses full green with zero red and blue for bright green.",
+   "kind": "predict",
+   "lines": "14-16",
+   "question": "What fill color and outline color will the second rectangle have?"
+  },
+  {
+   "description": "Set a white fill and green outline, draw the second rectangle at the supplied position and dimensions, and call win.wait() so the window stays open.",
+   "kind": "reveal",
+   "lines": "14-18"
+  }
+ ],
+ "title": "Drawing Colored Rectangles with ezgraphics",
+ "version": 1
+}

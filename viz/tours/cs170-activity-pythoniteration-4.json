@@ -1,0 +1,33 @@
+{
+ "code": "text = \"micro:bit\"\nvowels = 0\nfor letter in text:\n    if letter in \"aeiou\":\n        vowels += 1\nprint(\"Found\", vowels, \"vowels\")",
+ "description": "You can follow character membership tests into a running count.",
+ "example": "cs170-activity-pythoniteration-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You initialize vowels to zero and visit each character of micro:bit. letter holds one character on each pass.",
+   "kind": "reveal",
+   "lines": "1-3"
+  },
+  {
+   "description": "The membership test checks whether letter appears in aeiou. A matching character increases vowels by one.",
+   "kind": "reveal",
+   "lines": "4-5"
+  },
+  {
+   "answer": "No. The colon is absent from aeiou, so the increment is skipped for that character.",
+   "kind": "predict",
+   "lines": "4",
+   "question": "Will the colon contribute to the count?"
+  },
+  {
+   "description": "The two i characters and the o contribute three matches. You see Found 3 vowels after the loop.",
+   "kind": "reveal",
+   "lines": "6"
+  }
+ ],
+ "title": "Counting vowels in a string",
+ "version": 1
+}

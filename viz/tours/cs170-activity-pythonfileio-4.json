@@ -1,0 +1,33 @@
+{
+ "code": "file = open(\"scores.txt\", \"r\")\n\ntotal = 0\ncount = 0\nfor line in file:\n    fields = line.strip().split(\",\")\n    name = fields[0]\n    score = int(fields[1])\n    print(name + \" scored \" + str(score))\n    total = total + score\n    count = count + 1\n\nfile.close()\nprint(\"Average: \" + str(total / count))",
+ "description": "You split file lines into fields and compute an average from numeric scores.",
+ "example": "cs170-activity-pythonfileio-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You open scores.txt and initialize total and count. Each stripped line becomes a list of comma-separated fields.",
+   "kind": "reveal",
+   "lines": "1-6"
+  },
+  {
+   "description": "You retain the name as text and convert the score with int. str converts that number back to text for the printed sentence.",
+   "kind": "reveal",
+   "lines": "7-9"
+  },
+  {
+   "answer": "total adds score, while count adds one for each processed line.",
+   "kind": "predict",
+   "lines": "10-11",
+   "question": "Which update accumulates score values, and which counts processed lines?"
+  },
+  {
+   "description": "You close the file and divide total by count after the loop. The recorded output ends with the calculated average after the individual score messages.",
+   "kind": "reveal",
+   "lines": "10-14"
+  }
+ ],
+ "title": "Convert score fields before accumulating",
+ "version": 1
+}

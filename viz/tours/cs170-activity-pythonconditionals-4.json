@@ -1,0 +1,33 @@
+{
+ "code": "age = 25\n\nif age >= 18 and age < 35:\n    print(\"You can vote, but you can't run for President yet.\")\n\nif age <= 12 or age >= 65:\n    print(\"You get a discounted movie ticket!\")\nelse:\n    print(\"You pay full price. Sorry!\")",
+ "description": "You can follow two separate decisions for age 25.",
+ "example": "cs170-activity-pythonconditionals-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You set age to 25. Both comparisons around and are True, so the first message prints.",
+   "kind": "reveal",
+   "lines": "1-4"
+  },
+  {
+   "answer": "No. 25 <= 12 and 25 >= 65 are both False, so their or result is False.",
+   "kind": "predict",
+   "lines": "6",
+   "question": "Does age 25 satisfy either comparison in the ticket condition?"
+  },
+  {
+   "description": "The second decision selects else and prints the full-price message. This decision runs after the earlier if independently.",
+   "kind": "reveal",
+   "lines": "6-9"
+  },
+  {
+   "description": "You see two output lines: the voting-age message and then the full-price message. Each comes from a different conditional.",
+   "kind": "focus",
+   "lines": "4,9"
+  }
+ ],
+ "title": "Evaluating and and or conditions",
+ "version": 1
+}

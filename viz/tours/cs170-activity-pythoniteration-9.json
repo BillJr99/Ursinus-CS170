@@ -1,0 +1,33 @@
+{
+ "code": "import random\n\ndef checkIfRaining():\n    return True\n\nraining = False;\n\nwhile not raining:\n    randVal = random.random() # 0 to 1\n    minutes = round(randVal * 20) # whole numbers 0 to 20\n\n    print(\"Play outside for {} minutes!\".format(minutes))\n\n    raining = checkIfRaining() # made up function!",
+ "description": "You follow the supplied rain-check function and its effect on the loop condition.",
+ "example": "cs170-activity-pythoniteration-9",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You import random and define checkIfRaining to return True. raining begins as False.",
+   "kind": "reveal",
+   "lines": "1-6"
+  },
+  {
+   "description": "You enter the loop while not raining holds. Its body draws a random value, computes minutes, and formats a message.",
+   "kind": "reveal",
+   "lines": "8-12"
+  },
+  {
+   "answer": "It returns True. The next test of not raining is therefore false.",
+   "kind": "predict",
+   "lines": "14",
+   "question": "What value does the supplied checkIfRaining assign to raining?"
+  },
+  {
+   "description": "You update the condition variable at the end of the body. The recording contains one message from the loop before it ends.",
+   "kind": "reveal",
+   "lines": "14"
+  }
+ ],
+ "title": "Update a while condition from a function",
+ "version": 1
+}

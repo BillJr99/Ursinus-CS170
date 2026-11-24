@@ -1,0 +1,33 @@
+{
+ "code": "i = 0\nwhile i < 10:\n    print(i)\n    i += 1",
+ "description": "You follow the order of the condition, print, and counter update.",
+ "example": "cs170-activity-pythoniteration-10",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You initialize i and reach the while condition. The loop uses that comparison before entering its body.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "You print the current value of i in the body. The counter update comes on the following line.",
+   "kind": "reveal",
+   "lines": "3"
+  },
+  {
+   "answer": "It happens before the increment. The next condition check sees the updated i.",
+   "kind": "predict",
+   "lines": "3-4",
+   "question": "Does each print happen before or after that pass's increment?"
+  },
+  {
+   "description": "You add one to i on each pass. The supplied output lists consecutive counter values starting at zero.",
+   "kind": "reveal",
+   "lines": "4"
+  }
+ ],
+ "title": "Read the counter update in a while loop",
+ "version": 1
+}

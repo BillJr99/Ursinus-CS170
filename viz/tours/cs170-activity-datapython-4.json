@@ -1,0 +1,33 @@
+{
+ "code": "biggest = 0  # index of the priciest snack seen so far\nfor i in range(len(prices)):\n    if prices[i] > prices[biggest]:\n        biggest = i\nprint(\"Most expensive:\", names[biggest], \"at $\" + str(prices[biggest]))",
+ "description": "You use one saved index to retrieve both a snack name and its price.",
+ "example": "cs170-activity-datapython-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You initialize biggest to an index and visit each index in prices. biggest identifies the priciest snack seen so far.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "answer": "It stores i, the current index. prices[biggest] retrieves the price at that saved position.",
+   "kind": "predict",
+   "lines": "3-4",
+   "question": "Does biggest store a price or an index after its assignment?"
+  },
+  {
+   "description": "You replace the saved index only when the current price exceeds its price. The strict comparison keeps the saved index when prices tie.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "description": "You use biggest in both parallel lists to print the matching name and price. The supplied recording identifies Trail Mix at $3.25.",
+   "kind": "reveal",
+   "lines": "5"
+  }
+ ],
+ "title": "Keep the index of the largest price",
+ "version": 1
+}

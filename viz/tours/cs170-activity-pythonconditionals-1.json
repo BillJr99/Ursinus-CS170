@@ -1,0 +1,33 @@
+{
+ "code": "age = 21\nprint(age >= 18)\nprint(age >= 35)\nprint(age == 21)",
+ "description": "You can evaluate three Boolean expressions using the same age.",
+ "example": "cs170-activity-pythonconditionals-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You store 21 in age with one equals sign. The first comparison asks whether 21 is at least 18 and prints True.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "answer": "It prints False because 21 is less than 35.",
+   "kind": "predict",
+   "lines": "3",
+   "question": "What does age >= 35 print?"
+  },
+  {
+   "description": "The last expression uses == to compare age with 21. You check equality while keeping the stored age unchanged.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "description": "You see True, False and True on separate lines. Each print displays the Boolean value of one comparison.",
+   "kind": "focus",
+   "lines": "2-4"
+  }
+ ],
+ "title": "Printing comparison results",
+ "version": 1
+}

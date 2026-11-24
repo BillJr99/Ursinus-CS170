@@ -1,0 +1,33 @@
+{
+ "code": "age = 38\n\nif age >= 35:\n    print(\"You are old enough to run for President of the United States!\")",
+ "description": "You compare a stored age with the threshold in a single if statement.",
+ "example": "cs170-activity-pythonconditionals-6",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You store 38 in age. The conditional reads age without changing it.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "You compare age with 35 using >=. This comparison supplies the condition for the next line.",
+   "kind": "reveal",
+   "lines": "3"
+  },
+  {
+   "answer": "Yes. The stored age meets the comparison on line 3.",
+   "kind": "predict",
+   "lines": "3-4",
+   "question": "For the supplied age, does the program reach the print call?"
+  },
+  {
+   "description": "You reach the print call in the supplied recording. Its output contains the eligibility message written in the string.",
+   "kind": "reveal",
+   "lines": "4"
+  }
+ ],
+ "title": "Follow one conditional branch",
+ "version": 1
+}

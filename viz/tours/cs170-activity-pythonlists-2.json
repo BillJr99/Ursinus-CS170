@@ -1,0 +1,33 @@
+{
+ "code": "snacks = [\"pretzels\", \"apples\", \"popcorn\"]\nprint(snacks[0])\nprint(snacks[2])\nprint(len(snacks))\nprint(snacks[-1])",
+ "description": "You can compare forward indices, a negative index and list length.",
+ "example": "cs170-activity-pythonlists-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "snacks stores three strings. You select pretzels with index 0, the first position.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "Index 2 selects popcorn. len reports three elements, counting all stored values.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "answer": "Yes. Both select popcorn, the last element of this three-element list.",
+   "kind": "predict",
+   "lines": "5",
+   "question": "Does index -1 select the same element as index 2 here?"
+  },
+  {
+   "description": "You see pretzels, popcorn, 3 and popcorn in order. The two indices reach the final element from different directions.",
+   "kind": "reveal",
+   "lines": "5"
+  }
+ ],
+ "title": "Selecting list positions",
+ "version": 1
+}

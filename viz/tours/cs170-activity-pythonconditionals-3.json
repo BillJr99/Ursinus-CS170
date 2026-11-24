@@ -1,0 +1,33 @@
+{
+ "code": "age = 21\n\nif age >= 35:\n    print(\"You are old enough to run for President of the United States!\")\nelse:\n    print(\"You're too young to run for President.\")",
+ "description": "You can follow one comparison into its alternative branch.",
+ "example": "cs170-activity-pythonconditionals-3",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You assign 21 to age. That value will be used by the comparison below.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "The if branch tests whether age is at least 35. Its indented print runs only when that comparison is True.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "answer": "The else branch runs because 21 >= 35 is False.",
+   "kind": "predict",
+   "lines": "5-6",
+   "question": "Which branch runs when age is 21?"
+  },
+  {
+   "description": "You see You're too young to run for President. The else branch supplies the output for this age.",
+   "kind": "reveal",
+   "lines": "5-6"
+  }
+ ],
+ "title": "Taking the else branch",
+ "version": 1
+}

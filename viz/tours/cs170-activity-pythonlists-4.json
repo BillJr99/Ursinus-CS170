@@ -1,0 +1,33 @@
+{
+ "code": "scores = [88, 95, 73]\nfor score in scores:\n    print(score)",
+ "description": "You can follow a for loop directly through three scores.",
+ "example": "cs170-activity-pythonlists-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "scores holds 88, 95 and 73 in that order. You will visit the values stored in this list.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "Each iteration assigns the next element to score. The loop supplies values directly rather than their indices.",
+   "kind": "reveal",
+   "lines": "2"
+  },
+  {
+   "answer": "It prints 95, the second element of scores.",
+   "kind": "predict",
+   "lines": "3",
+   "question": "Which value will the second iteration print?"
+  },
+  {
+   "description": "You see 88, 95 and 73 on separate lines. The print runs once for each list element.",
+   "kind": "reveal",
+   "lines": "3"
+  }
+ ],
+ "title": "Visiting list values in order",
+ "version": 1
+}

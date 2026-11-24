@@ -1,0 +1,33 @@
+{
+ "code": "phonebook = {}                     # an empty dictionary\nphonebook[\"Taylor\"] = \"555-1234\"   # add a key-value pair\nphonebook[\"Jordan\"] = \"555-9876\"   # add another\nprint(phonebook)\n\n# or, all at once:\nmenu = {\"coffee\": 3, \"bagel\": 2, \"muffin\": 4}\nprint(menu)",
+ "description": "You can create dictionaries one pair at a time or with an initial collection of pairs.",
+ "example": "cs170-activity-pythondictionaries-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "The curly braces create an empty dictionary. You add Taylor as a key with the phone number string 555-1234 as its value.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "answer": "No. Jordan is a different key, so phonebook keeps both pairs.",
+   "kind": "predict",
+   "lines": "3-4",
+   "question": "Does adding Jordan replace Taylor's entry?"
+  },
+  {
+   "description": "You see both names and their phone numbers in the printed dictionary. Square brackets identify the key used by each assignment.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "description": "menu creates three pairs inside its braces, using a colon between each key and value. You see coffee mapped to 3, bagel to 2 and muffin to 4.",
+   "kind": "reveal",
+   "lines": "6-8"
+  }
+ ],
+ "title": "Building key-value pairs",
+ "version": 1
+}

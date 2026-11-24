@@ -1,0 +1,33 @@
+{
+ "code": "for row in range(3):\n    for col in range(2):\n        print(\"row\", row, \"col\", col)",
+ "description": "You can track a complete inner loop for each outer-loop value.",
+ "example": "cs170-activity-pythoniteration-5",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "The outer loop gives row the values 0, 1 and 2. You run its indented body for each value.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "The inner loop gives col the values 0 and 1. It starts again for each new row.",
+   "kind": "reveal",
+   "lines": "2"
+  },
+  {
+   "answer": "Six lines. Each of the three rows pairs with both column values.",
+   "kind": "predict",
+   "lines": "3",
+   "question": "How many lines will the print produce?"
+  },
+  {
+   "description": "You see row 0 with columns 0 and 1, then the same column sequence for rows 1 and 2. The final line is row 2 col 1.",
+   "kind": "reveal",
+   "lines": "3"
+  }
+ ],
+ "title": "Following nested loops",
+ "version": 1
+}

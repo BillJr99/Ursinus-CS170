@@ -1,0 +1,33 @@
+{
+ "code": "snacks = [\"pretzels\", \"apples\", \"popcorn\"]\nprint(snacks)\n\nempty_cart = []\nprint(empty_cart)",
+ "description": "You can compare two lists created with square brackets.",
+ "example": "cs170-activity-pythonlists-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "snacks holds three strings separated by commas. You place the elements inside square brackets.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "Printing snacks displays pretzels, apples and popcorn in their stored order. The output keeps the surrounding brackets.",
+   "kind": "reveal",
+   "lines": "2"
+  },
+  {
+   "answer": "It shows [], because this list contains zero elements.",
+   "kind": "predict",
+   "lines": "4-5",
+   "question": "What will printing empty_cart show?"
+  },
+  {
+   "description": "You see [] after the snack list. The same bracket syntax creates a list with elements or an empty one.",
+   "kind": "reveal",
+   "lines": "4-5"
+  }
+ ],
+ "title": "Creating full and empty lists",
+ "version": 1
+}

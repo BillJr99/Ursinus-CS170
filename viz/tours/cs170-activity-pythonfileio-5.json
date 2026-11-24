@@ -1,0 +1,33 @@
+{
+ "code": "with open(\"groceries.txt\", \"r\") as file:\n    for line in file:\n        print(line.strip())",
+ "description": "You use a with block to manage a file while printing cleaned lines.",
+ "example": "cs170-activity-pythonfileio-5",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You open groceries.txt for reading and bind its file object to file. The with block manages closing it.",
+   "kind": "reveal",
+   "lines": "1"
+  },
+  {
+   "description": "You iterate over the open file inside that block. Each pass supplies a line to the print expression.",
+   "kind": "reveal",
+   "lines": "2"
+  },
+  {
+   "answer": "It receives line.strip(), the string with surrounding whitespace removed.",
+   "kind": "predict",
+   "lines": "3",
+   "question": "Does print receive the original line or the result of strip?"
+  },
+  {
+   "description": "You print each cleaned grocery line. The supplied output lists milk, eggs, and bread on consecutive lines.",
+   "kind": "reveal",
+   "lines": "3"
+  }
+ ],
+ "title": "Read grocery lines inside with",
+ "version": 1
+}

@@ -1,0 +1,33 @@
+{
+ "code": "for i in range(1, 11):      # start at 1, stop before 11\n    print(i, end=\" \")\nprint()\n\nfor i in range(0, 20, 5):   # start at 0, stop before 20, count by 5\n    print(i, end=\" \")\nprint()\n\nfor i in range(3, 0, -1):   # count DOWN by using a negative step\n    print(i, end=\" \")\nprint(\"Liftoff!\")",
+ "description": "You can compare upward, stepped and downward loops.",
+ "example": "cs170-activity-pythoniteration-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "range(1, 11) supplies 1 through 10. You keep each value on the same line with end set to a space, then print a newline.",
+   "kind": "reveal",
+   "lines": "1-3"
+  },
+  {
+   "description": "The step of five produces 0, 5, 10 and 15. The stop value 20 lies outside the range.",
+   "kind": "reveal",
+   "lines": "5-7"
+  },
+  {
+   "answer": "It produces 3, 2 and 1. The range stops before zero.",
+   "kind": "predict",
+   "lines": "9-10",
+   "question": "Which values does the negative step produce before reaching the stop boundary?"
+  },
+  {
+   "description": "You see 3 2 1 followed by the liftoff message on the same line. The last print runs after the downward loop.",
+   "kind": "reveal",
+   "lines": "9-11"
+  }
+ ],
+ "title": "Reading range boundaries and steps",
+ "version": 1
+}

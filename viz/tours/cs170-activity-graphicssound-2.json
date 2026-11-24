@@ -1,0 +1,33 @@
+{
+ "code": "from ezgraphics import GraphicsWindow\nimport random\n\nwin = GraphicsWindow(640, 480)\nwin.setTitle(\"My First Drawing\")\n\ni = 0\nj = 0\nlasti = -1\nlastj = -1\n\ncanvas = win.canvas()\n\ncanvas.setFill(0,0,0)\ncanvas.drawRectangle(0, 0, 640, 480)\n\nwhile True:\n  if i > 0 and j > 0:\n    canvas.setFill(0,0,0)\n    canvas.drawRectangle(i-1, j-1, 10, 20)\n\n  canvas.setFill(255, 255, 255)\n  canvas.drawRectangle(i, j, 10, 20)\n\n  lasti = i\n  lastj = j\n\n  i = i + random.randint(-1, 1)\n  j = j + random.randint(-1, 1)\n\n  if i > 640:\n    i = 639\n  if j > 480:\n    j = 479\n\n  if i < 0:\n    i = 1\n  if j < 0:\n    j = 1\n\n  win.pause(1)\n\nwin.wait()",
+ "description": "You can inspect drawing order and vertical placement in the supplied example.",
+ "example": "cs170-activity-graphicssound-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You create the Traffic Light window and its canvas. The first shape is the dark-gray housing rectangle.",
+   "kind": "reveal",
+   "lines": "1-10"
+  },
+  {
+   "description": "Each oval follows a fill-color setting. The supplied red and yellow lights share their x coordinate and dimensions.",
+   "kind": "reveal",
+   "lines": "12-18"
+  },
+  {
+   "answer": "It places the green light below them because screen y coordinates increase downward.",
+   "kind": "predict",
+   "lines": "20-22",
+   "question": "Does the green light's larger y coordinate place it above or below the other lights?"
+  },
+  {
+   "description": "The tutorial describes red, yellow and green circles stacked inside the housing. You end with wait to keep the window open; the recording supplies no text output.",
+   "kind": "reveal",
+   "lines": "20-24"
+  }
+ ],
+ "title": "Reading layered traffic-light drawing",
+ "version": 1
+}

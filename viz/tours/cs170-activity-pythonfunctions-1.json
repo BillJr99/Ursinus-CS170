@@ -1,0 +1,33 @@
+{
+ "code": "def greet():\n    print(\"Hello there!\")\n    print(\"Welcome to CS170.\")\n\nprint(\"About to greet...\")\ngreet()\ngreet()\nprint(\"Done greeting.\")",
+ "description": "You can track when a saved function body actually runs.",
+ "example": "cs170-activity-pythonfunctions-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "def gives greet a body containing two print calls. You save that body for later calls rather than execute it here.",
+   "kind": "reveal",
+   "lines": "1-3"
+  },
+  {
+   "description": "The first displayed line is About to greet. Execution has reached the statements after the definition.",
+   "kind": "reveal",
+   "lines": "5"
+  },
+  {
+   "answer": "Twice. Each of the two greet calls runs both prints in the function body.",
+   "kind": "predict",
+   "lines": "6-7",
+   "question": "How many times will the welcome message appear?"
+  },
+  {
+   "description": "You see the greeting pair twice, followed by Done greeting. Each call finishes before the next top-level statement runs.",
+   "kind": "reveal",
+   "lines": "6-8"
+  }
+ ],
+ "title": "Defining and calling a greeting",
+ "version": 1
+}

@@ -1,0 +1,33 @@
+{
+ "code": "age = 38\n\nif age >= 35:\n    print(\"You are old enough to run for President of the United States!\")\nprint(\"Thanks for checking!\")",
+ "description": "You can distinguish a conditional print from the print that follows it.",
+ "example": "cs170-activity-pythonconditionals-2",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You assign 38 to age and compare it with 35. The condition evaluates to True.",
+   "kind": "reveal",
+   "lines": "1-3"
+  },
+  {
+   "description": "The indentation places this print inside the if block. You execute it because the condition is True.",
+   "kind": "reveal",
+   "lines": "4"
+  },
+  {
+   "answer": "No. It starts at the left margin and runs after the conditional.",
+   "kind": "predict",
+   "lines": "5",
+   "question": "Does the final print belong to the if block?"
+  },
+  {
+   "description": "You see the age message followed by Thanks for checking. Both print calls execute in this supplied run.",
+   "kind": "reveal",
+   "lines": "5"
+  }
+ ],
+ "title": "Finding the indented block",
+ "version": 1
+}

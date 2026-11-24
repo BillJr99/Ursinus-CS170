@@ -1,0 +1,33 @@
+{
+ "code": "countdown = 3\nwhile countdown > 0:\n    print(countdown)\n    countdown = countdown - 1\nprint(\"Liftoff!\")",
+ "description": "You can follow a changing value through repeated condition checks.",
+ "example": "cs170-activity-pythoniteration-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You start countdown at 3. The while condition permits an iteration whenever countdown is greater than zero.",
+   "kind": "reveal",
+   "lines": "1-2"
+  },
+  {
+   "description": "Each pass prints countdown and then subtracts one. The next condition check uses that updated value.",
+   "kind": "reveal",
+   "lines": "3-4"
+  },
+  {
+   "answer": "No. When countdown reaches zero, the condition is False and execution leaves the loop.",
+   "kind": "predict",
+   "lines": "2",
+   "question": "Will the loop print zero?"
+  },
+  {
+   "description": "You see 3, 2 and 1 followed by the liftoff message. The final print runs after the loop finishes.",
+   "kind": "reveal",
+   "lines": "5"
+  }
+ ],
+ "title": "Counting down with while",
+ "version": 1
+}

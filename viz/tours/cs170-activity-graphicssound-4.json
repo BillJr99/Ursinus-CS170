@@ -1,0 +1,33 @@
+{
+ "code": "from ezgraphics import GraphicsWindow\n\nwin = GraphicsWindow(640, 480)\nwin.setTitle(\"My First Drawing\")\n\ncanvas = win.canvas()\n\ncanvas.setFill(255, 0, 0)\ncanvas.drawRectangle(40, 40, 100, 200)\n\ncanvas.setFill(255, 255, 255)\ncanvas.setOutline(0, 255, 0)\ncanvas.drawRectangle(200, 200, 150, 50)\n\nwin.wait()",
+ "description": "You follow the canvas settings used by two rectangle calls.",
+ "example": "cs170-activity-graphicssound-4",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You import GraphicsWindow, create the window, and assign its title. canvas refers to the window's drawing surface.",
+   "kind": "reveal",
+   "lines": "1-6"
+  },
+  {
+   "description": "You select a fill color before the first rectangle call. The call supplies its position and dimensions.",
+   "kind": "reveal",
+   "lines": "8-9"
+  },
+  {
+   "answer": "The code sets a new fill and sets an outline color. Both calls appear before the second drawRectangle call.",
+   "kind": "predict",
+   "lines": "11-13",
+   "question": "Which settings change before the second rectangle is drawn?"
+  },
+  {
+   "description": "You draw the second rectangle and finish with win.wait(). The supplied recording contains no rendered drawing or text output.",
+   "kind": "reveal",
+   "lines": "11-15"
+  }
+ ],
+ "title": "Read drawing settings in sequence",
+ "version": 1
+}

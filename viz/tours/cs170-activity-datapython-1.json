@@ -1,0 +1,33 @@
+{
+ "code": "# snacks.csv contains lines like:\n# name,category,price\n# Pretzels,salty,2.50\n# Apple,fruit,0.75\n\nnames = []\ncategories = []\nprices = []\n\nf = open(\"snacks.csv\")\nrownum = 0\nfor line in f:\n    if rownum > 0:  # skip the header line\n        parts = line.strip().split(\",\")\n        names.append(parts[0])\n        categories.append(parts[1])\n        prices.append(float(parts[2]))\n    rownum = rownum + 1\nf.close()\n\nprint(names)\nprint(prices)",
+ "description": "You store each snack's fields at matching positions in separate lists.",
+ "example": "cs170-activity-datapython-1",
+ "lang": "python",
+ "reviewed": false,
+ "source": "draft: codex free model",
+ "steps": [
+  {
+   "description": "You prepare names, categories, and prices as empty lists. The file object supplies lines, and rownum tracks the current row.",
+   "kind": "reveal",
+   "lines": "1-11"
+  },
+  {
+   "description": "You split each data row into fields and append each field to its list. float converts the price text to a numeric value.",
+   "kind": "reveal",
+   "lines": "12-18"
+  },
+  {
+   "answer": "Yes. The increment sits inside the loop and outside the if body.",
+   "kind": "predict",
+   "lines": "18",
+   "question": "Does rownum increase on the first line even when the if body is skipped?"
+  },
+  {
+   "description": "You close the file and print names and prices. The recording shows snack names in file order and their corresponding numeric prices.",
+   "kind": "reveal",
+   "lines": "19-22"
+  }
+ ],
+ "title": "Build parallel lists from snack rows",
+ "version": 1
+}
